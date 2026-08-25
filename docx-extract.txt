@@ -1,0 +1,672 @@
+
+SMALLWOOD ASSOCIATES
+Retiree Lane
+Complete Build Package — one document
+For:  Web developer  ·  GoHighLevel consultant
+Owner:  John Smallwood (principal)
+Compliance:  Regulus Financial Group, LLC — approval required before launch
+Version:  v3 — Aug 18, 2026. Everything for the retiree lane in one file: reference, checklist, card captions, and the full 30-email sequence.
+[WEB]  web developer    [GHL]  GHL consultant    [JOHN]  John    [REG]  Regulus
+Contents
+•  0 · How to use this document
+•  1 · The goal
+•  2 · The funnel at a glance
+•  3 · Brand system (quick reference)
+•  4 · What's already built
+•  5 · Where the quiz results go
+•  6 · Build & launch checklist
+•  7 · Deliverables index
+•  8 · Retiree card captions & disclosures (12 cards)
+•  9 · Retiree 30-email nurture sequence (full copy)
+0 · How to use this document
+Sections 1–5 are quick reference. Section 6 is the ordered checklist — every task has a checkbox, an Owner, a blank Done by, and a Date. Section 7 links every asset. Sections 8 and 9 are the actual retiree creative and email copy, ready to use — no more separate files.
+One rule above all: nothing goes live to real traffic until Regulus has approved that specific asset.
+1 · The goal
+Drive pre-retirees and retirees to book a Wealth Curve Conversation through one owned, compliant funnel. Every asset points to a single next action; the Wealth Curve Scorecard (the quiz) is the primary digital conversion, and a live educational event is the offline front door. Measured on cost-per-client, not cost-per-appointment.
+2 · The funnel at a glance
+Track A — Always-on digital
+Retiree card / ad → Homepage or retiree door → Wealth Curve Scorecard → Results + book prompt → Conversation squeeze page → OnceHub booking → nurture + calls
+Track B — Live educational event
+Event invite → Registration page → RSVP into GHL → InGa confirms → the room → Scorecard warm-up → Conversation → post-event follow-up
+Both close on the same action: a booked Wealth Curve Conversation at go.oncehub.com/AdvisorsIntroMeetings.
+3 · Brand system (quick reference)
+The site is white and navy blue. The social cards keep copper. This is intentional — the cards are the ad; the site is the calm destination.
+Color
+Hex
+Use
+Deep navy
+#1b164e
+Primary brand blue — headers, footer, headlines, site CTAs
+Sky blue
+#a3cef2
+The only accent on the site — eyebrows, rules, the hero curve
+White
+#ffffff
+Dominant canvas across the site
+Copper
+#d98042
+Social cards ONLY — not the website
+Near-black
+#252526
+Body text
+Type: Cinzel for short display headlines only; Montserrat for all body/UI. Rule: one action per page, single-conversion; use the real logo assets; visible focus states.
+4 · What's already built
+Asset
+What it is
+Status
+Homepage (recolored)
+Navy/white, copper removed, quiz-first hero, three self-selection doors, testimonials removed.
+Built — needs hosting + QUIZ_URL
+Wealth Curve Scorecard
+Three-avatar quiz; balance-sheet snapshot; Blueprint results; lead capture with webhook.
+Built — needs webhook + hosting
+Summary + CRM payload (JS)
+Turns a completed quiz into the readable advisor note + structured fields/tags (§5).
+Built — needs splice + test
+Retiree event invite + registration
+Invite card + white registration page, single-conversion, GHL-ready form.
+Built — pending Regulus + wiring
+12 retiree social cards
+White/navy/sky, logo embedded. Captions + disclosures now in §8.
+Built — pending Regulus
+Retiree 30-email nurture
+Full copy now in §9. Needs episode links + Regulus.
+Built — needs transcripts + Regulus
+Conversation squeeze page
+Three video slots, per-fold schedule CTAs, full brand system.
+Built — needs videos + hosting
+5 · Where the quiz results go
+When someone finishes the Scorecard, one submission carries everything — and it can populate GoHighLevel and Salesforce at the same time.
+5.1  What one submission captures
+Avatar (owner / executive / retiree)
+Every answer they checked, with its point value
+Balance-sheet snapshot (invested non-IRA, IRA/401k, home, debt — optional ranges)
+Computed score + band, and the three weakest areas (the gaps)
+Contact, source, and timestamp
+5.2  The readable summary the advisor sees
+Lands as a note on the contact in GHL and in the Description field in Salesforce. Internal only.
+============================================================
+WEALTH CURVE SCORECARD - RESULT
+============================================================
+Submitted:  Aug 18, 2026  3:42 PM ET
+Source:     Homepage - Retiree lane
+ 
+CONTACT
+  Jane Doe
+  jane.doe@email.com - (732) 555-0148
+ 
+PROFILE
+  Avatar:            Retiree / Pre-Retiree
+  Overall readiness: 7 / 18  (39%) - In Progress
+ 
+TOP 3 GAPS  (lead the conversation here)
+  1. Income Strategy - "We withdraw as needed, no strategy"
+  2. Protection - "Partial"
+  3. Estate & Legacy - "Basic and outdated"
+ 
+FULL ANSWERS
+  - Tax-efficient income order .. We withdraw as needed   [0/3]
+  - Roth conversions / RMDs ..... We've heard, not acted  [1/3]
+  - Lifetime tax strategy ....... Somewhat proactive      [2/3]
+  - Protection (LTC, liability) . Partial                 [1/3]
+  - Estate docs (will/trust/POA)  Basic and outdated      [1/3]
+  - Tax diversification ......... Reasonably spread       [2/3]
+ 
+BALANCE-SHEET SNAPSHOT  (optional, self-reported ranges)
+  - Invested assets (non-IRA) ... $1M - $2.5M
+  - IRA / 401(k) ................ $1M - $2.5M
+  - Home value ................. $750K - $1M
+  - Debt ....................... Under $250K
+------------------------------------------------------------
+Educational self-assessment. Not advice or a guarantee.
+Band cut-offs are placeholders — John sets them to match the Blueprint's red/gray/green.
+5.3  What goes where
+Quiz element
+GoHighLevel
+Salesforce
+Automates?
+Avatar
+Field + tag
+Lead field
+Yes — routes nurture
+Score / band
+Fields
+Fields
+Yes — prioritize
+Top 3 gaps
+Tags gap-*
+Multiselect
+Yes — segment
+Full answers
+In the note
+Description
+No — reference
+Snapshot ranges
+Fields (opt.)
+Fields (opt.)
+Optional — qualify
+Readable summary
+Contact note
+Description
+No — advisor reads
+5.4  How it gets there (the webhook)
+Recommended: point the Scorecard's at a Make.com or Zapier custom webhook — one POST fans the same record into GoHighLevel and Salesforce.
+5.5  Quiz → CRM tasks
+Task
+Owner
+Done by
+Date
+☐  Choose the capture path (Make/Zapier relay — recommended — vs. direct GHL vs. native GHL page).
+GHL
+ 
+ 
+☐  Stand up the relay; map fields + tags to GoHighLevel and Salesforce.
+GHL
+ 
+ 
+☐  Splice the summary module into the Scorecard; adapt the one line; paste WEBHOOK_URL.
+GHL/WEB
+ 
+ 
+☐  Set band thresholds to match the Blueprint's red/gray/green.
+JOHN
+ 
+ 
+☐  Run one live test lead; confirm the note + tags land in GHL and Salesforce before any traffic.
+GHL
+ 
+ 
+6 · Build & launch checklist
+Ordered. Work top to bottom. Tick the box, write who did it and the date.
+Phase 1 · Fix what's live and risky
+Task
+Owner
+Done by
+Date
+☐  Find where the live homepage is actually served (WordPress origin vs. cache / CDN / static copy).
+WEB
+ 
+ 
+☐  Remove the testimonials (Doreen, Colleen, Peter + the disclosure paragraph) at that source; purge caches / CDN.
+WEB
+ 
+ 
+☐  Confirm the served HTML no longer contains them — and they're not on any other page or in structured data.
+WEB
+ 
+ 
+☐  Standardize everything on smallwoodassociates.com; retire smallwoodwealth.com references.
+WEB
+ 
+ 
+☐  Fix the footer email to the associates domain.
+WEB
+ 
+ 
+☐  Standardize the OnceHub link to go.oncehub.com/AdvisorsIntroMeetings everywhere.
+WEB
+ 
+ 
+Phase 2 · Wire the quiz to the CRM
+See §5.5 — those five tasks are Phase 2. Complete them before turning on any sequences.
+Phase 3 · Host the pages
+Task
+Owner
+Done by
+Date
+☐  Deploy the recolored navy/white homepage (quiz-first).
+WEB
+ 
+ 
+☐  Host the Scorecard, squeeze page, event registration page, and retiree door.
+WEB
+ 
+ 
+☐  Set to the live URLs.
+WEB
+ 
+ 
+☐  Record + supply the three squeeze videos; embed them.
+JOHN
+ 
+ 
+☐  Mobile QA every page on real devices.
+WEB
+ 
+ 
+Phase 4 · Turn on routing and sequences
+Task
+Owner
+Done by
+Date
+☐  Tag every lead by source and audience = retiree on capture.
+GHL
+ 
+ 
+☐  Advisor routing: first-available / round-robin via OnceHub; Ruby books on live calls.
+GHL
+ 
+ 
+☐  Load the retiree 30-email nurture (§9) — trigger = Scorecard completion.
+GHL
+ 
+ 
+☐  Supply podcast transcript links tagged by planning gap to fill the slots in §9.
+JOHN
+ 
+ 
+☐  Build the event confirmation flow (InGa) + post-event recap + next-morning call cadence.
+GHL
+ 
+ 
+☐  Confirm GHL BCC is a compliant archive and that SMS is archived — before sequences go live.
+GHL/REG
+ 
+ 
+Phase 5 · Compliance sign-off
+Task
+Owner
+Done by
+Date
+☐  Approve the recolored homepage copy.
+REG
+ 
+ 
+☐  Approve the 12 retiree cards + captions (§8).
+REG
+ 
+ 
+☐  Approve the retiree nurture emails (§9).
+REG
+ 
+ 
+☐  Approve final disclosure wording; remove the “pending review” flags.
+REG
+ 
+ 
+Phase 6 · Launch
+Task
+Owner
+Done by
+Date
+☐  Run one full live test: card → homepage → Scorecard → squeeze → OnceHub → nurture.
+WEB/GHL
+ 
+ 
+☐  Go live on the retiree lane.
+JOHN
+ 
+ 
+☐  Then replicate the same plumbing for the business-owner and executive lanes.
+JOHN
+ 
+ 
+7 · Deliverables index
+Card creative and email copy are no longer separate files — they're §8 and §9 of this document. This index covers the remaining assets that still live outside it: three code files and the Drive hub.
+7.1  How to use the three code files
+.html files (homepage, retiree cards): open in any web browser — double-click, or drag into a browser tab, and it renders as a real page/creative. Nothing to install. To publish, hand the file to the web developer; to post a card, screenshot it. They are not meant to be read as documents.
+.js file (the CRM summary module): not something you open or view. The GHL consultant pastes its code into the Wealth Curve Scorecard's script so a finished quiz produces the readable note + CRM fields described in §5. It has no use on its own.
+Asset
+Location / link
+Campaign Hub (Drive, indexes everything)
+Open in Google Drive
+This document (tracker + captions + emails)
+Save this file to Drive; paste the link here.   [ paste link ]
+Recolored homepage (code file, .html — see §7.1)
+Delivered this session — in your downloads; add to Drive.   [ paste link ]
+Wealth Curve Scorecard (code file, .html — see §7.1)
+Built in an earlier session — not in Drive yet.   [ paste link ]
+Summary + CRM payload (code file, .js — see §7.1)
+Delivered this session — in your downloads; add to Drive.   [ paste link ]
+Retiree social cards (code file, .html — see §7.1)
+Delivered this session — in your downloads; add to Drive.   [ paste link ]
+Conversation squeeze page (code file, .html)
+Built — not in Drive yet.   [ paste link ]
+Retiree event invite + registration (code files)
+Built — not in Drive yet.   [ paste link ]
+New Client Attraction playbook
+Built — not in Drive yet.   [ paste link ]
+8 · Retiree card captions & disclosures
+How to use: post the card image (from the retiree cards HTML file) with its caption below. Every caption closes on the same CTA. Append the standard disclosure shown after each caption.
+Disclosure tiers: Tier 1 = a sourced statistic, needs a citation line. Tier 2 = light attribution to a named source. Tier 3 = standard disclaimer only, no claim being sourced.
+Result: none of the 12 retiree headlines cite a statistic or ranking, so all 12 land at Tier 3 — standard disclaimer only, pending Regulus sign-off on the copy itself.
+CARD 1     On the shift
+On card: “You spent forty years learning how to save. No one taught you how to spend.”
+Caption:  Saving and spending are two different skills — and retirement only teaches one of them by trial and error. If no one's ever walked you through the second one, that's exactly what the Wealth Curve Scorecard is for. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 2     On your IRA
+On card: “Your IRA has a silent partner you never chose. The IRS.”
+Caption:  Every pre-tax dollar in your IRA or 401(k) comes with a future tax bill attached. The size of that bill isn't fixed — the order and timing of your withdrawals can change it. Worth knowing where you stand. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 3     On readiness
+On card: “Most people retire with savings and no plan to turn it into a paycheck.”
+Caption:  A balance is not an income. Turning what you've saved into a paycheck that lasts is a different exercise entirely — and it's the one most retirement plans skip. See where your plan stands. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 4     On timing
+On card: “The first few years of retirement decide the next thirty.”
+Caption:  A downturn early in retirement does more damage than the same downturn ten years in — it's called sequence-of-returns risk, and it's rarely part of the conversation until it's too late to plan around. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 5     On what we do
+On card: “Reduce taxes. Reduce fees. Turn savings into income. Pass more on.”
+Caption:  That's the whole job, in one line. Every piece of your plan — tax, fees, income, protection, legacy — works better when it's coordinated instead of handled one at a time. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 6     On returns
+On card: “At this stage, the goal isn't beating the market. It's not needing to.”
+Caption:  Chasing returns made sense when you had decades to recover. In retirement, the better goal is a plan resilient enough that a bad year doesn't force a bad decision. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 7     On taxes
+On card: “In retirement, the tax planning is the whole game.”
+Caption:  Filing on time isn't a tax strategy — it's paperwork. Withdrawal order, Roth conversions, and bracket management are where real tax planning happens, and most of it has to happen before the filing deadline, not at it. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 8     On protection
+On card: “The threat to your retirement isn't a market crash. It's a care event no one planned for.”
+Caption:  Markets recover. A long-term care event that isn't planned for can undo decades of careful saving in a few years. It's the gap we see left open most — because it's the one people least want to think about. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 9     On longevity
+On card: “Running out of money isn't the fear. Running out of it at ninety is.”
+Caption:  Living a long life is the goal and the risk. A plan built for an average lifespan quietly assumes you won't outlive it — a good plan assumes you will. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 10     On legacy
+On card: “The money you don't spend goes somewhere. Plan it — or taxes will.”
+Caption:  Whatever's left over goes to family, to causes you care about, or to taxes — by design or by default. Legacy planning is simply choosing which. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 11     On your number
+On card: “Can you say, on one page, what you'll live on and how long it lasts?”
+Caption:  A simple test: if you can't answer that on a single page, you likely have savings — not yet a plan. Worth finding out which one you have. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+CARD 12     On peace of mind
+On card: “Retirement isn't the goal. Spending these years your way is.”
+Caption:  Every piece of planning — tax, income, protection, legacy — exists to serve one thing: the freedom to spend these years without the quiet worry that something's been left undone. Take the Wealth Curve Scorecard — link in bio.
+DISCLOSURE:  Tier 3 — standard disclaimer
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.
+Pending Regulus review before any card goes live.
+9 · Retiree 30-email nurture sequence
+Cadence:  Phase 1 — Days 0–19 (emails 1–10). Phase 2 — every ~9–10 days to Day 226 (emails 11–30).
+One action:  every email drives to a single CTA — schedule a Wealth Curve Conversation via OnceHub.
+To finish before send:  fill each [episode link] with the matching “Money Isn't” episode (Phase 4 task, §6), and route the full set through Regulus (§6, Phase 5).
+Global footer (appended to every email):
+Smallwood Wealth Management. This content is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Past performance is not indicative of future results. Advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC. Please consult a qualified professional before making financial decisions.
+Final disclosure wording pending Regulus review.
+Phase 1 · Days 0–19
+EMAIL 1     Day 0     ·     The shift: saving → spending
+Subject:  You spent forty years learning to save. Now what?
+Preview:  The hardest part of retirement isn't the math you'd expect.
+You just took the Wealth Curve Scorecard — thank you. Whatever it showed you, here's the thing most people discover: the skills that got you here aren't the skills that carry you through.
+For forty years the job was simple in shape, if not in practice: earn, save, invest, repeat. Retirement quietly flips it. Now the job is to turn a pile of money into a paycheck that lasts as long as you do — through taxes, markets, and a timeline no one can predict.
+Nobody teaches that part. Over the next few weeks I'm going to walk you through the gaps we see most often, one at a time. No pitch — just the planning conversations we have every day.
+When a specific question comes up, that's the moment to talk it through:  Schedule your Wealth Curve Conversation →
+— John
+P.S.  We all have financial pressure, how many of these do you suffer from: The Wealth Curve Explained
+EMAIL 2     Day 2     ·     The pre-tax tax bomb
+Subject:  Your IRA has a silent partner you never chose
+Preview:  Every dollar in there is taxed on the way out.
+Look at your IRA or 401(k) balance. Now cross out a quarter to a third of it. That's roughly the government's share — not a fee, not a maybe, but a bill that comes due on your terms or theirs.
+Pre-tax retirement accounts are wonderful on the way in and unforgiving on the way out. Every withdrawal is ordinary income. Left unmanaged, that can push you into higher brackets exactly when you'd rather be spending, not filing.
+The good news: the timing and order of those withdrawals are yours to design. That design is where a lot of lifetime tax gets won or lost — and it starts years before the first required distribution.
+If a large pre-tax balance is most of your net worth, it's worth mapping:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on the “tax bomb” in your IRA breaks this down. The Retirement Tax Bomb
+EMAIL 3     Day 4     ·     Turning savings into income
+Subject:  Savings isn't a paycheck (yet)
+Preview:  Most people retire with a pile and no plan to turn it into income.
+Saving was the easy part — relatively. You had a paycheck, a plan, and time. Retirement removes all three and asks a harder question: how do you convert what you've built into steady, reliable income for thirty years?
+A pile of money is not a plan. Two households with the exact same balance can have wildly different retirements depending on how they draw it down — which accounts, in what order, at what pace.
+The goal isn't a bigger number. It's a paycheck you can count on, structured so a bad market year doesn't force a bad decision.
+To see what your paycheck could actually look like:  Schedule your Wealth Curve Conversation →
+— John
+P.S. How many retirement income sources will you have?  19 Sources of Retirement Income
+EMAIL 4     Day 6     ·     Sequence-of-returns risk
+Subject:  The first five years decide the next thirty
+Preview:  Retire into a down market with no plan and the math turns against you.
+Here's a risk that doesn't get enough attention: it's not just how your investments do over thirty years — it's when the bad years happen. A market drop early in retirement, while you're drawing income, does far more damage than the same drop later.
+Withdraw from a shrinking balance and you lock in losses you never recover from. Two people with identical average returns can end up in completely different places based only on the order those returns arrived.
+You can't control the market's timing. You can build a plan that doesn't force you to sell into a downturn — which is the whole point.
+If you're within five years of retiring, this is the window to plan for:  Schedule your Wealth Curve Conversation →
+— John
+P.S. What will be your sequence of returns?  How can Volatility Impact Your Plan
+EMAIL 5     Day 8     ·     Tax-efficient withdrawal order
+Subject:  The order you spend money in is a strategy
+Preview:  Taxable, tax-deferred, tax-free — the sequence matters.
+Most retirees have money in three kinds of buckets: taxable (brokerage, savings), tax-deferred (IRA, 401k), and tax-free (Roth). The order you pull from those buckets can change your lifetime tax bill meaningfully — and most people default to the least efficient order without realizing it.
+Draining one bucket before touching the others is simple, but simple isn't the same as smart. The right sequence keeps you in lower brackets longer, manages what's taxable each year, and protects flexibility down the road.
+It's one of the highest-leverage, lowest-cost moves in retirement planning — and it's entirely within your control.
+To map the most tax-efficient order for your accounts:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on withdrawal sequencing clearly defines how to weather the stom. Will you be able weather this in your retirement plan
+EMAIL 6     Day 10     ·     Roth conversion window
+Subject:  The quiet window most people waste
+Preview:  The years between retiring and RMDs are where the tax planning lives.
+There's a window in early retirement that quietly disappears: the years after your paycheck stops but before required distributions and, often, Social Security begin. Your income dips — and so, temporarily, does your tax bracket.
+For many households, that's the best time to consider moving money from tax-deferred to tax-free through Roth conversions — paying tax now, at a known lower rate, to avoid a larger, less predictable bill later.
+It isn't right for everyone, and the amount matters. But the window is real, it's short, and once RMDs start it closes. Most people don't notice it until it's gone.
+If you're in that window now, it's worth a look:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on roth conversions and when they make sense.  Roth Conversion?
+EMAIL 7     Day 12     ·     RMDs & bracket management
+Subject:  The tax bill you can see coming
+Preview:  RMDs don't manage themselves.
+Required minimum distributions are one of the few tax events you can see years in advance — which makes it strange how often they catch people off guard. Once they begin, the government sets a minimum you must withdraw and pay tax on, whether you need the money or not.
+For someone with a large pre-tax balance, RMDs can push income up, drag more of your Social Security into taxable territory, and even raise your Medicare premiums — all at once.
+The time to soften that is the decade before it starts, not the year it hits. Bracket management is a long game, played early.
+To model what your RMDs will look like and plan around them:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on RMDs and tax bracket management, watch it.. Overpaying Tax in Retirement
+EMAIL 8     Day 14     ·     Social Security timing
+Subject:  One box you can't un-check
+Preview:  Claim at the wrong time and you can't take it back.
+Social Security looks like a simple decision and isn't. Claim early, claim at full retirement age, or wait — each path changes your monthly check, your spouse's survivor benefit, and how much of it gets taxed.
+The decision is close to permanent, and it interacts with everything else: your withdrawal order, your Roth conversions, your tax brackets. Optimizing it in isolation misses the point — it has to fit the whole plan.
+There's no universally right age to claim. There's a right age for your situation, and it's worth getting that one right.
+Before you file, it's worth running the whole picture:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on Social Security timing covers the trade-offs. [HYPERLINK "https://youtu.be/GwNg8rQxLe4?si=gLXg30qZT6K_9xv6"Take SS Now or Delay
+EMAIL 9     Day 16     ·     The holistic frame
+Subject:  What we actually do
+Preview:  Reduce taxes. Reduce fees. Turn savings into income. Add protection. Pass more on.
+By now you've seen a pattern: none of these gaps live alone. Your withdrawal order affects your taxes, which affect your Medicare, which affects your income, which affects your legacy. Pull one thread and the others move.
+That's the whole idea behind the way we work. We look at every facet — taxes, fees, income, protection, estate — and design one plan where the pieces work together instead of against each other. Reduce the drag, add protection around what you've built, and structure it so you can spend it and still pass more on.
+Most plans optimize one piece. The gains hide in the coordination.
+If you'd like to see what a coordinated plan looks like for you:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on holistic planning ties the pieces together. Hidden Risks!
+EMAIL 10     Day 19     ·     Returns aren't the point
+Subject:  Beating the market isn't the goal anymore
+Preview:  At this stage, the goal is not needing to.
+When you were accumulating, chasing returns made sense — you had time to recover and a paycheck to keep adding. In retirement, the math changes. Now the goal isn't to beat the market. It's to build a plan that doesn't depend on beating it.
+A paycheck that survives a bad year. Taxes managed so you keep more of what you earn. Protection so one event doesn't undo decades. Get those right and you simply need less from your portfolio — which means less risk, and more peace of mind.
+Families don't hire us to win a performance contest. They hire us to make it all work together.
+To build a plan that doesn't hinge on the market's next move:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on why returns aren't the point is worth your time. The 4% Rule?
+Phase 2 · to Day 226
+EMAIL 11     Day 28     ·     Fee & expense drag
+Subject:  The fee you don't feel
+Preview:  Small percentages, compounded over decades, aren't small.
+Fees are quiet because they're automatic. A percentage here, an expense ratio there, a product cost buried in a statement — none of it stings on any given day. Over a thirty-year retirement, though, that quiet drag can cost real money.
+The problem usually isn't one big fee. It's layers no one has looked at together: the advisor cost, the fund costs, the product costs, the tax cost of how it's all held. Reviewed as a whole, there's often room to keep more of what's yours.
+You can't control the market. You can control what you pay to participate in it.
+If no one has reviewed your total cost lately, that's worth doing:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on hidden fees pulls back the curtainHYPERLINK "https://youtu.be/Vjq0F6_N8G8?si=aAMlYrTlJMV4CrTd". [episode link]
+EMAIL 12     Day 38     ·     Long-term care
+Subject:  The risk no one puts on the fridge
+Preview:  The real threat isn't a market crash. It's a care event no one planned for.
+Ask people what could derail their retirement and they'll say a market crash. The bigger threat, for most, is quieter: a long-term care event. One extended illness, one nursing-home stay, and years of careful saving can drain fast.
+It's the gap we see left open most often, because it's uncomfortable to plan for. But there are ways to prepare — through insurance, through structure, through how assets are positioned — and they work far better decided in advance than in a crisis.
+Protection comes before optimization. There's no point fine-tuning a plan that one event can undo.
+If long-term care isn't addressed in your plan, let's close that gap:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on long-term care planning covers your options. Building Wealth
+EMAIL 13     Day 48     ·     Liability & disability protection
+Subject:  The umbrella you hope to never open
+Preview:  A single gap can undo years of good decisions.
+Protection is the layer people assume is handled until they check. Umbrella liability, adequate coverage, the right structure — these are cheap relative to what they protect, and yet they're often the pieces no one has reviewed together.
+One lawsuit, one accident, one gap at the wrong moment can reach assets you thought were safe. In retirement, when you can't simply earn it back, that exposure matters more, not less.
+We look at protection first for a reason: it's the floor everything else stands on.
+To review whether your protection layer actually holds:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on how to protect your wealh. Protect Your Wealth
+EMAIL 14     Day 58     ·     Longevity risk
+Subject:  Running out at ninety
+Preview:  The fear isn't running out of money. It's running out of it late.
+Living a long life is the goal — and the risk. The real fear in retirement isn't running out of money; it's running out at ninety, with no way to earn more and decades of decisions already behind you.
+Longevity magnifies every other gap. A tax inefficiency, a fee drag, an aggressive withdrawal rate — each one is survivable over ten years and dangerous over thirty. Plans built for an average lifespan quietly assume you won't beat the average.
+A good plan assumes you will. It's built to last as long as you do, not as long as a spreadsheet expects.
+To pressure-test whether your plan lasts as long as you might:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on being prepared to live beyond 90!. Retirement Beyond 90!
+EMAIL 15     Day 68     ·     Health-care costs
+Subject:  The health-care line nobody budgets for
+Preview:  Medicare doesn't cover what most people assume.
+Most retirement budgets have a line for travel and a line for the grandkids and a badly underestimated line for health care. Medicare helps, but it doesn't cover everything — premiums, supplements, dental, vision, and the long-term care it largely excludes add up.
+And there's a tax wrinkle: higher income in retirement can quietly raise your Medicare premiums a year or two later. So the withdrawal and conversion decisions we've talked about reach further than your tax return.
+Health care isn't a footnote in a retirement plan. For many households it's one of the largest line items.
+To build realistic health-care costs into your plan:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on health-care costs in retirement covers the gaps. Medicare & More
+EMAIL 16     Day 78     ·     Estate documents
+Subject:  The three documents most retirees are missing
+Preview:  A will, a trust, and directives decide how smoothly this goes.
+Estate planning isn't just about who gets what. It's about how much of what you've built actually reaches the people you love — and how much stress lands on them in the process.
+The basics are often outdated or missing entirely: a current will, the right trust if you need one, powers of attorney, and health-care directives. Without them, decisions you'd want made your way get made by a court's default rules instead.
+These documents are quiet insurance. You hope they sit in a drawer unused — but if they're not there when they're needed, the cost is high and personal.
+If your documents are outdated or you're not sure, let's review them:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on estate planning mistakes is worth a listen. Asset Protection With Esate Planning
+EMAIL 17     Day 88     ·     Beneficiary designations
+Subject:  Where your money actually goes when you're gone
+Preview:  Your beneficiary forms can override your will.
+Here's a detail that surprises people: the beneficiary designations on your accounts often override whatever your will says. An outdated form — an ex-spouse, a deceased relative, a blank line — can send money exactly where you didn't intend, no matter how carefully the will is written.
+These forms rarely get reviewed after they're first filled out, sometimes decades ago. Life changes; the paperwork doesn't follow automatically.
+It's a five-minute problem to check and a permanent one to miss. Worth confirming they still say what you mean.
+To make sure your designations match your actual wishes:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on beneficiary mistakes covers the traps. Where will your money go?
+EMAIL 18     Day 98     ·     The survivor problem
+Subject:  The widow's penalty no one warns you about
+Preview:  When one spouse passes, the brackets shrink but the income often doesn't.
+One of the least-discussed risks in retirement lands on the surviving spouse. When one partner passes, the household usually loses one Social Security check — but the tax brackets shrink from married to single, often sharply.
+The result: similar income, higher taxes, at the hardest possible time. Most plans never model it, so the survivor discovers it in the middle of grief.
+It's planable. Roth conversions, account structure, and how income is arranged can soften the survivor's tax picture in advance — but only if someone looks ahead on purpose.
+To make sure your plan protects the survivor, not just the couple:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on the survivor's tax trap explains it. Expect the UnExpected
+EMAIL 19     Day 108     ·     Legacy & giving
+Subject:  Giving on purpose
+Preview:  The money you don't spend goes somewhere. Plan it — or taxes will.
+Whatever you don't spend goes somewhere — to family, to causes you care about, or to taxes. The only real choice is whether that transfer happens by design or by default.
+Giving with intention can also be efficient. Done well, charitable strategies and family gifting can support the people and causes you care about while trimming the tax drag on your estate. Done as an afterthought, a large share can simply leak away.
+Legacy isn't only for the very wealthy. It's for anyone who'd rather decide where their life's work lands.
+To shape a legacy that reflects what you actually want:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on giving with intention covers the strategies. CRT?
+EMAIL 20     Day 118     ·     Inflation
+Subject:  The enemy that never sleeps
+Preview:  A dollar today won't buy a dollar's worth in twenty years.
+Inflation is the risk that hides in plain sight. It doesn't crash — it erodes. Slowly, quietly, it thins the purchasing power of a fixed income until the paycheck that felt comfortable at 65 feels tight at 85.
+Plans that hold too much in cash or ignore rising costs can look safe and still fall behind. The goal isn't to avoid all risk — it's to keep your income growing enough to stay ahead of the slow leak.
+A retirement plan has to account for a world that keeps getting more expensive, because it will.
+To build inflation into your income plan, not around it:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on inflation and purchasing power covers this. How much will a dollar buy 10 years from now?
+EMAIL 21     Day 128     ·     Volatility & staying invested
+Subject:  Staying invested without white knuckles
+Preview:  The plan is what lets you sit still when it's loud.
+Markets will fall during your retirement — more than once. The question isn't whether, it's whether your plan lets you stay the course when it happens, or forces you to sell at the worst moment.
+That calm doesn't come from predicting the market. It comes from structure: enough set aside that a down year doesn't touch your paycheck, and a plan clear enough that you don't have to guess.
+The biggest returns are often lost not to markets but to reactions. A good plan protects you from your own worst instinct.
+To build a plan you can actually sit still inside:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on staying invested through volatility is worth it. Are you ready for the ride?
+EMAIL 22     Day 138     ·     Concentration risk
+Subject:  When one stock owns you
+Preview:  A single holding can carry more risk than the whole rest of the plan.
+Sometimes the biggest risk in a portfolio is a single position — company stock from a long career, an inheritance never diversified, one holding that grew until it quietly dominates everything.
+It feels loyal to hold it, and it may carry a big embedded gain that makes selling feel expensive. But concentration cuts both ways, and in retirement one bad chapter for one company shouldn't be able to reshape your whole plan.
+There are tax-aware ways to unwind a concentrated position over time. The key is doing it deliberately, before the decision gets made for you.
+If one position dominates your portfolio, let's plan the unwind:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on concentration risk covers the tax-smart ways out. Have you thought about this?
+EMAIL 23     Day 148     ·     Liquidity & buckets
+Subject:  Cash isn't lazy in retirement
+Preview:  Reserves are what let you absorb a shock without disturbing the plan.
+In your working years, idle cash felt like a missed opportunity. In retirement, the right amount of liquidity is a strategy — it's what lets you cover a surprise or ride out a down market without selling investments at the wrong time.
+Many plans use a bucket approach: near-term spending in safe, liquid assets; the rest positioned to grow. It's less about a magic number and more about never being forced to sell low to pay a bill.
+Reserves aren't drag. They're the shock absorber that keeps the rest of the plan intact.
+To size your reserves to your actual life, not a rule of thumb:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on the bucket approach explains it well. Spend or Save??
+EMAIL 24     Day 158     ·     Debt in retirement
+Subject:  Debt doesn't retire either
+Preview:  How you carry it matters more when the paycheck stops.
+Not all debt is created equal, and in retirement the difference sharpens. A low, fixed mortgage is one thing; variable, high-interest debt draining a fixed income is another. When there's no paycheck refilling the account, the math gets less forgiving.
+The instinct to pay everything off isn't always right, either — sometimes keeping liquidity or a low-rate loan is the smarter move. It depends on the rate, the taxes, and how it fits the rest of the plan.
+The point isn't to fear debt. It's to carry the right kind, in the right amount, on purpose.
+To decide how debt should fit your retirement, not fight it:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on debt in retirement covers the trade-offs. Debt?
+EMAIL 25     Day 168     ·     The house decision
+Subject:  The house decision
+Preview:  Downsize, stay, relocate — it's a financial decision too.
+The home is often the largest asset and the most emotional one. Staying, downsizing, relocating to a lower-tax state — each carries real financial weight beyond the sentiment: property taxes, upkeep, liquidity, and how much of your net worth stays tied up in one place.
+There's no single right answer. For some, the house is the plan's anchor; for others, it's equity that could be working harder elsewhere. What matters is deciding with the whole picture in view, not in isolation.
+It's worth running the numbers before the moving trucks, not after.
+To weigh the house decision as part of the whole plan:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on downsizing and relocation covers the math. Turn your house into tax free income
+EMAIL 26     Day 178     ·     Gifting to family
+Subject:  Helping the kids without hurting the plan
+Preview:  Generosity is easier when it's planned.
+Most people want to help — a down payment, tuition for a grandchild, a hand at the right moment. Done thoughtfully, gifting can be a joy and even tax-efficient. Done without a plan, it can quietly erode the security you spent decades building.
+The questions are simple to ask and easy to skip: How much can you give without risking your own longevity? What's the most tax-smart way to do it? Should it be now, later, or through your estate?
+You can be generous and secure. It just takes structuring the generosity on purpose.
+To help the people you love without weakening your own plan:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on smart family gifting covers the guardrails. gift or not to gift?
+EMAIL 27     Day 188     ·     Reviewing the plan
+Subject:  Plans age too
+Preview:  A plan set once and never revisited is a plan drifting off course.
+The tax law changes. The markets change. Your life changes — a move, a health event, a new grandchild, a shift in what you want these years to look like. A plan built once and filed away slowly stops matching the life it was built for.
+This is the quiet gap: not a wrong decision, just an old one no one has revisited. The best plans aren't set and forgotten; they're reviewed and adjusted as things move.
+If it's been a few years since anyone looked at yours as a whole, that alone is worth a conversation.
+If your plan hasn't had a fresh look lately, let's give it one:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on keeping a plan current is a good reminder. Are you ready for Retirement
+EMAIL 28     Day 198     ·     The one-page test
+Subject:  The one-page test
+Preview:  Can you say, on one page, what you'll live on and how long it lasts?
+Here's a simple test. On a single page, can you say exactly what you'll live on each year, where it comes from, how it's taxed, and how long it lasts — through a down market, a long life, and the loss of a spouse?
+If you can, you have a plan. If you can't, you have savings and a lot of hope. Most people, even careful ones, find they're closer to the second than they'd like.
+That one page is what everything we've talked about builds toward: not more complexity, but enough clarity that the answer fits on a single sheet.
+If your plan doesn't fit on one clear page yet, that's what we build:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on the one-page retirement plan covers the test. [episode link]
+EMAIL 29     Day 212     ·     Peace of mind
+Subject:  Retirement was never the goal
+Preview:  The freedom to spend these years your way is.
+We've spent a lot of words on taxes, income, protection, and legacy — but none of those are the point. They're the means. The point is the freedom to spend these years exactly the way you want, without the low hum of worry that something's been left undone.
+That peace doesn't come from a bigger number. It comes from knowing the pieces fit — that a bad market year, a tax surprise, a health event, or the loss of a spouse won't unravel the life you built.
+Retirement was never the finish line. What it lets you do is.
+When you're ready to trade the worry for a plan:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on what money isn't gets at the heart of this. Money Isn't
+EMAIL 30     Day 226     ·     The invitation
+Subject:  One conversation
+Preview:  No pitch, no obligation — just a clear look at where you stand.
+Over the last few months I've walked you through the gaps we see most often — the tax bomb, the withdrawal order, the protection blind spot, the survivor's penalty, the one-page test. If even one of them landed, it's worth an hour.
+The Wealth Curve Conversation is exactly that: a straightforward look at where your plan stands today, what's working, and where the gaps are. No products pushed, no obligation — just clarity you can use whether or not we ever work together.
+You took the first step when you completed the Scorecard. This is the natural next one.
+When the time feels right, I'd welcome the conversation:  Schedule your Wealth Curve Conversation →
+— John
+P.S. The Money Isn't episode on what to expect from a first meeting sets the stage. [episode link]

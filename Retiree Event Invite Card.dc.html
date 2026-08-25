@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Montserrat',sans-serif;background:#d5d8dc;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px;box-sizing:border-box}
+a{color:#1b164e;text-decoration:none} a:hover{color:#2c2570}
+</style>
+</helmet>
+<div style="position:relative;width:432px;aspect-ratio:{{ aspect }};background:#ffffff;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 16px 40px rgba(27,22,78,.16)">
+  <div style="position:absolute;inset:14px;border:1px solid #d98042;pointer-events:none"></div>
+  <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;padding:36px 34px;text-align:center">
+    <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#6f9fce;font-weight:600;margin-top:6px">You're invited &middot; Live event</div>
+    <div style="width:40px;height:1px;background:#d98042;opacity:.85;margin:16px auto"></div>
+    <div style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;line-height:1.28;font-size:23px;margin:auto 0">Taxes don't retire when you do. A working session for retirees and pre-retirees.</div>
+    <div style="font-size:12px;letter-spacing:.08em;color:#52545a;font-weight:500;margin-top:auto;padding-top:16px">[EVENT DATE] &middot; [TIME] &middot; [VENUE], Red Bank, NJ</div>
+    <div style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#d98042;font-weight:600;margin-top:10px">No cost &middot; Educational only</div>
+    <a href="#REGISTRATION_URL" style="display:inline-block;margin:12px auto 0;background:#d98042;color:#252526;font-weight:600;font-size:12.5px;letter-spacing:.01em;padding:11px 22px">Save your seat &rarr;</a>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid #e4e8ee">
+      <img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto">
+      <div style="font-size:9px;letter-spacing:.06em;color:#8a8b88">smallwoodassociates.com</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:520,&quot;height&quot;:620},&quot;format&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;4:5 portrait&quot;,&quot;1:1 square&quot;],&quot;default&quot;:&quot;4:5 portrait&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Card&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const f = this.props.format ?? "4:5 portrait";
+    return { aspect: f === "1:1 square" ? "1 / 1" : "4 / 5" };
+  }
+}
+</script>
+</body>
+</html>

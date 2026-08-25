@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wealth Curve Assessment — Smallwood Wealth Management</title>
+<!--
+  ============================================================================
+  WEALTH CURVE ASSESSMENT — v2
+  Smallwood Wealth Management
+
+  WHAT CHANGED FROM v1:
+  - Questions now flip the REAL scorecard categories from the Wealth Curve
+    Scorecard (Tax Rate, Savings Rate, Savings Rate Balance, Liquid Asset
+    Rate, Personal Use Real Estate, Umbrella/Disability/Life, Estate docs,
+    and the Business Owner set: Buy-Sell, Valuation, Personal Guarantee, BOE).
+  - Results styled to match the NEW Simoni Wealth Curve Blueprint (navy band,
+    copper rule, book-serif headings) and show a PREVIEW of the actual
+    red/gray/green scorecard gauges.
+
+  COMPLIANCE (SEC Marketing Rule):
+  - Measures preparedness, not performance. Gauges reflect the prospect's own
+    self-reported answers. NO dollar figures, NO percentages presented as
+    targets/benchmarks, NO guarantees, NO outcome projections.
+  - The real client's gauge values (e.g. 33% tax rate) are NOT reused as
+    benchmarks. Gauges are qualitative (Needs Attention / In Progress / Strong).
+  - "Fair share" framed as a values statement ("what you owe, not a dollar more").
+  - Disclosure on results mirrors the new Blueprint disclosure tone.
+
+  CONFIG BELOW: set BOOKING_URL, WEBHOOK_URL, and confirm FIRM/DOMAIN.
+  ============================================================================
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b164e;
+    --copper:#d98042;
+    --cool-gray:#e8ecef;
+    --sky:#a3cef2;
+    --warm-gray:#8a8b88;
+    --near-black:#252526;
+    --white:#ffffff;
+    --serif:'Source Serif 4', Georgia, serif;   /* evokes the new Blueprint headings */
+    --body:'Montserrat', sans-serif;
+    --red:#c0392b;
+    --amber:#e6b800;
+    --green:#2e7d32;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:var(--body);color:var(--near-black);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .stage{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 20px}
+  .card{width:100%;max-width:760px;background:var(--white)}
+  .progress-wrap{position:fixed;top:0;left:0;right:0;height:4px;background:var(--cool-gray);z-index:50}
+  .progress-bar{height:100%;width:0;background:var(--copper);transition:width .4s ease}
+
+  .wordmark{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.28em;color:var(--navy);text-transform:uppercase;margin-bottom:34px}
+  .wordmark small{display:block;font-size:9px;letter-spacing:.34em;color:var(--warm-gray);font-weight:500;margin-top:3px}
+
+  .kicker{font-family:var(--body);text-transform:uppercase;letter-spacing:.22em;font-size:11px;font-weight:600;color:var(--copper);margin-bottom:18px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.1;color:var(--navy);margin-bottom:20px}
+  h2{font-family:var(--serif);font-weight:600;font-size:clamp(22px,4vw,30px);color:var(--navy);line-height:1.18;margin-bottom:14px}
+  .lede{font-size:clamp(15px,2vw,18px);color:var(--near-black);font-weight:300;max-width:58ch;margin-bottom:14px}
+  .muted{color:var(--warm-gray);font-size:14px;font-weight:400}
+
+  .btn{font-family:var(--body);font-weight:600;font-size:15px;letter-spacing:.02em;border:none;border-radius:5px;padding:15px 30px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;display:inline-flex;align-items:center;gap:10px}
+  .btn-primary{background:var(--copper);color:var(--near-black)}   /* near-black text = accessible on copper */
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(217,128,66,.28)}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:28px}
+
+  .avatars{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
+  @media(min-width:640px){.avatars{grid-template-columns:1fr 1fr 1fr}}
+  .avatar{text-align:left;border:1.5px solid var(--cool-gray);border-radius:8px;padding:22px 20px;background:var(--white);cursor:pointer;transition:all .15s ease}
+  .avatar:hover{border-color:var(--copper);transform:translateY(-2px);box-shadow:0 10px 24px rgba(27,22,78,.08)}
+  .avatar .a-mark{width:36px;height:36px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .avatar .a-mark span{color:var(--sky);font-family:var(--serif);font-size:16px;font-weight:600}
+  .avatar .a-title{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:18px;margin-bottom:6px}
+  .avatar .a-desc{font-size:13px;color:var(--warm-gray)}
+
+  .qmeta{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:14px}
+  .options{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+  .option{text-align:left;border:1.5px solid var(--cool-gray);border-radius:7px;padding:16px 18px;background:var(--white);cursor:pointer;font-size:15px;color:var(--near-black);transition:all .12s ease;display:flex;align-items:center;gap:14px}
+  .option:hover{border-color:var(--sky);background:#fbfcfe}
+  .option.selected{border-color:var(--copper);background:#fef8f3}
+  .option .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--cool-gray);flex-shrink:0;transition:all .12s}
+  .option.selected .dot{border-color:var(--copper);background:var(--copper);box-shadow:inset 0 0 0 3px #fff}
+
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .field input{width:100%;padding:13px 15px;border:1.5px solid var(--cool-gray);border-radius:5px;font-family:var(--body);font-size:15px;color:var(--near-black);transition:border-color .12s}
+  .field input:focus{outline:none;border-color:var(--navy)}
+  .grid2{display:grid;grid-template-columns:1fr;gap:0 16px}
+  @media(min-width:520px){.grid2{grid-template-columns:1fr 1fr}}
+
+  .backlink{background:none;border:none;color:var(--warm-gray);font-size:13px;cursor:pointer;margin-bottom:24px;padding:0;font-weight:500}
+  .backlink:hover{color:var(--navy)}
+  .hidden{display:none}
+
+  /* ===== BLUEPRINT-STYLE RESULTS ===== */
+  .bp{border:1px solid var(--cool-gray);border-radius:4px;overflow:hidden}
+  .bp-head{background:var(--navy);color:#fff;padding:26px 30px;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:10px}
+  .bp-head .bp-mark{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#fff;opacity:.92}
+  .bp-head .bp-mark small{display:block;font-size:8px;letter-spacing:.3em;opacity:.6;margin-top:2px}
+  .bp-head .bp-title{text-align:right}
+  .bp-head .bp-title h3{font-family:var(--serif);font-weight:600;font-size:24px;color:#fff}
+  .bp-head .bp-title span{font-size:12px;color:var(--sky);letter-spacing:.06em}
+  .bp-body{padding:30px}
+  .bp-section-label{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);padding-bottom:6px;border-bottom:2px solid var(--copper);display:inline-block;margin:6px 0 18px}
+  .bp-lede{font-size:16px;font-weight:300;color:var(--near-black);margin-bottom:8px}
+
+  /* Scorecard gauge (mirrors the real report) */
+  .gauge-row{margin-bottom:20px}
+  .gauge-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px}
+  .gauge-name{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:15px}
+  .gauge-zone{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .gauge-bar{position:relative;height:16px;border-radius:2px;display:flex;overflow:visible}
+  .gauge-bar .seg{height:100%}
+  .gauge-bar .seg.r{flex:0 0 40%;background:#e3b4ad}
+  .gauge-bar .seg.g{flex:0 0 30%;background:var(--cool-gray)}
+  .gauge-bar .seg.n{flex:0 0 30%;background:#b7d4b8}
+  .gauge-bar.active .seg.r{background:var(--red)}
+  .gauge-bar.active .seg.mid{background:var(--amber)}
+  .gauge-bar.active .seg.n{background:var(--green)}
+  .marker{position:absolute;top:-4px;bottom:-4px;width:3px;background:var(--near-black);border-radius:2px;transform:translateX(-1px);transition:left .5s ease}
+
+  .opps{margin-top:6px;display:flex;flex-direction:column;gap:16px}
+  .opp{border-left:3px solid var(--copper);padding:2px 0 2px 16px}
+  .opp h4{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:16px;margin-bottom:3px}
+  .opp p{font-size:14px;color:var(--near-black);font-weight:300}
+
+  .bp-cta{margin-top:28px;padding:24px;background:#faf7f2;border:1px solid var(--cool-gray);border-radius:6px;text-align:center}
+  .bp-cta p{font-size:15px;color:var(--navy);font-weight:500;margin-bottom:16px}
+
+  .disclaimer{margin-top:22px;font-size:11px;color:var(--warm-gray);font-weight:400;line-height:1.55}
+  .devtoggle{margin-top:18px;font-size:12px;color:var(--warm-gray);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0}
+  .devpanel{margin-top:14px;background:var(--near-black);border-radius:6px;padding:16px;color:#cfd3d6;font-size:12px;font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;display:none}
+  .preview-tag{display:inline-block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);border:1px solid var(--copper);border-radius:3px;padding:3px 8px;font-weight:600;margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progress"></div></div>
+<div class="stage"><div class="card" id="app"></div></div>
+
+<script>
+/* ============================================================
+   CONFIG  — set these three, then it's live
+   ============================================================ */
+const FIRM_NAME   = "Smallwood Wealth Management";
+const BOOKING_URL = "https://www.smallwoodwealth.com"; // replace w/ your GHL calendar/consult link
+const WEBHOOK_URL = "";  // GHL inbound webhook OR Zapier/Make webhook (fans out to Salesforce). Blank = preview mode.
+
+/* ============================================================
+   SCORECARD LEVERS  (labels shown on the gauges)
+   ============================================================ */
+const LEVERS = {
+  tax:        "Tax Strategy",
+  savings:    "Savings Rate",
+  balance:    "Tax Diversification",
+  liquid:     "Liquidity",
+  realestate: "Home vs. Income",
+  protection: "Protection Layer",
+  estate:     "Estate & Legacy",
+  business:   "Business Continuity",
+  equity:     "Equity & Concentration",
+  income:     "Income Strategy"
+};
+
+const LEVER_TEASER = {
+  tax:"Taxes quietly erode wealth and its compounding power. Paying what you owe — and not a dollar more — is a design question, not a filing one. This is usually the first place we look.",
+  savings:"Your savings rate is the fuel. The question isn't just how much, but whether it's structured to build wealth and lifestyle at the same time.",
+  balance:"Too much in one tax structure limits your options later. Spreading savings across taxable, tax-deferred, and tax-free buckets is where flexibility is won or lost.",
+  liquid:"Liquid reserves are what let you seize an opportunity — or absorb a shock — without disturbing the rest of the plan.",
+  realestate:"When your home consumes too much of your income, everything downstream tightens. It's an overlooked lever with outsized impact.",
+  protection:"Umbrella, disability, and life coverage are where a single gap can undo years of good decisions. Protection comes before optimization.",
+  estate:"A will, trust, and powers of attorney decide how much of what you've built actually reaches the people you love — and how smoothly.",
+  business:"Buy-sell funding, a current valuation, and personal-guarantee exposure determine what your business is actually worth to you and your family.",
+  equity:"Concentrated equity carries risk and tax exposure that timing and structure can meaningfully reshape.",
+  income:"The order and timing of how you draw income can change your lifetime tax picture — and your freedom to spend what you've earned."
+};
+
+/* ============================================================
+   QUESTION BANK — flips of the real Wealth Curve Scorecard
+   ============================================================ */
+const QUESTIONS = {
+  business_owner: [
+    { q:"Your approach to keeping more of what you earn — paying what you owe, not a dollar more — is…", lever:"tax",
+      opts:[{t:"We file and hope for the best",p:0},{t:"Our accountant handles it; we don't drive strategy",p:1},{t:"We plan somewhat proactively",p:2},{t:"Year-round, forward-looking tax strategy",p:3}]},
+    { q:"If you sold or exited the business in the next few years, your tax plan for that event is…", lever:"tax",
+      opts:[{t:"Something we haven't thought about",p:0},{t:"A general idea, nothing formal",p:1},{t:"Partly mapped out",p:2},{t:"Structured well in advance",p:3}]},
+    { q:"Do you know what your business is actually worth today?", lever:"business",
+      opts:[{t:"No formal valuation",p:0},{t:"A rough guess",p:1},{t:"An older valuation",p:2},{t:"A current, documented valuation",p:3}]},
+    { q:"If you or a partner died tomorrow, your buy-sell agreement is…", lever:"business",
+      opts:[{t:"We don't have one",p:0},{t:"In place but unfunded",p:1},{t:"In place, partly funded",p:2},{t:"In place and fully funded",p:3}]},
+    { q:"How much of your business debt have you personally guaranteed — and is it protected?", lever:"business",
+      opts:[{t:"A lot, with no protection in place",p:0},{t:"Some, unexamined",p:1},{t:"Modest, with some coverage",p:2},{t:"Reviewed and deliberately covered",p:3}]},
+    { q:"Your savings are spread across taxable, tax-deferred, and tax-free structures…", lever:"balance",
+      opts:[{t:"Almost entirely in one bucket",p:0},{t:"Mostly one, a little elsewhere",p:1},{t:"Reasonably spread",p:2},{t:"Deliberately diversified for flexibility",p:3}]},
+    { q:"Protection around your wealth — umbrella liability, disability, key-person — is…", lever:"protection",
+      opts:[{t:"Minimal or ad hoc",p:0},{t:"Some coverage, never reviewed together",p:1},{t:"Reasonably covered",p:2},{t:"Deliberately layered and reviewed",p:3}]},
+    { q:"Your will, trust, and powers of attorney are…", lever:"estate",
+      opts:[{t:"Not in place",p:0},{t:"An old will only",p:1},{t:"Mostly documented",p:2},{t:"Current and structured for succession",p:3}]}
+  ],
+  executive: [
+    { q:"Your strategy for reducing what you overpay in tax each year is…", lever:"tax",
+      opts:[{t:"I don't have one",p:0},{t:"Whatever my preparer suggests at filing",p:1},{t:"Somewhat proactive",p:2},{t:"Forward-looking and coordinated",p:3}]},
+    { q:"How concentrated are you in your employer's stock?", lever:"equity",
+      opts:[{t:"Heavily — it's most of my portfolio",p:0},{t:"More than I'd like",p:1},{t:"Moderately",p:2},{t:"Well diversified",p:3}]},
+    { q:"Your plan for RSUs, options, and ESPP is…", lever:"equity",
+      opts:[{t:"Nonexistent — I react as I go",p:0},{t:"Mostly sell-when-I-need-to",p:1},{t:"Has some structure",p:2},{t:"Deliberately timed and tax-aware",p:3}]},
+    { q:"Deferred comp, backdoor/mega-backdoor Roth, and similar levers are…", lever:"balance",
+      opts:[{t:"Unfamiliar to me",p:0},{t:"On my radar but unused",p:1},{t:"Partly used",p:2},{t:"Actively part of my plan",p:3}]},
+    { q:"Your liquid reserves — cash for an opportunity or an emergency — are…", lever:"liquid",
+      opts:[{t:"Thin",p:0},{t:"Some, not intentional",p:1},{t:"Reasonable",p:2},{t:"Deliberately maintained",p:3}]},
+    { q:"Protection — umbrella liability, disability, life — is…", lever:"protection",
+      opts:[{t:"Thin or unexamined",p:0},{t:"Some pieces, never reviewed together",p:1},{t:"Reasonably in place",p:2},{t:"Coordinated and reviewed",p:3}]},
+    { q:"Your will, trust, and beneficiary designations are…", lever:"estate",
+      opts:[{t:"Not in place",p:0},{t:"Basic and outdated",p:1},{t:"Mostly current",p:2},{t:"Current and intentionally designed",p:3}]},
+    { q:"Your savings are spread across taxable, tax-deferred, and tax-free structures…", lever:"balance",
+      opts:[{t:"Almost entirely in one bucket",p:0},{t:"Mostly one, a little elsewhere",p:1},{t:"Reasonably spread",p:2},{t:"Deliberately diversified",p:3}]}
+  ],
+  retiree: [
+    { q:"Your plan for drawing income in a tax-efficient order is…", lever:"income",
+      opts:[{t:"We withdraw as needed, no strategy",p:0},{t:"A loose approach",p:1},{t:"Somewhat planned",p:2},{t:"A deliberate, tax-aware sequence",p:3}]},
+    { q:"Roth conversions and managing future RMDs are…", lever:"tax",
+      opts:[{t:"Not something we've looked at",p:0},{t:"We've heard of it, not acted",p:1},{t:"Partly explored",p:2},{t:"Actively part of our plan",p:3}]},
+    { q:"Your strategy to keep lifetime taxes as low as legitimately possible is…", lever:"tax",
+      opts:[{t:"We don't have one",p:0},{t:"Year-by-year at filing only",p:1},{t:"Somewhat proactive",p:2},{t:"A multi-year, forward-looking plan",p:3}]},
+    { q:"Protection against the big retirement risks — long-term care, liability — is…", lever:"protection",
+      opts:[{t:"Largely unaddressed",p:0},{t:"Partial",p:1},{t:"Reasonably covered",p:2},{t:"Deliberately layered",p:3}]},
+    { q:"Your will, trust, powers of attorney, and health directives are…", lever:"estate",
+      opts:[{t:"Not in place",p:0},{t:"An old will only",p:1},{t:"Mostly documented",p:2},{t:"Current and fully structured",p:3}]},
+    { q:"Your liquid reserves for the unexpected are…", lever:"liquid",
+      opts:[{t:"Thin",p:0},{t:"Some, not intentional",p:1},{t:"Reasonable",p:2},{t:"Deliberately maintained",p:3}]},
+    { q:"Confidence that you can comfortably spend more without running short is…", lever:"income",
+      opts:[{t:"Low — we're afraid to spend",p:0},{t:"Uncertain",p:1},{t:"Fairly confident",p:2},{t:"Very confident, it's modeled",p:3}]},
+    { q:"Your savings are spread across taxable, tax-deferred, and tax-free structures…", lever:"balance",
+      opts:[{t:"Almost entirely in one bucket",p:0},{t:"Mostly one, a little elsewhere",p:1},{t:"Reasonably spread",p:2},{t:"Deliberately diversified",p:3}]}
+  ]
+};
+
+const AVATARS = {
+  business_owner:{label:"Business Owner", mark:"B", desc:"Founders & owners of companies up to $200M"},
+  executive:{label:"Corporate Executive", mark:"E", desc:"Leaders with equity comp & concentrated stock"},
+  retiree:{label:"Approaching / In Retirement", mark:"R", desc:"Protecting and enjoying what you've built"}
+};
+
+const BANDS = [
+  {min:0,max:40,name:"Foundation",
+   line:"You've built something worth protecting — and there's real leverage waiting in how it's structured. The areas below are exactly where most people leave the most on the table."},
+  {min:41,max:65,name:"Building",
+   line:"You're ahead of most, with a solid base in place. The next moves are where good plans become great ones — and where the areas below tend to matter most."},
+  {min:66,max:85,name:"Advancing",
+   line:"You're well-organized and thinking ahead. At this level the gains are more refined — the areas below are where advanced planning quietly compounds."},
+  {min:86,max:100,name:"Optimized",
+   line:"You're operating at a high level. That's precisely why the frontier matters — the areas below are where even strong plans find their next edge."}
+];
+
+/* ============================================================
+   STATE + RENDER
+   ============================================================ */
+let state = {screen:"intro",avatar:null,qIndex:0,answers:[],contact:{}};
+const app = document.getElementById('app');
+const progress = document.getElementById('progress');
+function setProgress(p){progress.style.width=Math.max(0,Math.min(100,p))+"%"}
+
+function render(){
+  ({intro:renderIntro,avatar:renderAvatar,quiz:renderQuestion,capture:renderCapture,results:renderResults}[state.screen])();
+}
+
+function renderIntro(){
+  setProgress(0);
+  app.innerHTML = `
+    <div class="wordmark">Smallwood<small>Wealth Management</small></div>
+    <div class="kicker">The Wealth Curve Assessment</div>
+    <h1>Most people aren't as prepared as they think.</h1>
+    <p class="lede">In about two minutes, see where you stand across the levers that decide how much you keep in tax, how well you're protected, and how much reaches the people you love.</p>
+    <p class="muted">No account numbers. No personal financial details. Just a clear read on where the opportunity is.</p>
+    <div class="row"><button class="btn btn-primary" onclick="go('avatar')">Begin the assessment →</button></div>`;
+}
+
+function renderAvatar(){
+  setProgress(6);
+  const cards = Object.entries(AVATARS).map(([k,a])=>`
+    <button class="avatar" onclick="chooseAvatar('${k}')">
+      <div class="a-mark"><span>${a.mark}</span></div>
+      <div class="a-title">${a.label}</div>
+      <div class="a-desc">${a.desc}</div>
+    </button>`).join("");
+  app.innerHTML = `
+    <button class="backlink" onclick="go('intro')">← Back</button>
+    <div class="kicker">Step 1</div>
+    <h2>Which best describes you?</h2>
+    <p class="muted">This tailors the questions to your situation.</p>
+    <div class="avatars">${cards}</div>`;
+}
+
+function renderQuestion(){
+  const qs=QUESTIONS[state.avatar], q=qs[state.qIndex], sel=state.answers[state.qIndex];
+  setProgress(10+(state.qIndex/qs.length)*70);
+  const opts=q.opts.map((o,i)=>`
+    <button class="option ${sel&&sel.i===i?'selected':''}" onclick="answer(${i})">
+      <span class="dot"></span><span>${o.t}</span></button>`).join("");
+  app.innerHTML=`
+    <button class="backlink" onclick="prevQuestion()">← Back</button>
+    <div class="qmeta">Question ${state.qIndex+1} of ${qs.length}</div>
+    <h2>${q.q}</h2>
+    <div class="options">${opts}</div>
+    <div class="row"><button class="btn btn-primary" ${sel?'':'disabled'} onclick="nextQuestion()">
+      ${state.qIndex===qs.length-1?'See where you stand':'Continue'} →</button></div>`;
+}
+
+function renderCapture(){
+  setProgress(88);
+  app.innerHTML=`
+    <div class="kicker">Almost there</div>
+    <h2>Your Wealth Curve preview is ready.</h2>
+    <p class="lede">Enter your details to reveal your scorecard preview and top opportunity areas.</p>
+    <div class="field"><label>First name</label><input id="firstName" placeholder="First name"></div>
+    <div class="grid2">
+      <div class="field"><label>Last name</label><input id="lastName" placeholder="Last name"></div>
+      <div class="field"><label>Phone</label><input id="phone" type="tel" placeholder="Phone"></div>
+    </div>
+    <div class="field"><label>Email</label><input id="email" type="email" placeholder="you@company.com"></div>
+    <div class="row"><button class="btn btn-primary" onclick="submitLead()">Reveal my preview →</button></div>
+    <p class="disclaimer">By continuing you agree to be contacted by ${FIRM_NAME}. Your responses are used to prepare your assessment and are not a substitute for personalized advice.</p>`;
+}
+
+function gaugeHTML(name, pct){
+  const zone = pct<=40 ? {t:"Needs Attention",c:"var(--red)"} : pct<=70 ? {t:"In Progress",c:"var(--amber)"} : {t:"Strong",c:"var(--green)"};
+  const midClass = (pct>40&&pct<=70) ? "mid" : "g";
+  return `
+    <div class="gauge-row">
+      <div class="gauge-top">
+        <span class="gauge-name">${name}</span>
+        <span class="gauge-zone" style="color:${zone.c}">${zone.t}</span>
+      </div>
+      <div class="gauge-bar active">
+        <div class="seg r"></div><div class="seg ${midClass}"></div><div class="seg n"></div>
+        <div class="marker" style="left:${pct}%"></div>
+      </div>
+    </div>`;
+}
+
+function renderResults(){
+  setProgress(100);
+  const {score,band}=computeScore();
+  const perLever=leverScores();
+  const order=Object.keys(perLever); // avatar's levers, in question order
+  const gauges=order.map(l=>gaugeHTML(LEVERS[l], perLever[l])).join("");
+  const opps=Object.keys(perLever).sort((a,b)=>perLever[a]-perLever[b]).slice(0,3);
+  const oppHTML=opps.map(l=>`<div class="opp"><h4>${LEVERS[l]}</h4><p>${LEVER_TEASER[l]}</p></div>`).join("");
+  const first=state.contact.firstName||"Your";
+  const payload=buildPayload(score,band,perLever,opps);
+
+  app.innerHTML=`
+    <div class="preview-tag">Preview · Not your full Blueprint</div>
+    <div class="bp">
+      <div class="bp-head">
+        <div class="bp-mark">Smallwood<small>Wealth Management</small></div>
+        <div class="bp-title"><h3>Wealth Curve Preview</h3><span>${first} · 2026</span></div>
+      </div>
+      <div class="bp-body">
+        <div class="bp-section-label">Where You Stand</div>
+        <p class="bp-lede">${band.line}</p>
+
+        <div class="bp-section-label" style="margin-top:26px">Your Scorecard Preview</div>
+        <p class="muted" style="margin-bottom:20px">Based on what you shared. Your full Wealth Curve Blueprint measures each of these against your actual numbers.</p>
+        ${gauges}
+
+        <div class="bp-section-label" style="margin-top:26px">Where the Opportunity Is</div>
+        <div class="opps">${oppHTML}</div>
+
+        <div class="bp-cta">
+          <p>See your complete Wealth Curve Blueprint — your real numbers across every lever.</p>
+          <button class="btn btn-primary" onclick="bookCall()">Claim my Wealth Curve Blueprint →</button>
+        </div>
+
+        <p class="disclaimer">
+          For discussion and educational purposes only. This preview is based on the responses you provided and has not been independently verified. It is not investment, tax, or legal advice, and is not a promise or guarantee of any result. Individual circumstances vary. Investment advisory services are offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; registration does not imply a certain level of skill or training. Consult qualified professionals regarding your situation.
+        </p>
+        <button class="devtoggle" onclick="toggleDev()">▸ Preview the data sent to your CRM</button>
+        <pre class="devpanel" id="devpanel">${JSON.stringify(payload,null,2)}</pre>
+      </div>
+    </div>`;
+}
+
+/* ===== logic ===== */
+function go(s){state.screen=s;render()}
+function chooseAvatar(k){state.avatar=k;state.qIndex=0;state.answers=[];state.screen="quiz";render()}
+function answer(i){const q=QUESTIONS[state.avatar][state.qIndex];state.answers[state.qIndex]={i,points:q.opts[i].p,lever:q.lever,question:q.q,choice:q.opts[i].t};render()}
+function nextQuestion(){const qs=QUESTIONS[state.avatar];if(!state.answers[state.qIndex])return;if(state.qIndex<qs.length-1){state.qIndex++;render()}else{state.screen="capture";render()}}
+function prevQuestion(){if(state.qIndex>0){state.qIndex--;render()}else{state.screen="avatar";render()}}
+
+function computeScore(){
+  const qs=QUESTIONS[state.avatar], max=qs.length*3;
+  const raw=state.answers.reduce((s,a)=>s+(a?a.points:0),0);
+  const score=Math.round((raw/max)*100);
+  const band=BANDS.find(b=>score>=b.min&&score<=b.max)||BANDS[0];
+  return {score,band};
+}
+function leverScores(){
+  const tally={};
+  state.answers.forEach(a=>{if(!a)return;(tally[a.lever]=tally[a.lever]||[]).push(a.points)});
+  const out={};
+  Object.keys(tally).forEach(l=>{const arr=tally[l];out[l]=Math.round((arr.reduce((s,x)=>s+x,0)/(arr.length*3))*100)});
+  return out;
+}
+function buildPayload(score,band,perLever,opps){
+  return {
+    source:"Wealth Curve Assessment",
+    submittedAt:new Date().toISOString(),
+    avatar:state.avatar,
+    avatarLabel:AVATARS[state.avatar]?.label,
+    overallScore:score,
+    band:band.name,
+    scorecard:Object.fromEntries(Object.entries(perLever).map(([k,v])=>[LEVERS[k],v])),
+    opportunityAreas:opps.map(l=>LEVERS[l]),
+    contact:state.contact,
+    answers:state.answers.map(a=>({question:a.question,choice:a.choice,lever:LEVERS[a.lever],points:a.points}))
+  };
+}
+async function submitLead(){
+  const c={firstName:val('firstName'),lastName:val('lastName'),email:val('email'),phone:val('phone')};
+  if(!c.firstName||!c.email){alert("Please enter at least your first name and email.");return}
+  state.contact=c;
+  const {score,band}=computeScore();
+  const payload=buildPayload(score,band,leverScores(),Object.keys(leverScores()).sort((a,b)=>leverScores()[a]-leverScores()[b]).slice(0,3));
+  if(WEBHOOK_URL){try{await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})}catch(e){console.warn("Webhook failed (preview continues):",e)}}
+  else{console.log("PREVIEW MODE — payload that would be sent to CRM:",payload)}
+  state.screen="results";render();
+}
+function bookCall(){window.open(BOOKING_URL,"_blank")}
+function toggleDev(){const p=document.getElementById('devpanel');p.style.display=p.style.display==="block"?"none":"block"}
+function val(id){const el=document.getElementById(id);return el?el.value.trim():""}
+
+render();
+</script>
+</body>
+</html>

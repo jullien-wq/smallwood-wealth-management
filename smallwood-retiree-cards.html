@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smallwood — Retiree Social Cards (set of 12)</title>
+<!--
+  RETIREE SOCIAL CARD SET · 12 cards · 4:5 Instagram portrait
+  Palette: white field, navy lettering, sky-blue accent, copper CTA (cards keep copper).
+  Screenshot each card at 1080x1350 for posting. The CTA lives on-card AND in the caption;
+  compliant disclosure goes in the CAPTION, not on the card face.
+  PENDING REGULUS review before publishing. Standardize URL on smallwoodassociates.com.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b164e; --copper:#d98042; --sky:#6f9fce; --sky-soft:#a3cef2;
+    --near-black:#252526; --warm:#8a8b88; --line:#e4e8ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#d5d8dc;font-family:'Montserrat',sans-serif;padding:34px 18px;color:var(--near-black)}
+  .page-head{max-width:1200px;margin:0 auto 26px;text-align:center}
+  .page-head h1{font-family:'Cinzel',serif;color:var(--navy);font-size:22px;letter-spacing:.02em}
+  .page-head p{color:#4b4d53;font-size:13px;margin-top:8px}
+  .note{max-width:1200px;margin:0 auto 26px;background:#fff;border-left:3px solid var(--copper);
+    padding:12px 16px;font-size:12.5px;color:#52545a;border-radius:2px}
+
+  .grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.grid{grid-template-columns:1fr}}
+
+  .card{
+    position:relative;width:100%;aspect-ratio:4/5;background:#fff;
+    display:flex;flex-direction:column;overflow:hidden;
+    box-shadow:0 16px 40px rgba(27,22,78,.16);
+  }
+  .frame{position:absolute;inset:14px;border:1px solid var(--copper);pointer-events:none}
+  .qmark{position:absolute;top:16px;right:22px;font-family:'Cinzel',serif;font-size:52px;
+    line-height:1;color:var(--sky-soft);opacity:.5;pointer-events:none}
+  .inner{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;
+    padding:clamp(24px,6%,38px);text-align:center}
+
+  .eyebrow{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--sky);
+    font-weight:600;margin-top:6px}
+  .rule{width:40px;height:1px;background:var(--copper);opacity:.85;margin:16px auto}
+  .headline{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);
+    line-height:1.28;font-size:clamp(18px,2.1vw,23px);margin:auto 0}
+  .kicker{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);
+    font-weight:600;margin-top:auto;padding-top:18px}
+  .cta{display:inline-block;margin:12px auto 0;background:var(--copper);color:var(--near-black);
+    font-weight:600;font-size:12.5px;letter-spacing:.01em;padding:11px 20px;text-decoration:none}
+
+  .footer{display:flex;align-items:center;justify-content:space-between;margin-top:18px;
+    padding-top:14px;border-top:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:8px;text-align:left}
+  .brand .wm{display:flex;flex-direction:column;line-height:1.05}
+  .brand .n{font-family:'Cinzel',serif;font-size:12px;font-weight:600;color:var(--navy);letter-spacing:.06em}
+  .brand .s{font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm);font-weight:500}
+  .url{font-size:9px;letter-spacing:.06em;color:var(--warm)}
+</style>
+</head>
+<body>
+  <div class="page-head">
+    <h1>Retiree Social Card Set</h1>
+    <p>12 cards · 4:5 Instagram portrait · white / navy / sky, copper CTA · pending Regulus review</p>
+  </div>
+  <div class="note"><strong>For posting:</strong> screenshot each card at 1080&times;1350. The compliant disclosure goes in the caption (not on the card). The card CTA and the caption both point to the Wealth Curve Scorecard.</div>
+  <div class="grid">
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On the shift</div>
+          <div class="rule"></div>
+          <h3 class="headline">You spent forty years learning how to save. No one taught you how to spend.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On your IRA</div>
+          <div class="rule"></div>
+          <h3 class="headline">Your IRA has a silent partner you never chose. The IRS.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On readiness</div>
+          <div class="rule"></div>
+          <h3 class="headline">Most people retire with savings and no plan to turn it into a paycheck.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On timing</div>
+          <div class="rule"></div>
+          <h3 class="headline">The first few years of retirement decide the next thirty.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On what we do</div>
+          <div class="rule"></div>
+          <h3 class="headline">Reduce taxes. Reduce fees. Turn savings into income. Pass more on.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On returns</div>
+          <div class="rule"></div>
+          <h3 class="headline">At this stage, the goal isn’t beating the market. It’s not needing to.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On taxes</div>
+          <div class="rule"></div>
+          <h3 class="headline">In retirement, the tax planning is the whole game.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On protection</div>
+          <div class="rule"></div>
+          <h3 class="headline">The threat to your retirement isn’t a market crash. It’s a care event no one planned for.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On longevity</div>
+          <div class="rule"></div>
+          <h3 class="headline">Running out of money isn’t the fear. Running out of it at ninety is.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On legacy</div>
+          <div class="rule"></div>
+          <h3 class="headline">The money you don’t spend goes somewhere. Plan it — or taxes will.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On your number</div>
+          <div class="rule"></div>
+          <h3 class="headline">Can you say, on one page, what you’ll live on and how long it lasts?</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="frame"></div>
+        <div class="qmark">”</div>
+        <div class="inner">
+          <div class="eyebrow">On peace of mind</div>
+          <div class="rule"></div>
+          <h3 class="headline">Retirement isn’t the goal. Spending these years your way is.</h3>
+          <div class="kicker">See where you stand</div>
+          <a class="cta" href="#QUIZ_URL">Take the Wealth Curve Scorecard →</a>
+          <div class="footer">
+            <div class="brand"><img src="https://smallwoodassociates.com/wp-content/uploads/2024/08/Smallwood_Color_Vertical-1024x749.png" alt="Smallwood Wealth Management" style="height:42px;width:auto"></div>
+            <div class="url">smallwoodassociates.com</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Montserrat',sans-serif;color:#252526;background:#ffffff;-webkit-font-smoothing:antialiased;line-height:1.65}
+a{color:#1b164e;text-decoration:none} a:hover{color:#2c2570}
+input,select{font-family:'Montserrat',sans-serif}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff">
+  <header style="background:#1b164e;padding:0 28px">
+    <div style="max-width:1100px;margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between">
+      <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management" style="height:32px;width:auto;display:block">
+      <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#a3cef2;font-weight:600">Live educational event</span>
+    </div>
+  </header>
+  <main style="max-width:720px;margin:0 auto;padding:64px 28px 40px">
+    <div style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#7bb0e6;font-weight:600">You're invited</div>
+    <h1 style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:clamp(30px,4.5vw,44px);line-height:1.18;letter-spacing:.01em;margin:14px 0 10px">Taxes don't retire when you do.</h1>
+    <p style="font-size:14px;color:#6f7178;letter-spacing:.04em;margin:0 0 20px;font-weight:500">[EVENT DATE] &middot; [TIME] &middot; [VENUE], Red Bank, NJ &middot; Hosted by John Smallwood</p>
+    <p style="font-size:17px;color:#3d3f45;font-weight:300;max-width:56ch;margin:0 0 8px">A live working session for retirees and pre-retirees: how tax-efficient income, Roth timing, protection, and estate structure fit together — and where most plans quietly leak.</p>
+    <p style="font-size:13px;color:#6f7178;margin:0 0 36px">No cost. Educational only — nothing sold, nothing signed.</p>
+
+    <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+      <div style="background:#eef5fd;border:1px solid #e4e8ee;border-radius:4px;padding:30px 28px">
+        <div style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:19px;margin-bottom:18px">Save your seat</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:12.5px;font-weight:600;color:#1b164e">First name</label><input id="reg_first" placeholder="First name" style="padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-size:15px;background:#fff"></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:12.5px;font-weight:600;color:#1b164e">Last name</label><input id="reg_last" placeholder="Last name" style="padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-size:15px;background:#fff"></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:12.5px;font-weight:600;color:#1b164e">Email</label><input id="reg_email" type="email" placeholder="you@email.com" style="padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-size:15px;background:#fff"></div>
+          <div style="display:flex;flex-direction:column;gap:6px"><label style="font-size:12.5px;font-weight:600;color:#1b164e">Phone</label><input id="reg_phone" type="tel" placeholder="Phone" style="padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-size:15px;background:#fff"></div>
+        </div>
+        <sc-if value="{{ showGuestField }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:6px;margin-top:14px"><label style="font-size:12.5px;font-weight:600;color:#1b164e">Who's coming?</label>
+            <select id="reg_guest" style="padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-size:15px;background:#fff;color:#252526"><option>Just me</option><option>Me + spouse or guest</option></select>
+          </div>
+        </sc-if>
+        <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}"><p style="color:#c0392b;font-size:13px;margin:14px 0 0">{{ error }}</p></sc-if>
+        <div style="display:flex;align-items:center;gap:18px;margin-top:22px;flex-wrap:wrap">
+          <button onClick="{{ submit }}" style="background:#1b164e;color:#fff;font-weight:600;font-size:15px;letter-spacing:.01em;padding:15px 32px;border:1px solid #1b164e;border-radius:2px;cursor:pointer" style-hover="background:#2c2570;border-color:#2c2570">Save my seat &rarr;</button>
+          <sc-if value="{{ urgency }}" hint-placeholder-val="{{ true }}"><span style="font-size:12.5px;color:#6f7178">Seating is limited &mdash; one session only.</span></sc-if>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+      <div style="background:#eef5fd;border:1px solid #e4e8ee;border-radius:4px;padding:36px 30px;text-align:center">
+        <div style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:24px;margin-bottom:10px">You're on the list.</div>
+        <p style="font-size:15px;color:#3d3f45;max-width:44ch;margin:0 auto">Watch your inbox for the details &mdash; and expect a quick call from our office to confirm your seat.</p>
+      </div>
+    </sc-if>
+
+    <div style="margin-top:56px">
+      <div style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#7bb0e6;font-weight:600;margin-bottom:18px">What we'll cover</div>
+      <div style="display:grid;gap:0;border-top:1px solid #e4e8ee">
+        <div style="padding:20px 0;border-bottom:1px solid #e4e8ee;display:flex;gap:18px;align-items:baseline"><span style="font-family:'Cinzel',serif;color:#7bb0e6;font-size:14px;font-weight:600">01</span><div><div style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:16px">Turning savings into a paycheck</div><p style="font-size:14px;color:#52545a;margin:6px 0 0">The order you draw income in can change your lifetime tax bill &mdash; and how long the money lasts.</p></div></div>
+        <div style="padding:20px 0;border-bottom:1px solid #e4e8ee;display:flex;gap:18px;align-items:baseline"><span style="font-family:'Cinzel',serif;color:#7bb0e6;font-size:14px;font-weight:600">02</span><div><div style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:16px">Roth conversions and the RMD clock</div><p style="font-size:14px;color:#52545a;margin:6px 0 0">Why the decade before required distributions is where the biggest tax decisions get made.</p></div></div>
+        <div style="padding:20px 0;border-bottom:1px solid #e4e8ee;display:flex;gap:18px;align-items:baseline"><span style="font-family:'Cinzel',serif;color:#7bb0e6;font-size:14px;font-weight:600">03</span><div><div style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:16px">Protection and legacy, in plain terms</div><p style="font-size:14px;color:#52545a;margin:6px 0 0">Long-term care, liability, and the estate documents that decide what actually reaches your family.</p></div></div>
+      </div>
+    </div>
+  </main>
+  <footer style="border-top:1px solid #e4e8ee;margin-top:24px">
+    <div style="max-width:720px;margin:0 auto;padding:28px;font-size:11px;line-height:1.7;color:#8f92a8">
+      <p style="margin:0 0 8px">This event is for educational purposes only and is not a recommendation or an offer to buy or sell any security, nor tax or legal advice. Investment advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC.</p>
+      <p style="margin:0;color:#7bb0e6;font-style:italic">Draft &mdash; event details and copy pending Regulus compliance review before publication.</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showGuestField&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Form&quot;},&quot;urgencyLine&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Form&quot;}}">
+class Component extends DCLogic {
+  state = { submitted: false, error: "" };
+  submit = async () => {
+    const v = id => (document.getElementById(id) || {}).value?.trim() || "";
+    const c = { firstName: v('reg_first'), lastName: v('reg_last'), email: v('reg_email'), phone: v('reg_phone'), party: v('reg_guest') || "Just me" };
+    if (!c.firstName || !c.email) { this.setState({ error: "Please enter at least your first name and email." }); return; }
+    const WEBHOOK_URL = ""; // GHL inbound webhook — blank = preview mode
+    const payload = { source: "Retiree event registration", event: "[EVENT DATE] - [VENUE]", submittedAt: new Date().toISOString(), contact: c };
+    if (WEBHOOK_URL) { try { await fetch(WEBHOOK_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) }); } catch (e) { console.warn("Webhook failed:", e); } }
+    else { console.log("PREVIEW MODE — RSVP payload:", payload); }
+    this.setState({ submitted: true, error: "" });
+  };
+  renderVals() {
+    return {
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      error: this.state.error,
+      submit: this.submit,
+      showGuestField: this.props.showGuestField ?? true,
+      urgency: this.props.urgencyLine ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

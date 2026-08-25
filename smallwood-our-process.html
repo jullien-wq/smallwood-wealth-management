@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Process &mdash; Smallwood Wealth Management</title>
+<meta name="description" content="The Wealth Curve process: Conversation, Blueprint, Scorecard, Simulation, and Strategic Implementation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b164e;
+    --navy-800:#151140;
+    --navy-600:#2c2570;
+    --sky:#a3cef2;
+    --sky-line:#7bb0e6;
+    --sky-tint:#eef5fd;
+    --ink:#252526;
+    --gray:#6f7178;
+    --line:#e4e8ee;
+    --canvas:#ffffff;
+    --cta:var(--navy);          /* primary button fill — change here for a brighter blue */
+    --cta-ink:#ffffff;          /* primary button text */
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    background:var(--canvas);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);line-height:1.18;letter-spacing:.01em}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{
+    font-family:'Montserrat';font-weight:600;font-size:12px;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--sky-line);
+  }
+  .btn{
+    display:inline-block;background:var(--cta);color:var(--cta-ink);
+    font-weight:600;font-size:15px;letter-spacing:.01em;
+    padding:15px 30px;border:1px solid var(--cta);border-radius:2px;
+    transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{background:var(--navy-600);border-color:var(--navy-600);transform:translateY(-1px);box-shadow:0 10px 24px rgba(27,22,78,.18)}
+  .btn:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+  .btn-ghost{
+    display:inline-block;background:transparent;color:var(--navy);
+    font-weight:600;font-size:15px;padding:15px 30px;border:1px solid var(--line);border-radius:2px;
+    transition:border-color .15s ease,background .15s ease;
+  }
+  .btn-ghost:hover{border-color:var(--sky-line);background:var(--sky-tint)}
+  .textlink{font-weight:600;color:var(--navy);border-bottom:2px solid var(--sky);padding-bottom:2px}
+  .textlink:hover{border-bottom-color:var(--navy)}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .nav img{height:34px;width:auto;display:block}
+  .nav ul{display:flex;gap:18px;list-style:none;align-items:center}
+  .nav ul a{font-size:13px;font-weight:500;color:#dfe2ee;letter-spacing:.01em;white-space:nowrap}
+  .nav ul a:hover{color:#fff}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .portal{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);font-weight:600}
+  .nav .btn{padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
+  .nav .btn:hover{background:var(--sky);border-color:var(--sky);color:var(--navy);box-shadow:none}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+  @media(max-width:1150px){
+    .nav ul,.portal{display:none}
+    .burger{display:block}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:82px 0 70px;border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(34px,5vw,52px);margin:16px 0 22px}
+  .hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:40ch;margin-bottom:30px;font-weight:400}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .microline{margin-top:16px;font-size:12.5px;color:var(--gray);letter-spacing:.02em}
+  .hero-anim{animation:rise .8s ease both}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  /* wealth-curve signature graphic */
+  .curve-card{position:relative;background:linear-gradient(180deg,#fff, var(--sky-tint));border:1px solid var(--line);border-radius:6px;padding:26px 24px 20px;box-shadow:0 24px 60px rgba(27,22,78,.10)}
+  .curve-card .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);font-weight:600}
+  .curve-card .marker{font-family:'Cinzel',serif;color:var(--navy);font-size:15px;font-weight:600;margin-top:2px}
+  svg .cpath{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;
+    stroke-dasharray:640;stroke-dashoffset:640;animation:draw 1.9s .3s ease forwards}
+  svg .cfill{fill:url(#g1);opacity:.9}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  .dot{animation:pop .4s 1.9s ease both}
+  @keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+
+  /* ---------- section shell ---------- */
+  section{padding:72px 0}
+  .sec-head{max-width:60ch;margin-bottom:40px}
+  .sec-head h2{font-size:clamp(25px,3.2vw,34px);margin-top:10px}
+  .sec-head p{color:#45474d;margin-top:14px}
+
+  /* ---------- three doors ---------- */
+  .doors{background:var(--sky-tint)}
+  .door-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .door{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:30px 26px;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+  .door:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(27,22,78,.12)}
+  .door h3{font-size:19px;margin-bottom:12px}
+  .door p{font-size:14.5px;color:#45474d;flex:1;margin-bottom:18px}
+  .door .go{font-size:13.5px;font-weight:600;color:var(--navy);border-bottom:2px solid var(--sky);padding-bottom:2px;align-self:flex-start}
+  .door .go:hover{border-bottom-color:var(--navy)}
+
+  /* ---------- wealth curve process ---------- */
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
+  .step{padding:26px 20px 26px 0;border-right:1px solid var(--line)}
+  .step:last-child{border-right:0}
+  .step .n{font-family:'Cinzel',serif;font-size:14px;color:var(--sky-line);font-weight:600;letter-spacing:.1em}
+  .step h3{font-size:16px;margin:10px 0 8px}
+  .step p{font-size:13px;color:#52545a}
+  @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{border-right:0;border-bottom:1px solid var(--line)}}
+
+  /* ---------- services grid ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .svc{background:#fff;padding:30px 26px}
+  .svc h3{font-size:17px;margin-bottom:8px}
+  .svc p{font-size:14px;color:#4b4d53}
+  .svc .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky-line);font-weight:600}
+  @media(max-width:820px){.svc-grid{grid-template-columns:1fr 1fr}}
+
+  /* ---------- insights ---------- */
+  .insights{background:var(--navy);color:#fff}
+  .insights h2{color:#fff}
+  .insights .eyebrow{color:var(--sky)}
+  .insights .sec-head p{color:#c7cbdd}
+  .ins-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:22px}
+  .ins-card{background:var(--navy-600);border:1px solid #3a3480;border-radius:5px;padding:26px;display:flex;flex-direction:column}
+  .ins-card .kind{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sky);font-weight:600;margin-bottom:12px}
+  .ins-card h3{color:#fff;font-size:18px;margin-bottom:10px;line-height:1.3}
+  .ins-card p{font-size:13.5px;color:#cfd3e4;flex:1;margin-bottom:16px}
+  .ins-card .go{font-size:13px;font-weight:600;color:var(--sky);border-bottom:2px solid transparent}
+  .ins-card .go:hover{border-bottom-color:var(--sky)}
+  @media(max-width:820px){.ins-grid{grid-template-columns:1fr}}
+
+  /* ---------- final CTA ---------- */
+  .final{background:var(--sky-tint);text-align:center}
+  .final h2{font-size:clamp(26px,3.4vw,36px)}
+  .final p{max-width:52ch;margin:16px auto 28px;color:#45474d}
+  .final .hero-cta{justify-content:center}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy-800);color:#c3c6d6;font-size:13px;padding:56px 0 30px}
+  footer img{height:40px;margin-bottom:18px}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid #322c66}
+  .foot-top h4{font-family:'Montserrat';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:600}
+  .foot-top a{color:#c3c6d6;display:block;margin-bottom:8px}
+  .foot-top a:hover{color:var(--sky)}
+  .disc{padding-top:26px;font-size:11px;line-height:1.7;color:#8f92a8}
+  .disc strong{color:#c3c6d6}
+  .disc .flag{color:var(--sky);font-style:italic}
+  @media(max-width:820px){.hero-grid{grid-template-columns:1fr;gap:36px}.door-grid,.svc-grid{grid-template-columns:1fr}.foot-top{grid-template-columns:1fr}}
+
+  /* mobile menu panel */
+  .mobile-panel{display:none;background:var(--navy-800);border-top:1px solid #322c66}
+  .mobile-panel a{display:block;padding:14px 28px;color:#dfe2ee;font-size:14px;border-bottom:1px solid #2a2560}
+  header.open .mobile-panel{display:block}
+  @media(min-width:1151px){.mobile-panel{display:none !important}}
+
+  /* respect reduced motion — curve and reveals shown statically */
+  @media (prefers-reduced-motion: reduce){
+    svg .cpath{animation:none;stroke-dashoffset:0}
+    .dot{animation:none}
+    .hero-anim{animation:none}
+  }
+
+  /* ---------- subpage extras ---------- */
+  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
+  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:28px;font-weight:400}
+  .checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;max-width:900px}
+  .checklist li{position:relative;padding-left:26px;font-size:14.5px;color:#3d3f45}
+  .checklist li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--sky);border-radius:2px}
+  @media(max-width:700px){.checklist{grid-template-columns:1fr}}
+  .faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faq summary{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::after{content:"+";color:var(--sky-line);font-family:'Montserrat';font-weight:400;font-size:20px}
+  .faq details[open] summary::after{content:"\2212"}
+  .faq details p{margin-top:12px;font-size:14.5px;color:#45474d;max-width:70ch}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.team-grid{grid-template-columns:1fr}}
+  .member{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:26px 24px}
+  .member .mono{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--sky);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:19px;font-weight:600;margin-bottom:16px}
+  .member h3{font-size:17px;margin-bottom:4px}
+  .member .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-line);font-weight:600;margin-bottom:12px}
+  .member a{display:block;font-size:13px;color:#52545a;margin-top:4px}
+  .member a:hover{color:var(--navy)}
+  .cform{background:var(--sky-tint);border:1px solid var(--line);border-radius:4px;padding:30px 28px}
+  .cform .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.cform .g2{grid-template-columns:1fr}}
+  .cform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .cform .f{display:flex;flex-direction:column;margin-bottom:0}
+  .cform input,.cform select,.cform textarea{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Montserrat';font-size:15px;color:var(--ink);background:#fff}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--navy)}
+  .bigsteps .bstep{display:grid;grid-template-columns:80px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line)}
+  .bigsteps .bstep .n{font-family:'Cinzel',serif;font-size:26px;color:var(--sky-line);font-weight:600}
+  .bigsteps .bstep h3{font-size:20px;margin-bottom:8px}
+  .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:72ch}
+  .event-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;max-width:760px}
+  .event-card .meta{font-size:13px;letter-spacing:.06em;color:#52545a;font-weight:500}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr !important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="smallwood-homepage.html" aria-label="Smallwood Wealth Management home">
+      <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
+    </a>
+    <ul>
+      <li><a href="smallwood-homepage.html">Home</a></li>
+      <li><a href="smallwood-homepage.html#curve">The Wealth Curve</a></li>
+      <li><a href="smallwood-business-owners.html">Business Owners</a></li>
+      <li><a href="smallwood-retirement-planning.html">Retirees</a></li>
+      <li><a href="smallwood-homepage.html#insights">Insights</a></li>
+      <li><a href="smallwood-contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="portal" href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
+      <!-- QUIZ_URL: point to the hosted Wealth Curve Scorecard -->
+      <a class="btn" href="smallwood-wealth-curve-quiz.html">Take the Scorecard</a>
+      <button class="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </div>
+  <nav class="mobile-panel" aria-label="Mobile">
+    <a href="smallwood-homepage.html">Home</a>
+    <a href="smallwood-homepage.html#curve">The Wealth Curve</a>
+    <a href="smallwood-business-owners.html">Business Owners</a>
+    <a href="smallwood-wealth-curve-quiz.html">Executives</a>
+    <a href="smallwood-retirement-planning.html">Retirees</a>
+    <a href="smallwood-homepage.html#insights">Insights</a>
+    <a href="smallwood-contact.html">Contact</a>
+    <a href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
+  </nav>
+</header>
+<script>
+(function(){var h=document.querySelector('header'),b=document.querySelector('.burger');if(b){b.addEventListener('click',function(){var open=h.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});}})();
+</script>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">The Wealth Curve&trade;</span>
+    <h1>A process, not a product.</h1>
+    <p class="lead">Our aspiration is to construct a custom financial plan that strives to minimize your risk and taxes, grow your wealth, and help you achieve financial independence with the lifestyle you&rsquo;ve dreamed of.</p>
+    <div class="hero-cta">
+      <a class="btn" href="smallwood-wealth-curve-quiz.html?source=Process%20page">Take the Wealth Curve Scorecard &rarr;</a>
+      <a class="btn-ghost" href="https://go.oncehub.com/AdvisorsIntroMeetings">Schedule a Wealth Curve Conversation</a>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Five stages</span>
+      <h2>From first conversation to a plan that evolves with you.</h2>
+      <p>We start by getting to know your ambitions, opportunities, and challenges &mdash; then design a mutually agreed upon plan, set it in motion, and monitor it regularly so it evolves as you do.</p>
+    </div>
+    <div class="bigsteps">
+      <div class="bstep"><div class="n">01</div><div><h3>Conversation</h3><p>A no-cost, no-obligation conversation &mdash; not a sales pitch. We listen first: your goals, your assets, your current advisors, and where you feel uncertain.</p></div></div>
+      <div class="bstep"><div class="n">02</div><div><h3>Blueprint</h3><p>A clear picture of where your wealth stands today, across every dimension &mdash; taxes, investments, protection, estate, and cash flow &mdash; in one document.</p></div></div>
+      <div class="bstep"><div class="n">03</div><div><h3>Scorecard</h3><p>We measure your readiness across the levers that decide how much you keep: tax, protection, investment, and legacy. You see exactly where the gaps are.</p></div></div>
+      <div class="bstep"><div class="n">04</div><div><h3>Simulation</h3><p>We model the strategies before you commit to any of them &mdash; so every decision is tested against your actual numbers, not a rule of thumb.</p></div></div>
+      <div class="bstep"><div class="n">05</div><div><h3>Strategic Implementation</h3><p>We put the plan in motion, then meet regularly to adapt it as tax law, markets, and your life change. The plan evolves as you do.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">One step</span>
+    <h2>Start with the Scorecard.</h2>
+    <p>The Wealth Curve begins with a clear read on where you stand. It takes about five minutes.</p>
+    <div class="hero-cta">
+      <a class="btn" href="smallwood-wealth-curve-quiz.html?source=Process%20page">Take the Wealth Curve Scorecard &rarr;</a>
+      <a class="btn-ghost" href="https://go.oncehub.com/AdvisorsIntroMeetings">Schedule a Wealth Curve Conversation</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
+    <div class="foot-top">
+      <div>
+        <h4>Smallwood Wealth Management</h4>
+        <a href="https://www.google.com/maps/place/199+Broad+St,+Red+Bank,+NJ+07701">199 Broad St, Red Bank, NJ 07701</a>
+        <a href="tel:732-542-1565">Phone: (732) 542-1565</a>
+        <a href="tel:800-797-1000">Toll Free: (800) 797-1000</a>
+        <a href="mailto:clientservices@smallwoodassociates.com">clientservices@smallwoodassociates.com</a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="smallwood-homepage.html#curve">The Wealth Curve</a>
+        <a href="smallwood-our-process.html">Our Process</a>
+        <a href="smallwood-our-team.html">Our Team</a>
+        <a href="smallwood-events.html">Events</a>
+        <a href="/financial-library/">Education</a>
+      </div>
+      <div>
+        <h4>Get Started</h4>
+        <a href="smallwood-wealth-curve-quiz.html">Take the Scorecard</a>
+        <a href="https://go.oncehub.com/AdvisorsIntroMeetings">Schedule a Conversation</a>
+        <a href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
+        <a href="smallwood-contact.html">Contact Us</a>
+      </div>
+    </div>
+    <div class="disc">
+      <p>This communication is strictly intended for individuals residing in the states of AZ, CA, CT, DC, DE, FL, GA, IL, LA, MA, MD, ME, NC, NH, NJ, NM, NY, OH, PA, RI, SC, TN, TX, UT, VA. No offers may be made or accepted from any resident outside these states due to various regulations and registration requirements regarding investment products and services. Investments are not FDIC- or NCUA-insured, are not guaranteed by a bank/financial institution, and are subject to risks, including possible loss of the principal invested.</p>
+      <p><strong>Investment Advisory Services provided by Smallwood Wealth Investment Management, LLC, an SEC registered investment advisor.</strong> Headquartered at 199 Broad Street, Red Bank, NJ 07701-2056. Securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC, Headquartered at 2687 44th St. SE, Kentwood, MI 49512. Regulus Financial Group, LLC and Smallwood Wealth Investment Management, LLC are not affiliated companies.</p>
+      <p>NOT FDIC INSURED. NOT BANK GUARANTEED. MAY LOSE VALUE, INCLUDING LOSS OF PRINCIPAL. NOT INSURED BY ANY STATE OR FEDERAL AGENCY.</p>
+      <p><a href="/privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp; <a href="/terms-of-use/">Terms of Use</a> &nbsp;|&nbsp; <a href="/wp-content/uploads/2025/04/SWIM-4-09-2025-Form-CRS.pdf">Form CRS</a> &nbsp;|&nbsp; <a href="https://regal-regulus.com/disclosures">Regulus Disclosures</a></p>
+      <p class="flag">Draft redesign &mdash; final disclosure wording and all page copy pending Regulus compliance review before launch.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

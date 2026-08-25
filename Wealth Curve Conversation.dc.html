@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Montserrat',sans-serif;color:#252526;background:#ffffff;-webkit-font-smoothing:antialiased;line-height:1.65}
+a{color:#1b164e;text-decoration:none} a:hover{color:#2c2570}
+</style>
+</helmet>
+<div style="min-height:100vh;background:#ffffff">
+  <header style="background:#1b164e;padding:0 28px">
+    <div style="max-width:1100px;margin:0 auto;height:68px;display:flex;align-items:center;justify-content:space-between">
+      <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management" style="height:32px;width:auto;display:block">
+      <a href="https://go.oncehub.com/AdvisorsIntroMeetings" style="background:#ffffff;color:#1b164e;font-weight:600;font-size:13px;padding:10px 20px;border-radius:2px" style-hover="background:#a3cef2">Schedule now</a>
+    </div>
+  </header>
+
+  <section style="background:#1b164e;color:#ffffff;padding:72px 28px 80px;text-align:center">
+    <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:20px">
+      <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#a3cef2;font-weight:600">The Wealth Curve Conversation</span>
+      <h1 style="font-family:'Cinzel',serif;font-weight:600;font-size:clamp(30px,4.5vw,46px);line-height:1.18;margin:0;color:#ffffff">You've seen your gaps. This is the conversation that closes them.</h1>
+      <p style="font-size:17px;font-weight:300;color:#c7cbdd;max-width:54ch;margin:0">One call. We walk through your Scorecard together, show you what your full Wealth Curve Blueprint would measure, and you decide if it's worth going further.</p>
+      <a href="https://go.oncehub.com/AdvisorsIntroMeetings" style="background:#ffffff;color:#1b164e;font-weight:600;font-size:15px;padding:16px 34px;border-radius:2px" style-hover="background:#a3cef2">Schedule your Wealth Curve Conversation &rarr;</a>
+      <span style="font-size:12.5px;color:#8f92a8">No cost, no obligation &mdash; about 30 minutes.</span>
+    </div>
+  </section>
+
+  <sc-for list="{{ folds }}" as="fold" hint-placeholder-count="3">
+    <section style="padding:72px 28px;border-bottom:1px solid #e4e8ee">
+      <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center">
+        <div style="aspect-ratio:16/9;background:#eef5fd;border:1px solid #e4e8ee;border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;order:{{ fold.mediaOrder }}">
+          <div style="width:64px;height:64px;border-radius:50%;background:#1b164e;display:flex;align-items:center;justify-content:center"><div style="width:0;height:0;border-top:12px solid transparent;border-bottom:12px solid transparent;border-left:20px solid #a3cef2;margin-left:5px"></div></div>
+          <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6f7178;font-weight:600;text-align:center;padding:0 20px">{{ fold.videoLabel }}</div>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-start;gap:16px">
+          <span style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:#7bb0e6;font-weight:600">{{ fold.eyebrow }}</span>
+          <h2 style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:clamp(23px,3vw,30px);line-height:1.2;margin:0">{{ fold.title }}</h2>
+          <p style="font-size:15.5px;color:#45474d;margin:0;max-width:46ch">{{ fold.body }}</p>
+          <a href="https://go.oncehub.com/AdvisorsIntroMeetings" style="background:#1b164e;color:#ffffff;font-weight:600;font-size:14.5px;padding:14px 28px;border-radius:2px;margin-top:6px" style-hover="background:#2c2570">{{ fold.cta }} &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <section style="background:#eef5fd;padding:64px 28px;text-align:center">
+    <div style="max-width:640px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:18px">
+      <h2 style="font-family:'Cinzel',serif;font-weight:600;color:#1b164e;font-size:clamp(24px,3vw,32px);margin:0">One step, and it's on the calendar.</h2>
+      <p style="font-size:15px;color:#45474d;margin:0;max-width:48ch">Pick a time that works. You'll get a confirmation and a short note on how to prepare &mdash; which is to say, you don't need to.</p>
+      <a href="https://go.oncehub.com/AdvisorsIntroMeetings" style="background:#1b164e;color:#ffffff;font-weight:600;font-size:15px;padding:16px 34px;border-radius:2px" style-hover="background:#2c2570">Schedule your Wealth Curve Conversation &rarr;</a>
+    </div>
+  </section>
+
+  <footer style="background:#151140;color:#8f92a8;padding:36px 28px">
+    <div style="max-width:1000px;margin:0 auto;font-size:11px;line-height:1.7">
+      <p style="margin:0 0 8px">The Wealth Curve Conversation is an introductory, educational meeting. It is not investment, tax, or legal advice, and no advisory relationship is formed by scheduling or attending. Investment advisory services offered through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser; securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC. 199 Broad Street, Red Bank, NJ 07701.</p>
+      <p style="margin:0;color:#a3cef2;font-style:italic">Draft &mdash; videos pending; copy pending Regulus compliance review before launch.</p>
+    </div>
+  </footer>
+
+  <sc-if value="{{ stickyCta }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;bottom:0;background:#1b164e;padding:12px 20px;display:flex;justify-content:center;box-shadow:0 -8px 24px rgba(27,22,78,.25);z-index:40">
+      <a href="https://go.oncehub.com/AdvisorsIntroMeetings" style="background:#ffffff;color:#1b164e;font-weight:600;font-size:14px;padding:12px 26px;border-radius:2px" style-hover="background:#a3cef2">Schedule your Conversation &rarr;</a>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stickyCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stickyCta: this.props.stickyCta ?? false,
+      folds: [
+        { eyebrow: "What it is", title: "A look at your whole picture — not a pitch.", body: "John walks through what the Wealth Curve measures: lifetime taxes, income order, protection, and legacy. You'll see how your Scorecard answers map to the levers that matter.", cta: "Schedule the conversation", videoLabel: "[Video 1 — John: what the conversation is]", mediaOrder: 0 },
+        { eyebrow: "What you leave with", title: "Your gaps, named and prioritized.", body: "You leave knowing your three biggest opportunity areas and what a full Wealth Curve Blueprint would measure against your real numbers. Whether you go further is entirely up to you.", cta: "See my gaps in plain terms", videoLabel: "[Video 2 — John: what you leave with]", mediaOrder: 2 },
+        { eyebrow: "What it isn't", title: "Nothing sold. Nothing signed.", body: "It's an educational conversation. No products, no paperwork, no follow-up pressure. If it's not a fit, you'll still leave with a clearer read on your plan than you walked in with.", cta: "Pick a time", videoLabel: "[Video 3 — John: what it isn't]", mediaOrder: 0 }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
