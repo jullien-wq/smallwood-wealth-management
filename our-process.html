@@ -3,34 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smallwood Wealth Management — Where does your wealth plan stand?</title>
-<meta name="description" content="Take the Wealth Curve Scorecard — a short, private self-assessment that shows the gaps in your plan across tax, protection, investment, and legacy. Red Bank, NJ.">
-
-<!--
-  ============================================================
-  SMALLWOOD HOMEPAGE — REDESIGN TARGET  (Draft v1 · Aug 2026)
-  Changes from live site, per John:
-   1. Palette: copper/orange REMOVED. White canvas + navy (#1b164e),
-      sky blue (#a3cef2) as the only accent. Swap the CTA color in ONE
-      place via --cta below if you want a brighter blue.
-   2. Offer reframed: primary conversion is now the WEALTH CURVE
-      SCORECARD (the quiz), not "schedule a call." Call is the quiet
-      secondary path.
-   3. Hero broadened from business-owner-only to all three avatars
-      (self-selection doors below the hero).
-   4. TESTIMONIALS REMOVED (compliance). NOTE: they are still being
-      served on the live WordPress/Smart Marketing page — must be
-      purged at the served source, not just here.
-  DEV TO WIRE:
-   - [QUIZ_URL]   -> hosted Wealth Curve Scorecard. Replace every href="/scorecard".
-   - [ONCEHUB]    -> canonical https://go.oncehub.com/AdvisorsIntroMeetings
-                     (live site currently uses a different OnceHub link — standardize).
-   - Canonical domain: smallwoodassociates.com. Standardize the footer
-     email (currently @smallwoodwealth.com) before launch.
-   - Final disclosure wording pending Regulus review.
-  ============================================================
--->
-
+<title>Our Process &mdash; Smallwood Wealth Management</title>
+<meta name="description" content="The Wealth Curve process: Conversation, Blueprint, Scorecard, Simulation, and Strategic Implementation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -101,20 +75,10 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{position:relative;padding:82px 0 70px;border-bottom:1px solid var(--line);overflow:hidden;background:var(--navy)}
-  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-  .hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(27,22,78,.9) 0%,rgba(27,22,78,.74) 55%,rgba(27,22,78,.55) 100%);z-index:1}
-  .hero .wrap{position:relative;z-index:2}
+  .hero{padding:82px 0 70px;border-bottom:1px solid var(--line)}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
   .hero h1{font-size:clamp(34px,5vw,52px);margin:16px 0 22px}
-  .hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#e6e9f4;max-width:40ch;margin-bottom:30px;font-weight:400}
-  .hero h1{color:#fff}
-  .hero .eyebrow{color:var(--sky)}
-  .hero .microline{color:#c7cbdd}
-  .hero .btn{background:#fff;color:var(--navy);border-color:#fff}
-  .hero .btn:hover{background:var(--sky);border-color:var(--sky);color:var(--navy)}
-  .hero .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
-  .hero .btn-ghost:hover{border-color:var(--sky);background:rgba(255,255,255,.08)}
+  .hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:40ch;margin-bottom:30px;font-weight:400}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .microline{margin-top:16px;font-size:12.5px;color:var(--gray);letter-spacing:.02em}
   .hero-anim{animation:rise .8s ease both}
@@ -208,11 +172,46 @@
     .dot{animation:none}
     .hero-anim{animation:none}
   }
+
+  /* ---------- subpage extras ---------- */
+  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
+  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:28px;font-weight:400}
+  .checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;max-width:900px}
+  .checklist li{position:relative;padding-left:26px;font-size:14.5px;color:#3d3f45}
+  .checklist li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--sky);border-radius:2px}
+  @media(max-width:700px){.checklist{grid-template-columns:1fr}}
+  .faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faq summary{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::after{content:"+";color:var(--sky-line);font-family:'Montserrat';font-weight:400;font-size:20px}
+  .faq details[open] summary::after{content:"\2212"}
+  .faq details p{margin-top:12px;font-size:14.5px;color:#45474d;max-width:70ch}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media(max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.team-grid{grid-template-columns:1fr}}
+  .member{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:26px 24px}
+  .member .mono{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--sky);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:19px;font-weight:600;margin-bottom:16px}
+  .member h3{font-size:17px;margin-bottom:4px}
+  .member .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-line);font-weight:600;margin-bottom:12px}
+  .member a{display:block;font-size:13px;color:#52545a;margin-top:4px}
+  .member a:hover{color:var(--navy)}
+  .cform{background:var(--sky-tint);border:1px solid var(--line);border-radius:4px;padding:30px 28px}
+  .cform .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:560px){.cform .g2{grid-template-columns:1fr}}
+  .cform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .cform .f{display:flex;flex-direction:column;margin-bottom:0}
+  .cform input,.cform select,.cform textarea{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Montserrat';font-size:15px;color:var(--ink);background:#fff}
+  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--navy)}
+  .bigsteps .bstep{display:grid;grid-template-columns:80px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line)}
+  .bigsteps .bstep .n{font-family:'Cinzel',serif;font-size:26px;color:var(--sky-line);font-weight:600}
+  .bigsteps .bstep h3{font-size:20px;margin-bottom:8px}
+  .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:72ch}
+  .event-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;max-width:760px}
+  .event-card .meta{font-size:13px;letter-spacing:.06em;color:#52545a;font-weight:500}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr !important}}
 </style>
 </head>
 <body>
-
-<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrap nav">
     <a href="/" aria-label="Smallwood Wealth Management home">
@@ -220,10 +219,10 @@
     </a>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="#curve">The Wealth Curve</a></li>
+      <li><a href="/#curve">The Wealth Curve</a></li>
       <li><a href="/business-owners">Business Owners</a></li>
       <li><a href="/retirees">Retirees</a></li>
-      <li><a href="#insights">Insights</a></li>
+      <li><a href="/#insights">Insights</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -235,176 +234,58 @@
   </div>
   <nav class="mobile-panel" aria-label="Mobile">
     <a href="/">Home</a>
-    <a href="#curve">The Wealth Curve</a>
+    <a href="/#curve">The Wealth Curve</a>
     <a href="/business-owners">Business Owners</a>
     <a href="/scorecard">Executives</a>
     <a href="/retirees">Retirees</a>
-    <a href="#insights">Insights</a>
+    <a href="/#insights">Insights</a>
     <a href="/contact">Contact</a>
     <a href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
   </nav>
 </header>
 <script>
-  (function(){
-    var h=document.querySelector('header'),b=document.querySelector('.burger');
-    if(b){b.addEventListener('click',function(){
-      var open=h.classList.toggle('open');
-      b.setAttribute('aria-expanded',open?'true':'false');
-    });}
-  })();
+(function(){var h=document.querySelector('header'),b=document.querySelector('.burger');if(b){b.addEventListener('click',function(){var open=h.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});}})();
 </script>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" poster="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg">
-    <source src="https://smallwoodassociates.com/wp-content/uploads/2025/07/Hero-Video-Smallwood.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="wrap hero-grid">
-    <div class="hero-anim">
-      <span class="eyebrow">The Wealth Curve&trade; Scorecard</span>
-      <h1>Do You Know Where Your Wealth Plan Stands?</h1>
-      <p class="lead">You've built real wealth. The question is how much of it survives taxes, risk, and time. Take the Wealth Curve Scorecard &mdash; a short, private self-assessment that shows you the gaps in your plan across tax, protection, investment, and legacy.</p>
-      <div class="hero-cta">
-        <!-- QUIZ_URL -->
-        <a class="btn" href="/scorecard">Take the Wealth Curve Scorecard &rarr;</a>
-        <!-- ONCEHUB canonical -->
-        <a class="btn-ghost" href="https://go.oncehub.com/AdvisorsIntroMeetings">Prefer to talk first?</a>
-      </div>
-      <p class="microline">An educational self-assessment &mdash; no cost, no obligation, about 5 minutes.</p>
-    </div>
-
-    <div class="curve-card hero-anim" aria-hidden="true">
-      <span class="label">Your position on the curve</span>
-      <div class="marker">See where you stand &rarr;</div>
-      <svg viewBox="0 0 440 240" width="100%" height="auto" role="img" aria-label="An upward wealth curve">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#a3cef2" stop-opacity=".55"/>
-            <stop offset="1" stop-color="#a3cef2" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path class="cfill" d="M12,210 C120,205 210,170 300,110 C350,76 400,44 428,30 L428,222 L12,222 Z"/>
-        <path class="cpath" d="M12,210 C120,205 210,170 300,110 C350,76 400,44 428,30"/>
-        <g class="dot">
-          <circle cx="230" cy="153" r="8" fill="#fff" stroke="#1b164e" stroke-width="3"/>
-        </g>
-        <line x1="230" y1="161" x2="230" y2="222" stroke="#1b164e" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== THREE DOORS ===================== -->
-<section class="doors">
+<section class="page-hero">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Start where you are</span>
-      <h2>One plan, built around who you actually are.</h2>
-      <p>Every plan is custom &mdash; but the pressures aren't the same for an owner, an executive, and a retiree. Choose your door, then see your gaps.</p>
-    </div>
-    <div class="door-grid">
-      <div class="door">
-        <h3>Business Owners</h3>
-        <p>Your net worth is tied up in the company. We plan the tax, the timing, and everything a sale sets in motion &mdash; most of which is decided long before you sign.</p>
-        <a class="go" href="/scorecard?source=Homepage%20-%20Owner%20door&avatar=owner">Take the Scorecard &rarr;</a>
-      </div>
-      <div class="door">
-        <h3>Corporate Executives</h3>
-        <p>Concentrated stock, deferred comp, and a package you didn't design. We coordinate RSUs, options, and 10b5-1 planning into one strategy instead of many.</p>
-        <a class="go" href="/scorecard?source=Homepage%20-%20Executive%20door&avatar=executive">Take the Scorecard &rarr;</a>
-      </div>
-      <div class="door">
-        <h3>Retirees &amp; Pre-Retirees</h3>
-        <p>You have enough. Now the job is keeping it &mdash; tax-efficient income, Roth timing, protection, and a legacy that holds up. Taxes don't retire when you do.</p>
-        <a class="go" href="/scorecard?source=Homepage%20-%20Retiree%20door&avatar=retiree">Take the Scorecard &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== THE WEALTH CURVE (process) ===================== -->
-<section id="curve">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">The Wealth Curve&trade;</span>
-      <h2>A process, not a product.</h2>
-      <p>We start by understanding your ambitions, opportunities, and challenges &mdash; then design a plan, set it in motion, and monitor it so it evolves as you do.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="n">01</div><h3>Conversation</h3><p>We get to know your goals, your assets, and the risks you're carrying.</p></div>
-      <div class="step"><div class="n">02</div><h3>Blueprint</h3><p>A clear picture of where your wealth stands today, across every dimension.</p></div>
-      <div class="step"><div class="n">03</div><h3>Scorecard</h3><p>We measure your readiness in tax, protection, investment, and legacy.</p></div>
-      <div class="step"><div class="n">04</div><h3>Simulation</h3><p>We model the strategies before you commit to any of them.</p></div>
-      <div class="step"><div class="n">05</div><h3>Implementation</h3><p>We put the plan in motion and revisit it as your life changes.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SERVICES ===================== -->
-<section style="background:#fafbfc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">What we look at</span>
-      <h2>Every facet of your wealth &mdash; not just the portfolio.</h2>
-      <p>A holistic plan designed to reduce taxes, fees, and risk &mdash; and to put more protection around what you've built, so you can enjoy it and pass more of it on.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc"><div class="tag">Tax</div><h3>Tax Strategies</h3><p>Reduce lifetime tax drag &mdash; the single biggest leak in most plans.</p></div>
-      <div class="svc"><div class="tag">Grow</div><h3>Investment Planning</h3><p>Guidance built to your plan, not guesswork or product sales.</p></div>
-      <div class="svc"><div class="tag">Plan</div><h3>Financial Planning</h3><p>Plan for today; feel confident about tomorrow.</p></div>
-      <div class="svc"><div class="tag">Retire</div><h3>Retirement Planning</h3><p>Tax-efficient income and a number that lasts.</p></div>
-      <div class="svc"><div class="tag">Protect</div><h3>Protection &amp; Estate</h3><p>Estate structure, liability, disability, and long-term care &mdash; the layers most plans skip.</p></div>
-      <div class="svc"><div class="tag">Build</div><h3>Business Planning</h3><p>For owners: value, exit, and the tax around both.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== INSIGHTS (replaces testimonials) ===================== -->
-<section id="insights" class="insights">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Insights</span>
-      <h2>Learn how we think.</h2>
-      <p>No pitches &mdash; just the planning conversations we have every day, in the open.</p>
-    </div>
-    <div class="ins-grid">
-      <div class="ins-card">
-        <div class="kind">Podcast &middot; Money Isn't</div>
-        <h3>The show about everything money isn't.</h3>
-        <p>Candid conversations on wealth, taxes, and the decisions that actually move the needle.</p>
-        <a class="go" href="https://www.youtube.com/@moneyisnt">Listen &rarr;</a>
-      </div>
-      <div class="ins-card">
-        <div class="kind">Article</div>
-        <h3>Estate Planning Mistakes to Avoid</h3>
-        <p>The gaps that quietly cost families &mdash; and how to close them before they matter.</p>
-        <a class="go" href="https://smallwoodassociates.com/2025/10/14/estate-planning-mistakes-that-cost-families-millions-and-how-to-avoid-them/">Read &rarr;</a>
-      </div>
-      <div class="ins-card">
-        <div class="kind">Article</div>
-        <h3>Wealth Lessons from a Young Entrepreneur</h3>
-        <p>What building &mdash; and keeping &mdash; wealth early teaches about doing it right.</p>
-        <a class="go" href="https://smallwoodassociates.com/2025/10/24/he-made-30m-before-30-this-is-what-he-learned/">Read &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FINAL CTA ===================== -->
-<section class="final">
-  <div class="wrap">
-    <span class="eyebrow">One step</span>
-    <h2>See where you stand on the Wealth Curve.</h2>
-    <p>A few minutes now can surface the gaps that shape the next decade of your plan. Private, educational, and yours to keep.</p>
+    <span class="eyebrow">The Wealth Curve&trade;</span>
+    <h1>A process, not a product.</h1>
+    <p class="lead">Our aspiration is to construct a custom financial plan that strives to minimize your risk and taxes, grow your wealth, and help you achieve financial independence with the lifestyle you&rsquo;ve dreamed of.</p>
     <div class="hero-cta">
-      <a class="btn" href="/scorecard">Take the Wealth Curve Scorecard &rarr;</a>
+      <a class="btn" href="/scorecard?source=Process%20page">Take the Wealth Curve Scorecard &rarr;</a>
       <a class="btn-ghost" href="https://go.oncehub.com/AdvisorsIntroMeetings">Schedule a Wealth Curve Conversation</a>
     </div>
   </div>
 </section>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Five stages</span>
+      <h2>From first conversation to a plan that evolves with you.</h2>
+      <p>We start by getting to know your ambitions, opportunities, and challenges &mdash; then design a mutually agreed upon plan, set it in motion, and monitor it regularly so it evolves as you do.</p>
+    </div>
+    <div class="bigsteps">
+      <div class="bstep"><div class="n">01</div><div><h3>Conversation</h3><p>A no-cost, no-obligation conversation &mdash; not a sales pitch. We listen first: your goals, your assets, your current advisors, and where you feel uncertain.</p></div></div>
+      <div class="bstep"><div class="n">02</div><div><h3>Blueprint</h3><p>A clear picture of where your wealth stands today, across every dimension &mdash; taxes, investments, protection, estate, and cash flow &mdash; in one document.</p></div></div>
+      <div class="bstep"><div class="n">03</div><div><h3>Scorecard</h3><p>We measure your readiness across the levers that decide how much you keep: tax, protection, investment, and legacy. You see exactly where the gaps are.</p></div></div>
+      <div class="bstep"><div class="n">04</div><div><h3>Simulation</h3><p>We model the strategies before you commit to any of them &mdash; so every decision is tested against your actual numbers, not a rule of thumb.</p></div></div>
+      <div class="bstep"><div class="n">05</div><div><h3>Strategic Implementation</h3><p>We put the plan in motion, then meet regularly to adapt it as tax law, markets, and your life change. The plan evolves as you do.</p></div></div>
+    </div>
+  </div>
+</section>
 
-<!-- ===================== FOOTER ===================== -->
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">One step</span>
+    <h2>Start with the Scorecard.</h2>
+    <p>The Wealth Curve begins with a clear read on where you stand. It takes about five minutes.</p>
+    <div class="hero-cta">
+      <a class="btn" href="/scorecard?source=Process%20page">Take the Wealth Curve Scorecard &rarr;</a>
+      <a class="btn-ghost" href="https://go.oncehub.com/AdvisorsIntroMeetings">Schedule a Wealth Curve Conversation</a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="wrap">
     <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
@@ -418,7 +299,7 @@
       </div>
       <div>
         <h4>Explore</h4>
-        <a href="#curve">The Wealth Curve</a>
+        <a href="/#curve">The Wealth Curve</a>
         <a href="/our-process">Our Process</a>
         <a href="/our-team">Our Team</a>
         <a href="/events">Events</a>
@@ -441,6 +322,5 @@
     </div>
   </div>
 </footer>
-
 </body>
 </html>
