@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retiree Event &mdash; Smallwood Wealth Management</title>
-<meta name="description" content="A live educational event for retirees and pre-retirees in Red Bank, NJ. Save your seat.">
+<title>Schedule a Conversation &mdash; Smallwood Wealth Management</title>
+<meta name="description" content="Schedule a no-cost Wealth Curve Conversation with Smallwood Wealth Management in Red Bank, NJ.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -186,14 +186,19 @@
   .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
   .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
   .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:16px;font-weight:400}
-  .cform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
-  .cform input,.cform select{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Montserrat';font-size:15px;color:var(--ink);background:#fff;box-sizing:border-box}
-  .cform input:focus,.cform select:focus{outline:none;border-color:var(--navy)}
-  @media(max-width:560px){.cform .g2{grid-template-columns:1fr !important}}
-  .bigsteps .bstep{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line)}
-  .bigsteps .bstep .n{font-family:'Cinzel',serif;font-size:24px;color:var(--sky-line);font-weight:600}
-  .bigsteps .bstep h3{font-size:19px;margin-bottom:8px}
-  .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:70ch}
+  .sched-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
+  @media(max-width:900px){.sched-grid{grid-template-columns:1fr}}
+  .booker{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden}
+  .booker iframe{display:block;width:100%;height:760px;border:0}
+  .vid{aspect-ratio:16/9;background:var(--sky-tint);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+  .vid .play{width:56px;height:56px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
+  .vid .play::after{content:"";width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:17px solid var(--sky);margin-left:4px}
+  .vid .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);font-weight:600;text-align:center;padding:0 18px}
+  .vid iframe{width:100%;height:100%;border:0;border-radius:4px}
+  .meet-steps .bstep{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
+  .meet-steps .n{font-family:'Cinzel',serif;font-size:24px;color:var(--sky-line);font-weight:600}
+  .meet-steps h3{font-size:19px;margin-bottom:8px}
+  .meet-steps p{font-size:14.5px;color:#45474d;max-width:64ch}
 </style>
 </head>
 <body>
@@ -234,59 +239,42 @@
 
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">You're invited &middot; Live educational event</span>
-    <h1>Taxes don&rsquo;t retire when you do.</h1>
-    <p class="microline" style="margin-bottom:14px">[EVENT DATE] &middot; [TIME] &middot; [VENUE], Red Bank, NJ &middot; Hosted by John Smallwood</p>
-    <p class="lead">A live working session for retirees and pre-retirees: how tax-efficient income, Roth timing, protection, and estate structure fit together &mdash; and where most plans quietly leak.</p>
-    <p class="microline">No cost. Educational only &mdash; nothing sold, nothing signed.</p>
+    <span class="eyebrow">The Wealth Curve Conversation</span>
+    <h1>Schedule your conversation.</h1>
+    <p class="lead">One call, about 30 minutes. We walk through where your plan stands &mdash; taxes, protection, investment, and legacy &mdash; and you decide if it's worth going further. No cost, no obligation, nothing sold.</p>
   </div>
 </section>
 <section>
-  <div class="wrap" style="max-width:760px">
-    <form id="rsvp" class="cform" style="background:#eef5fd;border:1px solid var(--line);border-radius:4px;padding:30px 28px">
-      <h2 style="font-size:20px;margin-bottom:18px">Save your seat</h2>
-      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-        <div class="f"><label for="r_first">First name</label><input id="r_first" required placeholder="First name"></div>
-        <div class="f"><label for="r_last">Last name</label><input id="r_last" placeholder="Last name"></div>
-        <div class="f"><label for="r_email">Email</label><input id="r_email" type="email" required placeholder="you@email.com"></div>
-        <div class="f"><label for="r_phone">Phone</label><input id="r_phone" type="tel" placeholder="Phone"></div>
+  <div class="wrap sched-grid">
+    <div>
+      <div class="sec-head" style="margin-bottom:24px">
+        <span class="eyebrow">Who you'll be talking to</span>
+        <h2>Smallwood Wealth, in two minutes.</h2>
+        <p>Smallwood Wealth Management is an SEC-registered investment advisory firm in Red Bank, NJ. For over 30 years we've helped business owners, executives, and retirees coordinate every part of their financial life &mdash; taxes, investments, protection, and estate &mdash; into one plan, held to a fiduciary standard.</p>
       </div>
-      <div class="f" style="margin-top:14px"><label for="r_guest">Who's coming?</label><select id="r_guest"><option>Just me</option><option>Me + spouse or guest</option></select></div>
-      <div style="display:flex;align-items:center;gap:18px;margin-top:20px;flex-wrap:wrap">
-        <button class="btn" type="submit">Save my seat &rarr;</button>
-        <span style="font-size:12.5px;color:var(--gray)">Seating is limited &mdash; one session only.</span>
+      <!-- VIDEO SLOTS: replace each placeholder div with a YouTube embed, e.g.
+           <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="..." allowfullscreen></iframe> -->
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; John: what Smallwood does]</div></div>
+        <div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; John: how the first meeting works]</div></div>
       </div>
-      <p style="margin-top:14px;font-size:11.5px;color:var(--gray)">Your information is private and never shared.</p>
-    </form>
-    <div id="rsvp-done" style="display:none;background:#eef5fd;border:1px solid var(--line);border-radius:4px;padding:36px 30px;text-align:center">
-      <h2 style="font-size:24px;margin-bottom:10px">You&rsquo;re on the list.</h2>
-      <p style="font-size:15px;color:#45474d;max-width:44ch;margin:0 auto">Watch your inbox for the details &mdash; and expect a quick call from our office to confirm your seat.</p>
+      <div class="sec-head" style="margin:40px 0 0">
+        <span class="eyebrow">How the first meeting goes</span>
+      </div>
+      <div class="meet-steps">
+        <div class="bstep"><div class="n">01</div><div><h3>We listen first.</h3><p>Your goals, your assets, your current advisors, and where you feel uncertain. No forms to fill out beforehand &mdash; come as you are.</p></div></div>
+        <div class="bstep"><div class="n">02</div><div><h3>We name the gaps.</h3><p>Most first conversations surface 3&ndash;5 meaningful gaps or opportunities across tax, protection, investment, and legacy.</p></div></div>
+        <div class="bstep"><div class="n">03</div><div><h3>You decide what's next.</h3><p>If it makes sense, the next step is a full Wealth Curve Blueprint against your real numbers. If not, you still leave with a clearer read on your plan.</p></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="booker">
+        <iframe src="https://go.oncehub.com/AdvisorsIntroMeetings" title="Schedule a Wealth Curve Conversation"></iframe>
+      </div>
+      <p style="margin-top:12px;font-size:12.5px;color:var(--gray)">Booking not loading? <a class="textlink" href="https://go.oncehub.com/AdvisorsIntroMeetings">Open the scheduler in a new tab &rarr;</a> or call <a class="textlink" href="tel:7325421565">(732) 542-1565</a>.</p>
     </div>
   </div>
 </section>
-<section style="border-top:1px solid var(--line)">
-  <div class="wrap" style="max-width:760px">
-    <div class="sec-head"><span class="eyebrow">What we'll cover</span><h2>Three decisions, one evening.</h2></div>
-    <div class="bigsteps">
-      <div class="bstep"><div class="n">01</div><div><h3>Turning savings into a paycheck</h3><p>The order you draw income in can change your lifetime tax bill &mdash; and how long the money lasts.</p></div></div>
-      <div class="bstep"><div class="n">02</div><div><h3>Roth conversions and the RMD clock</h3><p>Why the decade before required distributions is where the biggest tax decisions get made.</p></div></div>
-      <div class="bstep"><div class="n">03</div><div><h3>Protection and legacy, in plain terms</h3><p>Long-term care, liability, and the estate documents that decide what actually reaches your family.</p></div></div>
-    </div>
-  </div>
-</section>
-<script>
-document.getElementById('rsvp').addEventListener('submit',function(e){
-  e.preventDefault();
-  var v=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
-  var payload={source:'Retiree event registration',event:'[EVENT DATE] - [VENUE]',submittedAt:new Date().toISOString(),
-    contact:{firstName:v('r_first'),lastName:v('r_last'),email:v('r_email'),phone:v('r_phone'),party:v('r_guest')}};
-  var WEBHOOK_URL='';
-  if(WEBHOOK_URL){fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});}
-  else{console.log('PREVIEW MODE - RSVP payload:',payload);}
-  document.getElementById('rsvp').style.display='none';
-  document.getElementById('rsvp-done').style.display='block';
-});
-</script>
 <footer>
   <div class="wrap">
     <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
@@ -309,7 +297,7 @@ document.getElementById('rsvp').addEventListener('submit',function(e){
       <div>
         <h4>Get Started</h4>
         <a href="/scorecard">Take the Scorecard</a>
-        <a href="/schedule">Schedule a Conversation</a>
+        <a href="https://go.oncehub.com/AdvisorsIntroMeetings">Schedule a Conversation</a>
         <a href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
         <a href="/contact">Contact Us</a>
       </div>
