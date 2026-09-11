@@ -45,7 +45,7 @@
 <style>
   :root{
     --navy:#1b164e;
-    --copper:#d98042;
+    --copper:#1b164e; /* brand rule: copper is social-only; accent remapped to navy */
     --cool-gray:#e8ecef;
     --sky:#a3cef2;
     --warm-gray:#8a8b88;
@@ -75,8 +75,8 @@
   .muted{color:var(--warm-gray);font-size:14px;font-weight:400}
 
   .btn{font-family:var(--body);font-weight:600;font-size:15px;letter-spacing:.02em;border:none;border-radius:5px;padding:15px 30px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;display:inline-flex;align-items:center;gap:10px}
-  .btn-primary{background:var(--copper);color:var(--near-black)}   /* near-black text = accessible on copper */
-  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(217,128,66,.28)}
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(27,22,78,.28)}
   .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:28px}
 
   .avatars{display:grid;grid-template-columns:1fr;gap:14px;margin-top:28px}
@@ -92,7 +92,7 @@
   .options{display:flex;flex-direction:column;gap:11px;margin-top:26px}
   .option{text-align:left;border:1.5px solid var(--cool-gray);border-radius:7px;padding:16px 18px;background:var(--white);cursor:pointer;font-size:15px;color:var(--near-black);transition:all .12s ease;display:flex;align-items:center;gap:14px}
   .option:hover{border-color:var(--sky);background:#fbfcfe}
-  .option.selected{border-color:var(--copper);background:#fef8f3}
+  .option.selected{border-color:var(--navy);background:#eef5fd}
   .option .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--cool-gray);flex-shrink:0;transition:all .12s}
   .option.selected .dot{border-color:var(--copper);background:var(--copper);box-shadow:inset 0 0 0 3px #fff}
 
@@ -161,7 +161,7 @@
    ============================================================ */
 const FIRM_NAME   = "Smallwood Wealth Management";
 const BOOKING_URL = "/schedule"; // embeds the OnceHub scheduler
-const WEBHOOK_URL = "";  // GHL inbound webhook OR Zapier/Make webhook (fans out to Salesforce). Blank = preview mode.
+const WEBHOOK_URL = "https://hooks.zapier.com/hooks/catch/4443408/4ducc4i/";  // Zapier relay -> HighLevel
 
 /* ============================================================
    SCORECARD LEVERS  (labels shown on the gauges)
