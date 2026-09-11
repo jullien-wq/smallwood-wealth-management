@@ -475,7 +475,7 @@ async function submitLead(){
   state.contact=c;
   const {score,band}=computeScore();
   const payload=buildPayload(score,band,leverScores(),Object.keys(leverScores()).sort((a,b)=>leverScores()[a]-leverScores()[b]).slice(0,3));
-  if(WEBHOOK_URL){try{await fetch(WEBHOOK_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)})}catch(e){console.warn("Webhook failed (preview continues):",e)}}
+  if(WEBHOOK_URL){try{await fetch(WEBHOOK_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(payload)})}catch(e){console.warn("Webhook failed (preview continues):",e)}}
   else{console.log("PREVIEW MODE — payload that would be sent to CRM:",payload)}
   state.screen="results";render();
 }
