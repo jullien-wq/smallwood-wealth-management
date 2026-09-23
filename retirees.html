@@ -15,7 +15,7 @@
 <meta name="twitter:site" content="@smallwoodwealth">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#1b164e;
@@ -34,17 +34,17 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Montserrat',sans-serif;
+    font-family:'Nunito Sans',sans-serif;
     color:var(--ink);
     background:var(--canvas);
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
-  h1,h2,h3{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);line-height:1.18;letter-spacing:.01em}
+  h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);line-height:1.18;letter-spacing:.01em}
   a{color:inherit;text-decoration:none}
   .eyebrow{
-    font-family:'Montserrat';font-weight:600;font-size:12px;letter-spacing:.26em;
+    font-family:'Nunito Sans';font-weight:600;font-size:12px;letter-spacing:.26em;
     text-transform:uppercase;color:var(--sky-line);
   }
   .btn{
@@ -95,7 +95,7 @@
   /* wealth-curve signature graphic */
   .curve-card{position:relative;background:linear-gradient(180deg,#fff, var(--sky-tint));border:1px solid var(--line);border-radius:6px;padding:26px 24px 20px;box-shadow:0 24px 60px rgba(27,22,78,.10)}
   .curve-card .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);font-weight:600}
-  .curve-card .marker{font-family:'Cinzel',serif;color:var(--navy);font-size:15px;font-weight:600;margin-top:2px}
+  .curve-card .marker{font-family:'Nunito',sans-serif;color:var(--navy);font-size:15px;font-weight:600;margin-top:2px}
   svg .cpath{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;
     stroke-dasharray:640;stroke-dashoffset:640;animation:draw 1.9s .3s ease forwards}
   svg .cfill{fill:url(#g1);opacity:.9}
@@ -123,7 +123,7 @@
   .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
   .step{padding:26px 20px 26px 0;border-right:1px solid var(--line)}
   .step:last-child{border-right:0}
-  .step .n{font-family:'Cinzel',serif;font-size:14px;color:var(--sky-line);font-weight:600;letter-spacing:.1em}
+  .step .n{font-family:'Nunito',sans-serif;font-size:14px;color:var(--sky-line);font-weight:600;letter-spacing:.1em}
   .step h3{font-size:16px;margin:10px 0 8px}
   .step p{font-size:13px;color:#52545a}
   @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{border-right:0;border-bottom:1px solid var(--line)}}
@@ -160,7 +160,7 @@
   footer{background:var(--navy-800);color:#c3c6d6;font-size:13px;padding:56px 0 30px}
   footer img{height:40px;margin-bottom:18px}
   .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid #322c66}
-  .foot-top h4{font-family:'Montserrat';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:600}
+  .foot-top h4{font-family:'Nunito Sans';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:600}
   .foot-top a{color:#c3c6d6;display:block;margin-bottom:8px}
   .foot-top a:hover{color:var(--sky)}
   .disc{padding-top:26px;font-size:11px;line-height:1.7;color:#8f92a8}
@@ -190,15 +190,15 @@
   .checklist li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--sky);border-radius:2px}
   @media(max-width:700px){.checklist{grid-template-columns:1fr}}
   .faq details{border-bottom:1px solid var(--line);padding:18px 0}
-  .faq summary{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
-  .faq summary::after{content:"+";color:var(--sky-line);font-family:'Montserrat';font-weight:400;font-size:20px}
+  .faq summary{font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+  .faq summary::after{content:"+";color:var(--sky-line);font-family:'Nunito Sans';font-weight:400;font-size:20px}
   .faq details[open] summary::after{content:"\2212"}
   .faq details p{margin-top:12px;font-size:14.5px;color:#45474d;max-width:70ch}
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   @media(max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.team-grid{grid-template-columns:1fr}}
   .member{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:26px 24px}
-  .member .mono{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--sky);display:flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:19px;font-weight:600;margin-bottom:16px}
+  .member .mono{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--sky);display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:19px;font-weight:600;margin-bottom:16px}
   .member h3{font-size:17px;margin-bottom:4px}
   .member .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-line);font-weight:600;margin-bottom:12px}
   .member a{display:block;font-size:13px;color:#52545a;margin-top:4px}
@@ -208,10 +208,10 @@
   @media(max-width:560px){.cform .g2{grid-template-columns:1fr}}
   .cform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
   .cform .f{display:flex;flex-direction:column;margin-bottom:0}
-  .cform input,.cform select,.cform textarea{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Montserrat';font-size:15px;color:var(--ink);background:#fff}
+  .cform input,.cform select,.cform textarea{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Nunito Sans';font-size:15px;color:var(--ink);background:#fff}
   .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--navy)}
   .bigsteps .bstep{display:grid;grid-template-columns:80px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line)}
-  .bigsteps .bstep .n{font-family:'Cinzel',serif;font-size:26px;color:var(--sky-line);font-weight:600}
+  .bigsteps .bstep .n{font-family:'Nunito',sans-serif;font-size:26px;color:var(--sky-line);font-weight:600}
   .bigsteps .bstep h3{font-size:20px;margin-bottom:8px}
   .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:72ch}
   .event-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;max-width:760px}
@@ -327,11 +327,11 @@
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:100%">
         <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden">
           <div style="aspect-ratio:16/9"><iframe src="https://www.youtube-nocookie.com/embed/pnC-eioe2jI" title="Why Concentration in the S&amp;P 500 Could Wreck Your Retirement" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
-          <div style="padding:14px 18px;font-family:'Cinzel',serif;font-weight:600;color:var(--navy);font-size:15.5px">Why Concentration in the S&amp;P 500 Could Wreck Your Retirement</div>
+          <div style="padding:14px 18px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:15.5px">Why Concentration in the S&amp;P 500 Could Wreck Your Retirement</div>
         </div>
         <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden">
           <div style="aspect-ratio:16/9"><iframe src="https://www.youtube-nocookie.com/embed/Nc7upszRzcU" title="Estate Planning Mistakes That Cost Families Millions (And How to Avoid Them)" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
-          <div style="padding:14px 18px;font-family:'Cinzel',serif;font-weight:600;color:var(--navy);font-size:15.5px">Estate Planning Mistakes That Cost Families Millions (And How to Avoid Them)</div>
+          <div style="padding:14px 18px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:15.5px">Estate Planning Mistakes That Cost Families Millions (And How to Avoid Them)</div>
         </div></div>
   </div>
 </section>

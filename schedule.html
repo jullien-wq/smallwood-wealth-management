@@ -15,7 +15,7 @@
 <meta name="twitter:site" content="@smallwoodwealth">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#1b164e;
@@ -34,17 +34,17 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:'Montserrat',sans-serif;
+    font-family:'Nunito Sans',sans-serif;
     color:var(--ink);
     background:var(--canvas);
     line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:1160px;margin:0 auto;padding:0 28px}
-  h1,h2,h3{font-family:'Cinzel',serif;font-weight:600;color:var(--navy);line-height:1.18;letter-spacing:.01em}
+  h1,h2,h3{font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);line-height:1.18;letter-spacing:.01em}
   a{color:inherit;text-decoration:none}
   .eyebrow{
-    font-family:'Montserrat';font-weight:600;font-size:12px;letter-spacing:.26em;
+    font-family:'Nunito Sans';font-weight:600;font-size:12px;letter-spacing:.26em;
     text-transform:uppercase;color:var(--sky-line);
   }
   .btn{
@@ -105,7 +105,7 @@
   /* wealth-curve signature graphic */
   .curve-card{position:relative;background:linear-gradient(180deg,#fff, var(--sky-tint));border:1px solid var(--line);border-radius:6px;padding:26px 24px 20px;box-shadow:0 24px 60px rgba(27,22,78,.10)}
   .curve-card .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gray);font-weight:600}
-  .curve-card .marker{font-family:'Cinzel',serif;color:var(--navy);font-size:15px;font-weight:600;margin-top:2px}
+  .curve-card .marker{font-family:'Nunito',sans-serif;color:var(--navy);font-size:15px;font-weight:600;margin-top:2px}
   svg .cpath{fill:none;stroke:var(--navy);stroke-width:3;stroke-linecap:round;
     stroke-dasharray:640;stroke-dashoffset:640;animation:draw 1.9s .3s ease forwards}
   svg .cfill{fill:url(#g1);opacity:.9}
@@ -133,7 +133,7 @@
   .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line)}
   .step{padding:26px 20px 26px 0;border-right:1px solid var(--line)}
   .step:last-child{border-right:0}
-  .step .n{font-family:'Cinzel',serif;font-size:14px;color:var(--sky-line);font-weight:600;letter-spacing:.1em}
+  .step .n{font-family:'Nunito',sans-serif;font-size:14px;color:var(--sky-line);font-weight:600;letter-spacing:.1em}
   .step h3{font-size:16px;margin:10px 0 8px}
   .step p{font-size:13px;color:#52545a}
   @media(max-width:860px){.steps{grid-template-columns:1fr 1fr}.step{border-right:0;border-bottom:1px solid var(--line)}}
@@ -170,7 +170,7 @@
   footer{background:var(--navy-800);color:#c3c6d6;font-size:13px;padding:56px 0 30px}
   footer img{height:40px;margin-bottom:18px}
   .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:32px;border-bottom:1px solid #322c66}
-  .foot-top h4{font-family:'Montserrat';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:600}
+  .foot-top h4{font-family:'Nunito Sans';font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:14px;font-weight:600}
   .foot-top a{color:#c3c6d6;display:block;margin-bottom:8px}
   .foot-top a:hover{color:var(--sky)}
   .disc{padding-top:26px;font-size:11px;line-height:1.7;color:#8f92a8}
@@ -204,7 +204,7 @@
   .vid .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);font-weight:600;text-align:center;padding:0 18px}
   .vid iframe{width:100%;height:100%;border:0;border-radius:4px}
   .meet-steps .bstep{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
-  .meet-steps .n{font-family:'Cinzel',serif;font-size:24px;color:var(--sky-line);font-weight:600}
+  .meet-steps .n{font-family:'Nunito',sans-serif;font-size:24px;color:var(--sky-line);font-weight:600}
   .meet-steps h3{font-size:19px;margin-bottom:8px}
   .meet-steps p{font-size:14.5px;color:#45474d;max-width:64ch}
 </style>
@@ -277,7 +277,7 @@
     <div>
       <div class="booker">
         <!--booking calendar inline widget begin -->
-        <div data-oh-booking-calendar-id="BKC-K752DGYV5D" style="min-width:320px;height:700px;"></div>
+        <div data-oh-booking-calendar-id="BKC-K752DGYV5D" style="min-width:320px;height:1150px;"></div>
         <!--booking calendar inline widget end -->
       </div>
       <p style="margin-top:12px;font-size:12.5px;color:var(--gray)">Booking not loading? <a class="textlink" href="https://oncehub.com/schedule-your-introductory-meeting" target="_blank" rel="noopener">Open the scheduler in a new tab &rarr;</a> or call <a class="textlink" href="tel:7325421565">(732) 542-1565</a>.</p>
