@@ -343,7 +343,7 @@ function renderCapture(){
 
 function gaugeHTML(name, pct){
   const zone = pct<=40 ? {t:"Needs Attention",c:"var(--red)"} : pct<=70 ? {t:"In Progress",c:"var(--amber)"} : {t:"Strong",c:"var(--green)"};
-  const midClass = (pct>40&&pct<=70) ? "mid" : "g";
+  const midClass = "g"; // gray middle always present to keep gauge spacing consistent
   return `
     <div class="gauge-row">
       <div class="gauge-top">

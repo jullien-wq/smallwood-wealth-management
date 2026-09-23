@@ -217,6 +217,14 @@
   .event-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;max-width:760px}
   .event-card .meta{font-size:13px;letter-spacing:.06em;color:#52545a;font-weight:500}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr !important}}
+  .member{padding:0 0 22px;overflow:hidden}
+  .member .photo{aspect-ratio:4/5;background:var(--sky-tint);margin-bottom:18px;overflow:hidden}
+  .member .photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  .member h3,.member .role,.member>a{padding:0 24px}
+  .lead-row{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center;margin-bottom:48px}
+  .lead-photo{aspect-ratio:4/5;background:var(--sky-tint);border-radius:4px;overflow:hidden;border-top:3px solid var(--navy)}
+  .lead-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+  @media(max-width:700px){.lead-row{grid-template-columns:1fr}.lead-photo{max-width:260px}}
 </style>
 </head>
 <body>
@@ -234,7 +242,7 @@
       <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a class="portal" href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
+      <a class="portal" href="/client-portal">Client Portal</a>
       <!-- QUIZ_URL: point to the hosted Wealth Curve Scorecard -->
       <a class="btn" href="/scorecard">Take the Scorecard</a>
       <button class="burger" aria-label="Menu" aria-expanded="false">&#9776;</button>
@@ -248,7 +256,7 @@
     <a href="/retirees">Retirees</a>
     <a href="/#insights">Insights</a>
     <a href="/contact">Contact</a>
-    <a href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
+    <a href="/client-portal">Client Portal</a>
   </nav>
 </header>
 <script>
@@ -268,95 +276,88 @@
 </section>
 <section class="doors">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="lead-row">
+      <div class="lead-photo"><img src="https://smallwoodassociates.com/wp-content/uploads/2023/09/John-Smallwood-bio-2023.png" alt="John L. Smallwood, CFP&reg;"></div>
+    <div class="sec-head" style="margin:0">
       <span class="eyebrow">Leadership</span>
       <h2>John L. Smallwood, CFP&reg;</h2>
       <p style="max-width:72ch">John is President of Smallwood Wealth Management and affiliated companies. A CERTIFIED FINANCIAL PLANNER&trade; professional, he provides investment consulting and financial plan design for corporate executives, entrepreneurs, and professionals. His strength lies in his commitment to continually improve the level and quality of the planning process &mdash; repositioning assets to help decrease risk, decrease taxation, and increase protection.</p>
       <p style="margin-top:14px"><a class="textlink" href="mailto:johnl@smallwoodwealth.com">johnl@smallwoodwealth.com</a>&nbsp;&nbsp;&nbsp;<a class="textlink" href="tel:8007971000">(800) 797-1000</a></p>
     </div>
+    </div>
     <div class="team-grid">
       
       <div class="member">
-        <div class="mono">RM</div>
-        <h3>Robert Marks, CFP&reg;</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Robert-Marks-headshot-scaled-1-1-scaled-rlbognb5lxrbeigq71afovx9xp7vba6jxki13w2m4o.jpg" alt="Robert Marks" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/robert-marks/" style="color:inherit;display:inline;margin:0;font-size:inherit">Robert Marks, CFP&reg;</a></h3>
         <div class="role">Wealth Advisor</div>
         <a href="mailto:rmarks@smallwoodwealth.com">rmarks@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">JS</div>
-        <h3>Jared Smallwood</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Jared-SmallwoodHS1501rt-scaled-e1711465419547-rlbom1vqwn5o5sm3mve7j0towgkukmmzobjjg624co.jpg" alt="Jared Smallwood" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/jared-smallwood/" style="color:inherit;display:inline;margin:0;font-size:inherit">Jared Smallwood</a></h3>
         <div class="role">Wealth Advisor</div>
         <a href="mailto:jared@smallwoodwealth.com">jared@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">CS</div>
-        <h3>Chris Smallwood</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Chris-Smallwood-bio-2023-qjpqbxamag25o28x05yrjgl1h8dth77lkd86l5kihs.png" alt="Chris Smallwood" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/chris-smallwood/" style="color:inherit;display:inline;margin:0;font-size:inherit">Chris Smallwood</a></h3>
         <div class="role">Wealth Advisor</div>
         <a href="mailto:chris@smallwoodwealth.com">chris@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">CF</div>
-        <h3>Christine Flynn</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Christine-Flynn-Headshot-scaled-rlbop4spb3di7s4zn7c6p8u2zxe5swvbfkiu2thnyg.jpg" alt="Christine Flynn" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/christine-flynn/" style="color:inherit;display:inline;margin:0;font-size:inherit">Christine Flynn</a></h3>
         <div class="role">Client Relations &mdash; Investments</div>
         <a href="mailto:cflynn@smallwoodwealth.com">cflynn@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">AL</div>
-        <h3>Ariana Lunderman</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Ariana-Lunderman-bio-2023-qjpq9ra0j73cwfe8nq8qai9s692cqblvln2vr6s6u8.png" alt="Ariana Lunderman" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/ariana-lunderman/" style="color:inherit;display:inline;margin:0;font-size:inherit">Ariana Lunderman</a></h3>
         <div class="role">Client Service &mdash; Insurance</div>
         <a href="mailto:alunderman@smallwoodwealth.com">alunderman@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">CN</div>
-        <h3>Christina Nieves</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/image004-1-rlboh71qdlpwkbibkuyfj63ldgay56574hm21as4gw.jpg" alt="Christina Nieves" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/christina-nieves/" style="color:inherit;display:inline;margin:0;font-size:inherit">Christina Nieves</a></h3>
         <div class="role">Client Service &mdash; Annuities</div>
         <a href="mailto:cnieves@smallwoodwealth.com">cnieves@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">JT</div>
-        <h3>James Tovey</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/SmallwoodHeadshotsEdits1-25-copy-1-rlbogc13bxbvj6x40wewuyrqt2rgqwxrw0o7ckjc7c.jpg" alt="James Tovey" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/james-tovey/" style="color:inherit;display:inline;margin:0;font-size:inherit">James Tovey</a></h3>
         <div class="role">Client Service Representative</div>
         <a href="mailto:jtovey@smallwoodwealth.com">jtovey@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
       
       <div class="member">
-        <div class="mono">JS</div>
-        <h3>John L. &lsquo;Jack&rsquo; Smallwood, Jr.</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Jack-Smallwood-bio-2023-qjpq5f8t0p5rd5ovyusnsln9kaff8kefo6sa397jj4.png" alt="John L. Smallwood, Jr." loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/john-l-smallwood-jr/" style="color:inherit;display:inline;margin:0;font-size:inherit">John L. &lsquo;Jack&rsquo; Smallwood, Jr.</a></h3>
         <div class="role">Business Operations &amp; Strategy</div>
         <a href="mailto:jack@smallwoodwealth.com">jack@smallwoodwealth.com</a>
         <a href="tel:8007971000">(800) 797-1000</a>
       </div>
-      
       <div class="member">
-        <div class="mono">MH</div>
-        <h3>Michelle Hunter</h3>
-        <div class="role">Executive Assistant to John Smallwood</div>
-        <a href="mailto:mhunter@smallwoodwealth.com">mhunter@smallwoodwealth.com</a>
-        <a href="tel:7325421565">(732) 542-1565</a>
-      </div>
-      
-      <div class="member">
-        <div class="mono">MR</div>
-        <h3>Marissa Rudolph</h3>
+        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Marissa_Professional-Imagev1-rn0ou0bskwypkvn98sf5cfh1d06r13uoqs2csynvz4.jpg" alt="Marissa Rudolph" loading="lazy"></div>
+        <h3><a href="https://smallwoodassociates.com/our-team/marissa-rudolph/" style="color:inherit;display:inline;margin:0;font-size:inherit">Marissa Rudolph</a></h3>
         <div class="role">Operations &amp; Client Relations</div>
         <a href="mailto:mrudolph@smallwoodwealth.com">mrudolph@smallwoodwealth.com</a>
         
       </div>
     </div>
-    <p style="margin-top:18px;font-size:12px;color:var(--gray)">Headshots to be supplied from the firm&rsquo;s photo library before launch.</p>
   </div>
 </section>
 
@@ -380,7 +381,7 @@
         <a href="https://www.google.com/maps/place/199+Broad+St,+Red+Bank,+NJ+07701">199 Broad St, Red Bank, NJ 07701</a>
         <a href="tel:732-542-1565">Phone: (732) 542-1565</a>
         <a href="tel:800-797-1000">Toll Free: (800) 797-1000</a>
-        <a href="mailto:clientservices@smallwoodassociates.com">clientservices@smallwoodassociates.com</a>
+        <a href="mailto:clientservices@smallwoodwealth.com">clientservices@smallwoodwealth.com</a>
       </div>
       <div>
         <h4>Explore</h4>
@@ -394,7 +395,7 @@
         <h4>Get Started</h4>
         <a href="/scorecard">Take the Scorecard</a>
         <a href="/schedule">Schedule a Conversation</a>
-        <a href="https://smallwoodassociates.com/client-wealth-planning-portal/">Client Portal</a>
+        <a href="/client-portal">Client Portal</a>
         <a href="/contact">Contact Us</a>
       </div>
     </div>
