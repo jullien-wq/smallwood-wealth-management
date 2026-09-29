@@ -69,12 +69,12 @@
   header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .nav img{height:34px;width:auto;display:block}
-  .nav ul{display:flex;gap:18px;list-style:none;align-items:center}
+  .nav ul{display:flex;gap:16px;list-style:none;align-items:center}
   .nav ul a{font-size:13px;font-weight:500;color:#dfe2ee;letter-spacing:.01em;white-space:nowrap}
   .nav ul a:hover{color:#fff}
   .nav-right{display:flex;align-items:center;gap:16px}
   .portal{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);font-weight:600}
-  .nav .btn{padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
+  .nav .btn{white-space:nowrap;padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
   .nav .btn:hover{background:var(--sky);border-color:var(--sky);color:var(--navy);box-shadow:none}
   .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
   @media(max-width:1150px){
@@ -207,6 +207,12 @@
   .meet-steps .n{font-family:'Nunito',sans-serif;font-size:24px;color:var(--sky-line);font-weight:600}
   .meet-steps h3{font-size:19px;margin-bottom:8px}
   .meet-steps p{font-size:14.5px;color:#45474d;max-width:64ch}
+
+  .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
+  .link-secondary:hover{border-bottom-color:var(--navy)}
+  .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
+  .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
+  @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
 </style>
 <script type="text/javascript" src="https://cdn.oncehub.com/cal/embed.js" async></script>
 </head>
@@ -220,6 +226,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/#curve">The Wealth Curve</a></li>
       <li><a href="/business-owners">Business Owners</a></li>
+      <li><a href="/executives">Executives</a></li>
       <li><a href="/retirees">Retirees</a></li>
       <li><a href="/#insights">Insights</a></li>
       <li><a href="/contact">Contact</a></li>
@@ -235,7 +242,7 @@
     <a href="/">Home</a>
     <a href="/#curve">The Wealth Curve</a>
     <a href="/business-owners">Business Owners</a>
-    <a href="/scorecard">Executives</a>
+    <a href="/executives">Executives</a>
     <a href="/retirees">Retirees</a>
     <a href="/#insights">Insights</a>
     <a href="/contact">Contact</a>
@@ -258,19 +265,21 @@
     <div>
       <div class="sec-head" style="margin-bottom:24px">
         <span class="eyebrow">Who you'll be talking to</span>
-        <h2>Smallwood Wealth, in two minutes.</h2>
+        <h2>Before we meet.</h2>
         <p>Smallwood Wealth Management is an SEC-registered investment advisory firm in Red Bank, NJ. For over 30 years we've helped business owners, executives, and retirees coordinate every part of their financial life &mdash; taxes, investments, protection, and estate &mdash; into one plan, held to a fiduciary standard.</p>
       </div>
-      <div style="display:flex;flex-direction:column;gap:18px">
-        <div class="vid" style="display:block"><iframe src="https://www.youtube-nocookie.com/embed/4H8BOobxJlI" title="The TRUTH About Having A Million Dollars For Retirement" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-        <div class="vid" style="display:block"><iframe src="https://www.youtube-nocookie.com/embed/YKb4OOMKxSs" title="Why Most Business Owners Never See Real Profit" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <!-- VIDEO SLOTS: replace each .vid div with <div class="vid" style="display:block"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="..." loading="lazy" allowfullscreen></iframe></div> -->
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; What to expect]</div></div><h3 style="font-size:16px;margin-top:10px">What to expect</h3></div>
+        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; What you&rsquo;ll need]</div></div><h3 style="font-size:16px;margin-top:10px">What you&rsquo;ll need</h3></div>
+        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; How the firm works]</div></div><h3 style="font-size:16px;margin-top:10px">How the firm works</h3></div>
       </div>
       <div class="sec-head" style="margin:40px 0 0">
         <span class="eyebrow">How the first meeting goes</span>
       </div>
       <div class="meet-steps">
         <div class="bstep"><div class="n">01</div><div><h3>We listen first.</h3><p>Your goals, your assets, your current advisors, and where you feel uncertain. No forms to fill out beforehand &mdash; come as you are.</p></div></div>
-        <div class="bstep"><div class="n">02</div><div><h3>We name the gaps.</h3><p>Most first conversations surface 3&ndash;5 meaningful gaps or opportunities across tax, protection, investment, and legacy.</p></div></div>
+        <div class="bstep"><div class="n">02</div><div><h3>We name the gaps.</h3><p>Many first conversations can surface 3 to 5 meaningful gaps or opportunities across tax, protection, investment, and legacy.</p></div></div>
         <div class="bstep"><div class="n">03</div><div><h3>You decide what's next.</h3><p>If it makes sense, the next step is a full Wealth Curve Blueprint against your real numbers. If not, you still leave with a clearer read on your plan.</p></div></div>
       </div>
     </div>

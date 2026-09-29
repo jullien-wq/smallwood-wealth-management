@@ -69,12 +69,12 @@
   header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .nav img{height:34px;width:auto;display:block}
-  .nav ul{display:flex;gap:18px;list-style:none;align-items:center}
+  .nav ul{display:flex;gap:16px;list-style:none;align-items:center}
   .nav ul a{font-size:13px;font-weight:500;color:#dfe2ee;letter-spacing:.01em;white-space:nowrap}
   .nav ul a:hover{color:#fff}
   .nav-right{display:flex;align-items:center;gap:16px}
   .portal{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);font-weight:600}
-  .nav .btn{padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
+  .nav .btn{white-space:nowrap;padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
   .nav .btn:hover{background:var(--sky);border-color:var(--sky);color:var(--navy);box-shadow:none}
   .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
   @media(max-width:1150px){
@@ -217,6 +217,12 @@
   .event-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;max-width:760px}
   .event-card .meta{font-size:13px;letter-spacing:.06em;color:#52545a;font-weight:500}
   @media(max-width:820px){.contact-grid{grid-template-columns:1fr !important}}
+
+  .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
+  .link-secondary:hover{border-bottom-color:var(--navy)}
+  .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
+  .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
+  @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -229,6 +235,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/#curve">The Wealth Curve</a></li>
       <li><a href="/business-owners">Business Owners</a></li>
+      <li><a href="/executives">Executives</a></li>
       <li><a href="/retirees">Retirees</a></li>
       <li><a href="/#insights">Insights</a></li>
       <li><a href="/contact">Contact</a></li>
@@ -244,7 +251,7 @@
     <a href="/">Home</a>
     <a href="/#curve">The Wealth Curve</a>
     <a href="/business-owners">Business Owners</a>
-    <a href="/scorecard">Executives</a>
+    <a href="/executives">Executives</a>
     <a href="/retirees">Retirees</a>
     <a href="/#insights">Insights</a>
     <a href="/contact">Contact</a>
@@ -271,7 +278,7 @@
     <div class="event-card">
       <span class="eyebrow" style="color:var(--sky-line)">Live educational event</span>
       <h3 style="font-size:24px">Taxes don&rsquo;t retire when you do.</h3>
-      <div class="meta">[EVENT DATE] &middot; [TIME] &middot; [VENUE], Red Bank, NJ &middot; Hosted by John Smallwood</div>
+      <div class="meta">Thursday, November 12, 2026 &middot; 6:00&ndash;7:30 PM &middot; Smallwood Wealth offices, 199 Broad Street, Red Bank, NJ &middot; Hosted by John Smallwood</div>
       <p style="font-size:14.5px;color:#45474d;max-width:64ch">A working session for retirees and pre-retirees: how tax-efficient income, Roth timing, protection, and estate structure fit together &mdash; and where most plans quietly leak.</p>
       <div class="hero-cta" style="margin-top:6px">
         <a class="btn" href="/retiree-event">Save your seat &rarr;</a>
@@ -285,9 +292,9 @@
     <div class="sec-head">
       <span class="eyebrow">Live webinars</span>
       <h2>6 Factors Impacting Your Wealth in Retirement.</h2>
-      <p>Sign up in seconds &mdash; just your name and email.</p>
+      <p>Tuesday, November 17, 2026 &middot; 12:00&ndash;12:45 PM ET &middot; Online &middot; Hosted by John Smallwood. Sign up in seconds &mdash; just your name and email.</p>
     </div>
-    <a class="btn" href="#WEBINAR_URL">Register for the webinar &rarr;</a>
+    <a class="btn" href="/webinar">Register for the webinar &rarr;</a>
   </div>
 </section>
 <section style="background:#fafbfc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
@@ -307,7 +314,7 @@
     <p>Start with the Scorecard instead &mdash; it covers the same ground in about five minutes, privately.</p>
     <div class="hero-cta">
       <a class="btn" href="/scorecard?source=Events%20page">Take the Wealth Curve Scorecard &rarr;</a>
-      <a class="btn-ghost" href="/schedule">Schedule a Wealth Curve Conversation</a>
+      <a class="link-secondary" href="/schedule">Schedule a Wealth Curve Conversation</a>
     </div>
   </div>
 </section>

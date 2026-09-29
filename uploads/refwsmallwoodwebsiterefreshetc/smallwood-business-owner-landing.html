@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  SMALLWOOD WEALTH — BUSINESS OWNER LANDING PAGE (DRAFT)
+  ------------------------------------------------------
+  STATUS: Draft for Regulus pre-approval. Do not publish until reviewed.
+
+  SINGLE CONVERSION ARCHITECTURE:
+    Every CTA points to the Wealth Curve Scorecard (#scorecard), which is the
+    single top-of-funnel action. The Scorecard hands off to the Wealth Curve
+    Conversation booking: https://go.oncehub.com/AdvisorsIntroMeetings
+    Before deploy, wire the Scorecard section to your deployed Wealth Curve Quiz
+    (single-file HTML) OR embed it, then let it route to OnceHub.
+
+  DELIBERATELY OMITTED pending source verification:
+    - "73% exit" statistic
+    - "#8 ranking"
+    These are NOT in this page. Add only after sources are confirmed and Regulus clears them.
+
+  COMPLIANCE NOTES:
+    - No testimonials, and no "clients tell us" style lines.
+    - No quantified outcome promises; aims are framed with "strives to / designed to / help."
+    - Disclosure block at the foot reuses your live-site language; confirm current wording with Regulus.
+
+  CARD SPINE (Section 6): Item 1 is your real approved card. Items 2–12 are CANDIDATE
+    headlines — SWAP these against your 17 approved owner cards (captions doc). The grid scales to 17.
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smallwood Wealth — For Business Owners &amp; Founders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b164e;
+    --copper:#d98042;
+    --sky:#a3cef2;
+    --cool-gray:#e8ecef;
+    --near-black:#252526;
+    --warm-gray:#8a8b88;
+    --white:#ffffff;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Montserrat',sans-serif;color:var(--near-black);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.02em;line-height:1.2}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+  .eyebrow{font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--copper);font-weight:600;margin-bottom:18px;}
+  p.lead{font-size:clamp(15px,2.2vw,18px);max-width:60ch}
+
+  .cta{display:inline-block;background:var(--copper);color:var(--near-black);font-family:'Montserrat',sans-serif;font-weight:600;font-size:15px;letter-spacing:.01em;padding:15px 30px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s ease, filter .15s ease;}
+  .cta:hover{transform:translateY(-1px);filter:brightness(1.05)}
+  .cta:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+  .cta.on-navy:focus-visible{outline-color:#fff}
+
+  header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--cool-gray);}
+  header.site .bar{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .wordmark{font-family:'Cinzel',serif;font-weight:600;font-size:20px;letter-spacing:.06em;color:var(--navy);text-decoration:none}
+  .wordmark span{color:var(--copper)}
+  header .cta{padding:11px 22px;font-size:13px}
+
+  section{padding:clamp(64px,9vw,110px) 0}
+  .band-navy{background:var(--navy);color:#fff}
+  .band-navy h1,.band-navy h2,.band-navy h3{color:#fff}
+  .band-gray{background:var(--cool-gray)}
+
+  .hero{position:relative;overflow:hidden}
+  .hero .frame{position:absolute;inset:18px;border:1px solid rgba(217,128,66,.5);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(30px,5.4vw,52px);text-transform:uppercase}
+  .hero p.lead{color:var(--cool-gray);margin-top:26px}
+  .hero .cta-row{margin-top:36px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .hero .trust{font-size:12.5px;color:var(--sky);letter-spacing:.02em;max-width:34ch}
+  .hero-card{border:1px solid rgba(217,128,66,.55);padding:34px;background:rgba(255,255,255,.03);}
+  .hero-card .k{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--copper);font-weight:600}
+  .hero-card h3{font-size:22px;text-transform:uppercase;margin:14px 0 12px}
+  .hero-card p{font-size:14px;color:var(--cool-gray)}
+  .fade-rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade-rise{animation:none;opacity:1;transform:none}}
+
+  .stakes h2{font-size:clamp(24px,3.6vw,36px);max-width:22ch;color:var(--navy)}
+  .stakes .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:44px}
+  .stakes .col h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:17px;color:var(--navy);margin-bottom:10px}
+  .stakes .col p{font-size:14.5px;color:#4a4a4c}
+  .stakes .col .num{font-family:'Cinzel',serif;color:var(--copper);font-size:15px;letter-spacing:.1em;display:block;margin-bottom:8px}
+
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .fit h2{font-size:clamp(22px,3.2vw,32px);color:var(--navy)}
+  .fit ul{list-style:none;margin-top:8px}
+  .fit li{padding:14px 0;border-bottom:1px solid #d3d8dc;font-size:15px;display:flex;gap:14px}
+  .fit li::before{content:"";flex:0 0 8px;height:8px;margin-top:8px;background:var(--copper)}
+  .fit .aside{background:var(--white);border:1px solid #d3d8dc;padding:30px}
+  .fit .aside h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:12px}
+  .fit .aside p{font-size:14px;color:#4a4a4c}
+
+  .curve h2{font-size:clamp(24px,3.6vw,36px)}
+  .curve .steps{display:grid;grid-template-columns:repeat(5,1fr);margin-top:48px;border-top:1px solid rgba(163,206,242,.35)}
+  .curve .step{padding:26px 20px 0;border-right:1px solid rgba(163,206,242,.18)}
+  .curve .step:last-child{border-right:0}
+  .curve .step .n{font-family:'Cinzel',serif;color:var(--copper);font-size:14px;letter-spacing:.14em}
+  .curve .step h3{font-size:17px;text-transform:uppercase;margin:14px 0 10px;color:#fff}
+  .curve .step p{font-size:13px;color:var(--sky)}
+  .curve .tm{font-size:12px;color:var(--sky);margin-top:28px;letter-spacing:.04em}
+
+  .cover h2{font-size:clamp(24px,3.6vw,36px);max-width:24ch;color:var(--navy)}
+  .cover .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:44px}
+  .cover .cell{border-left:2px solid var(--copper);padding:6px 0 6px 20px}
+  .cover .cell h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:var(--navy);margin-bottom:6px}
+  .cover .cell p{font-size:13.5px;color:#4a4a4c}
+
+  .spine h2{font-size:clamp(24px,3.6vw,36px);color:var(--navy)}
+  .spine .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+  .spine .cardlet{background:var(--navy);color:#fff;padding:28px;position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:210px;}
+  .spine .cardlet .fr{position:absolute;inset:12px;border:1px solid rgba(217,128,66,.4);pointer-events:none}
+  .spine .cardlet .ib{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--copper);font-weight:600}
+  .spine .cardlet h3{font-size:18px;text-transform:uppercase;margin:16px 0 12px;line-height:1.25}
+  .spine .cardlet p{font-size:13px;color:var(--cool-gray);margin-top:auto}
+  .spine .cardlet.real{outline:2px solid var(--copper);outline-offset:-2px}
+  .spine .note{margin-top:26px;font-size:12.5px;color:var(--warm-gray)}
+
+  .why .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+  .why h2{font-size:clamp(24px,3.6vw,36px);max-width:18ch;color:var(--navy)}
+  .why p{font-size:15px;color:#4a4a4c;margin-top:20px;max-width:52ch}
+  .why .facts{border-top:1px solid var(--cool-gray)}
+  .why .facts .f{padding:20px 0;border-bottom:1px solid var(--cool-gray)}
+  .why .facts .f h3{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--navy)}
+  .why .facts .f p{font-size:13.5px;margin-top:4px}
+
+  .close{text-align:center}
+  .close .frame{max-width:760px;margin:0 auto;border:1px solid rgba(217,128,66,.55);padding:clamp(40px,6vw,64px)}
+  .close h2{font-size:clamp(26px,4vw,40px);text-transform:uppercase}
+  .close p.lead{color:var(--cool-gray);margin:22px auto 0}
+  .close .cta{margin-top:34px;font-size:16px;padding:17px 38px}
+  .close .micro{font-size:12px;color:var(--sky);margin-top:20px;letter-spacing:.03em}
+  .scorecard-embed{margin-top:34px;padding:22px;border:1px dashed rgba(163,206,242,.5);font-size:13px;color:var(--sky);}
+
+  footer.site{background:#14103a;color:#c9c9d6;font-size:12px;line-height:1.7}
+  footer.site .wrap{padding-top:56px;padding-bottom:56px}
+  footer.site .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.12)}
+  footer.site .wordmark{color:#fff}
+  footer.site .disc{margin-top:26px;color:#9a9ab0}
+  footer.site .disc p{margin-bottom:12px}
+  .compliance-flag{background:#2a1f12;border:1px solid var(--copper);color:#f0d9c5;padding:16px 20px;margin-top:28px;font-size:12px}
+
+  @media (max-width:900px){
+    .hero-grid,.why .grid,.fit-grid{grid-template-columns:1fr}
+    .stakes .cols,.cover .grid,.spine .grid{grid-template-columns:1fr 1fr}
+    .curve .steps{grid-template-columns:1fr 1fr}
+    .curve .step{border-bottom:1px solid rgba(163,206,242,.18);padding-bottom:22px}
+  }
+  @media (max-width:560px){
+    .stakes .cols,.cover .grid,.spine .grid,.curve .steps{grid-template-columns:1fr}
+    header .cta{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="wordmark" href="#top">SMALLWOOD<span>.</span></a>
+    <a class="cta" href="#scorecard">Take the Wealth Curve Scorecard →</a>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<section class="hero band-navy" id="top">
+  <div class="frame" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div class="fade-rise">
+      <div class="eyebrow">For Business Owners &amp; Founders</div>
+      <h1>The Business Built Your Wealth. What Protects It?</h1>
+      <p class="lead">Strategic planning for owners who want to reduce tax drag, tighten protection, and keep more of what the business made — not just grow revenue. One concentrated asset, and most of what decides the outcome is set long before you sell.</p>
+      <div class="cta-row">
+        <a class="cta on-navy" href="#scorecard">Take the Wealth Curve Scorecard →</a>
+        <span class="trust">A private, SEC-registered wealth firm advising owners and families.</span>
+      </div>
+    </div>
+    <aside class="hero-card fade-rise" aria-label="Featured question">
+      <div class="k">See where you stand</div>
+      <h3>Most Owners Aren't Ready For The Exit</h3>
+      <p>Taxes, timing, and a single concentrated asset decide how much of your wealth survives the sale — and most of that is set long before you sign. The Scorecard shows you where the gaps are, in about five minutes.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- 2 · THE STAKES -->
+<section class="stakes">
+  <div class="wrap">
+    <div class="eyebrow">The problem no P&amp;L shows you</div>
+    <h2>Your net worth is one asset, one tax code, and one exit away from a very different number.</h2>
+    <div class="cols">
+      <div class="col">
+        <span class="num">Concentration</span>
+        <h3>One asset carries everything</h3>
+        <p>Most of your wealth sits inside the business. That's efficient for building it and fragile for keeping it. A single event — a market, a buyer, a health issue — moves everything at once.</p>
+      </div>
+      <div class="col">
+        <span class="num">Tax drag</span>
+        <h3>The cost you never see billed</h3>
+        <p>Entity structure, timing, and how income and gains are recognized quietly decide how much you keep. Left on autopilot, tax drag compounds against you year after year.</p>
+      </div>
+      <div class="col">
+        <span class="num">Timing</span>
+        <h3>The moves happen before the sale</h3>
+        <p>By the time a term sheet is on the table, most of the options are gone. What you do in the years before the exit is what decides how much of it survives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · WHO THIS IS FOR -->
+<section class="fit band-gray">
+  <div class="wrap">
+    <div class="eyebrow">Who we work with</div>
+    <div class="fit-grid">
+      <div>
+        <h2>Built for owners with real complexity — and something to protect.</h2>
+        <ul>
+          <li>Business owners and founders, from growing firms up to substantial enterprise value.</li>
+          <li>Wealth concentrated in a single company, with a liquidity event on the horizon or already in motion.</li>
+          <li>People who want one integrated plan — tax, protection, estate, liquidity — not another product pitch.</li>
+          <li>Families who want to keep more, protect more, and pass more to the people they love.</li>
+        </ul>
+      </div>
+      <div class="aside">
+        <h3>What this isn't</h3>
+        <p>This isn't a transaction, a single product, or a quick answer. It's a custom plan built around your circumstances and what you actually want your wealth to do. If you're looking to put money in one place and move on, we're probably not the right fit — and that's fine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · THE WEALTH CURVE -->
+<section class="curve band-navy">
+  <div class="wrap">
+    <div class="eyebrow">The Wealth Curve™</div>
+    <h2>A planning process, not a sales process.</h2>
+    <p class="lead" style="color:var(--sky);margin-top:18px">We start by understanding your ambitions, opportunities, and the challenges you face — then design a plan you agree to, set it in motion, and monitor it as your life changes.</p>
+    <div class="steps">
+      <div class="step"><span class="n">01</span><h3>Conversation</h3><p>We get to know your goals, your business, and what you want the wealth to do.</p></div>
+      <div class="step"><span class="n">02</span><h3>Blueprint</h3><p>A clear picture of where you stand across tax, protection, estate, and liquidity.</p></div>
+      <div class="step"><span class="n">03</span><h3>Scorecard</h3><p>Your readiness, scored — so the gaps are specific, not vague.</p></div>
+      <div class="step"><span class="n">04</span><h3>Simulation</h3><p>We pressure-test the plan against the scenarios that actually matter to you.</p></div>
+      <div class="step"><span class="n">05</span><h3>Implementation</h3><p>We put it in motion and adjust it as you and the business evolve.</p></div>
+    </div>
+    <p class="tm">The Wealth Curve™ is the proprietary planning framework of Smallwood Wealth Management.</p>
+  </div>
+</section>
+
+<!-- 5 · WHAT INTEGRATED PLANNING COVERS -->
+<section class="cover">
+  <div class="wrap">
+    <div class="eyebrow">One plan, every dimension</div>
+    <h2>Most advisors are strong on investments. Fewer look at everything around them.</h2>
+    <div class="grid">
+      <div class="cell"><h3>Tax strategy</h3><p>Structure, timing, and recognition — designed to reduce the drag on what you keep.</p></div>
+      <div class="cell"><h3>Fees &amp; cost</h3><p>We look to reduce expenses and cost across the plan, not add layers to it.</p></div>
+      <div class="cell"><h3>Estate &amp; succession</h3><p>How the business and the wealth pass — on your terms, with less friction and less lost to taxes.</p></div>
+      <div class="cell"><h3>Life insurance</h3><p>Protection structured to do a job in the plan, not sold as a product on its own.</p></div>
+      <div class="cell"><h3>Umbrella &amp; liability</h3><p>Layers of protection around the wealth, so one claim doesn't reach everything you've built.</p></div>
+      <div class="cell"><h3>Disability &amp; long-term care</h3><p>The risks owners under-plan for most — addressed before they become the event that decides everything.</p></div>
+    </div>
+    <p class="lead" style="margin-top:40px;color:#4a4a4c">Each plan is custom, built around your circumstances and designed to help you save more, protect more, spend more of what you've earned, and pass more to the people you love.</p>
+  </div>
+</section>
+
+<!-- 6 · CARD SPINE — item 1 is the approved card; 2–12 are candidates to swap for your approved owner cards -->
+<section class="spine band-gray">
+  <div class="wrap">
+    <div class="eyebrow">The questions owners can't afford to guess on</div>
+    <h2>If any of these land, that's where the Scorecard starts.</h2>
+    <div class="grid">
+      <article class="cardlet real"><div class="fr"></div>
+        <div class="ib">Exit</div>
+        <h3>Most Owners Aren't Ready For The Exit</h3>
+        <p>Taxes, timing, and one concentrated asset decide how much survives the sale.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Concentration</div>
+        <h3>Your Wealth And Your Business Are The Same Bet</h3>
+        <p>When everything rides on one asset, protecting it is the plan — not a footnote to it.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Tax</div>
+        <h3>The Biggest Cost In Your Plan Is Never On An Invoice</h3>
+        <p>Structure and timing quietly decide how much you keep. Autopilot favors the IRS.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Structure</div>
+        <h3>The Entity That Built The Company May Cost You On The Way Out</h3>
+        <p>How you're organized today shapes what the exit looks like tomorrow.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Cash flow</div>
+        <h3>Revenue Isn't Wealth Until It Leaves The Business</h3>
+        <p>Growing the top line and building personal wealth are two different jobs.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Retirement</div>
+        <h3>Your Retirement Plan Shouldn't Depend On One Buyer Showing Up</h3>
+        <p>If the whole plan is "sell the business," the plan has a single point of failure.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Protection</div>
+        <h3>What Happens To The Business If You Can't Run It Tomorrow?</h3>
+        <p>Disability and key-person gaps are the risks owners plan for last and need first.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Liability</div>
+        <h3>One Claim Shouldn't Be Able To Reach Everything You've Built</h3>
+        <p>Layers of protection decide whether a lawsuit is a setback or a catastrophe.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Estate</div>
+        <h3>Passing The Business Is A Plan, Not A Paragraph In A Will</h3>
+        <p>Succession left undesigned is succession decided by taxes and timing.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Fees</div>
+        <h3>You Watch Every Cost In The Business. Who Watches Them In Your Wealth?</h3>
+        <p>Layered fees and cost compound quietly against what you keep.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Liquidity</div>
+        <h3>Asset-Rich And Access-Poor Is Its Own Kind Of Risk</h3>
+        <p>A big number on paper doesn't help if you can't reach it when it matters.</p>
+      </article>
+      <article class="cardlet"><div class="fr"></div>
+        <div class="ib">Family</div>
+        <h3>The Point Was Never The Money. It Was The People It's For.</h3>
+        <p>A plan built to protect and pass wealth is a plan built around your family.</p>
+      </article>
+    </div>
+    <p class="note">Draft note: swap these against your approved owner card headlines before deploy.</p>
+  </div>
+</section>
+
+<!-- 7 · WHY SMALLWOOD -->
+<section class="why">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow">Why Smallwood</div>
+        <h2>One plan that looks at everything you've built.</h2>
+        <p>We don't start with a product. We start with a plan — one that looks at every part of your wealth and how the pieces work together. Our aspiration is a custom plan that strives to reduce your risk and taxes, grow your wealth, and help you reach financial independence with the life you actually want.</p>
+      </div>
+      <div class="facts">
+        <div class="f"><h3>Integrated by design</h3><p>Tax, protection, estate, and liquidity in one plan — not four disconnected opinions.</p></div>
+        <div class="f"><h3>Transparent by design</h3><p>A planning relationship built to be clear about what you're paying for.</p></div>
+        <div class="f"><h3>SEC-registered</h3><p>Advisory services through Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser.</p></div>
+        <div class="f"><h3>Built for the long game</h3><p>A relationship that adjusts as you and the business change — not a one-time transaction.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · SCORECARD CLOSE -->
+<section class="close band-navy" id="scorecard">
+  <div class="wrap">
+    <div class="frame">
+      <div class="eyebrow">The Wealth Curve Scorecard</div>
+      <h2>See Where You Stand</h2>
+      <p class="lead">A short, educational self-assessment across the dimensions that decide how much of your wealth you keep — tax, protection, estate, liquidity. About five minutes. At the end, you'll see your gaps and can book a Wealth Curve Conversation to walk through them.</p>
+      <!-- DEPLOY NOTE: point this button at the deployed Wealth Curve Quiz (owner path),
+           which routes to https://go.oncehub.com/AdvisorsIntroMeetings on completion. -->
+      <a class="cta on-navy" href="https://go.oncehub.com/AdvisorsIntroMeetings">Take the Wealth Curve Scorecard →</a>
+      <p class="micro">No cost. No obligation. Your information is kept private.</p>
+      <div class="scorecard-embed">[ Embed the Wealth Curve Quiz here, or link the button above to it. On completion, the quiz hands off to the OnceHub Conversation booking. ]</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <a class="wordmark" href="#top">SMALLWOOD<span>.</span></a>
+      <div style="max-width:40ch">Smallwood Wealth Management · 199 Broad Street, Red Bank, NJ 07701 · (732) 542-1565</div>
+    </div>
+    <div class="disc">
+      <p>This communication is strictly intended for individuals residing in the states in which Smallwood Wealth Investment Management, LLC and its representatives are registered or exempt from registration. No offers may be made to or accepted from any resident outside those states due to various regulations and registration requirements regarding investment products and services.</p>
+      <p>Investment Advisory Services provided by Smallwood Wealth Investment Management, LLC, an SEC-registered investment adviser. Headquartered at 199 Broad Street, Red Bank, NJ 07701-2056.</p>
+      <p>Securities offered through Regulus Financial Group, LLC. Member FINRA/SIPC. Regulus Financial Group, LLC and Smallwood Wealth Investment Management, LLC are not affiliated companies.</p>
+      <p>The Wealth Curve Scorecard is an educational self-assessment. It is not investment, tax, or legal advice, an offer, a solicitation, or a guarantee of results. Registration does not imply a certain level of skill or training.</p>
+      <p>NOT FDIC INSURED. NOT BANK GUARANTEED. MAY LOSE VALUE, INCLUDING LOSS OF PRINCIPAL. NOT INSURED BY ANY STATE OR FEDERAL AGENCY.</p>
+    </div>
+    <div class="compliance-flag">DRAFT — pending Regulus pre-approval. Confirm current disclosure and state-registration language before publishing. Do not add the exit statistic or any ranking until sources are verified and cleared. No testimonials on this page by design.</div>
+  </div>
+</footer>
+
+</body>
+</html>

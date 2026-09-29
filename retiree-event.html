@@ -69,12 +69,12 @@
   header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff}
   .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .nav img{height:34px;width:auto;display:block}
-  .nav ul{display:flex;gap:18px;list-style:none;align-items:center}
+  .nav ul{display:flex;gap:16px;list-style:none;align-items:center}
   .nav ul a{font-size:13px;font-weight:500;color:#dfe2ee;letter-spacing:.01em;white-space:nowrap}
   .nav ul a:hover{color:#fff}
   .nav-right{display:flex;align-items:center;gap:16px}
   .portal{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);font-weight:600}
-  .nav .btn{padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
+  .nav .btn{white-space:nowrap;padding:10px 20px;font-size:13.5px;background:#fff;color:var(--navy);border-color:#fff}
   .nav .btn:hover{background:var(--sky);border-color:var(--sky);color:var(--navy);box-shadow:none}
   .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
   @media(max-width:1150px){
@@ -202,6 +202,12 @@
   .bigsteps .bstep .n{font-family:'Nunito',sans-serif;font-size:24px;color:var(--sky-line);font-weight:600}
   .bigsteps .bstep h3{font-size:19px;margin-bottom:8px}
   .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:70ch}
+
+  .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
+  .link-secondary:hover{border-bottom-color:var(--navy)}
+  .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
+  .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
+  @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -214,6 +220,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="/#curve">The Wealth Curve</a></li>
       <li><a href="/business-owners">Business Owners</a></li>
+      <li><a href="/executives">Executives</a></li>
       <li><a href="/retirees">Retirees</a></li>
       <li><a href="/#insights">Insights</a></li>
       <li><a href="/contact">Contact</a></li>
@@ -229,7 +236,7 @@
     <a href="/">Home</a>
     <a href="/#curve">The Wealth Curve</a>
     <a href="/business-owners">Business Owners</a>
-    <a href="/scorecard">Executives</a>
+    <a href="/executives">Executives</a>
     <a href="/retirees">Retirees</a>
     <a href="/#insights">Insights</a>
     <a href="/contact">Contact</a>
@@ -244,7 +251,7 @@
   <div class="wrap">
     <span class="eyebrow">You're invited &middot; Live educational event</span>
     <h1>Taxes don&rsquo;t retire when you do.</h1>
-    <p class="microline" style="margin-bottom:14px">[EVENT DATE] &middot; [TIME] &middot; [VENUE], Red Bank, NJ &middot; Hosted by John Smallwood</p>
+    <p class="microline" style="margin-bottom:14px">Thursday, November 12, 2026 &middot; 6:00&ndash;7:30 PM &middot; Smallwood Wealth offices, 199 Broad Street, Red Bank, NJ &middot; Hosted by John Smallwood</p>
     <p class="lead">A live working session for retirees and pre-retirees: how tax-efficient income, Roth timing, protection, and estate structure fit together &mdash; and where most plans quietly leak.</p>
     <p class="microline">No cost. Educational only &mdash; nothing sold, nothing signed.</p>
   </div>
@@ -286,7 +293,7 @@
 document.getElementById('rsvp').addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
-  var payload={source:'Retiree event registration',event:'[EVENT DATE] - [VENUE]',submittedAt:new Date().toISOString(),
+  var payload={source:'Retiree event registration',event:'2026-11-12 Retiree seminar - 199 Broad St',submittedAt:new Date().toISOString(),
     contact:{firstName:v('r_first'),lastName:v('r_last'),email:v('r_email'),phone:v('r_phone'),party:v('r_guest')}};
   var WEBHOOK_URL='';
   if(WEBHOOK_URL){fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});}

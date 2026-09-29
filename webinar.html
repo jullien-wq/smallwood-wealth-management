@@ -3,38 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smallwood Wealth Management | Financial Planning in Red Bank, NJ</title>
-<meta name="description" content="Fiduciary financial planning for business owners, executives, and retirees in Red Bank, NJ. Take the Wealth Curve Scorecard and see where your plan stands in 5 minutes.">
-
-<!--
-  ============================================================
-  SMALLWOOD HOMEPAGE — REDESIGN TARGET  (Draft v1 · Aug 2026)
-  Changes from live site, per John:
-   1. Palette: copper/orange REMOVED. White canvas + navy (#1b164e),
-      sky blue (#a3cef2) as the only accent. Swap the CTA color in ONE
-      place via --cta below if you want a brighter blue.
-   2. Offer reframed: primary conversion is now the WEALTH CURVE
-      SCORECARD (the quiz), not "schedule a call." Call is the quiet
-      secondary path.
-   3. Hero broadened from business-owner-only to all three avatars
-      (self-selection doors below the hero).
-   4. TESTIMONIALS REMOVED (compliance). NOTE: they are still being
-      served on the live WordPress/Smart Marketing page — must be
-      purged at the served source, not just here.
-  DEV TO WIRE:
-   - [QUIZ_URL]   -> hosted Wealth Curve Scorecard. Replace every href="/scorecard".
-   - [ONCEHUB]    -> canonical https://go.oncehub.com/AdvisorsIntroMeetings
-                     (live site currently uses a different OnceHub link — standardize).
-   - Canonical domain: smallwoodassociates.com. Standardize the footer
-     email (currently @smallwoodwealth.com) before launch.
-   - Final disclosure wording pending Regulus review.
-  ============================================================
--->
-
+<title>Live Webinar: 6 Factors Impacting Your Wealth in Retirement | Smallwood Wealth</title>
+<meta name="description" content="Free 45-minute webinar with John Smallwood on November 17, 2026: six factors that shape how long retirement savings last. Register in seconds.">
 <link rel="icon" type="image/png" href="https://smallwoodassociates.com/wp-content/uploads/2024/08/Favicon.png">
 <meta property="og:site_name" content="Smallwood Wealth Management">
-<meta property="og:title" content="Smallwood Wealth Management | Financial Planning in Red Bank, NJ">
-<meta property="og:description" content="Fiduciary financial planning for business owners, executives, and retirees in Red Bank, NJ. Take the Wealth Curve Scorecard and see where your plan stands in 5 minutes.">
+<meta property="og:title" content="Live Webinar: 6 Factors Impacting Your Wealth in Retirement | Smallwood Wealth">
+<meta property="og:description" content="Free 45-minute webinar with John Smallwood on November 17, 2026: six factors that shape how long retirement savings last. Register in seconds.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -216,7 +190,18 @@
     .dot{animation:none}
     .hero-anim{animation:none}
   }
-  /*vidgrid*/@media(max-width:760px){#podcast-videos .wrap>div[style*="grid"]{grid-template-columns:1fr !important}}
+
+  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
+  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:16px;font-weight:400}
+  .cform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  .cform input,.cform select{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Nunito Sans';font-size:15px;color:var(--ink);background:#fff;box-sizing:border-box}
+  .cform input:focus,.cform select:focus{outline:none;border-color:var(--navy)}
+  @media(max-width:560px){.cform .g2{grid-template-columns:1fr !important}}
+  .bigsteps .bstep{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line)}
+  .bigsteps .bstep .n{font-family:'Nunito',sans-serif;font-size:24px;color:var(--sky-line);font-weight:600}
+  .bigsteps .bstep h3{font-size:19px;margin-bottom:8px}
+  .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:70ch}
 
   .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
   .link-secondary:hover{border-bottom-color:var(--navy)}
@@ -226,8 +211,6 @@
 </style>
 </head>
 <body>
-
-<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrap nav">
     <a href="/" aria-label="Smallwood Wealth Management home">
@@ -235,11 +218,11 @@
     </a>
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="#curve">The Wealth Curve</a></li>
+      <li><a href="/#curve">The Wealth Curve</a></li>
       <li><a href="/business-owners">Business Owners</a></li>
       <li><a href="/executives">Executives</a></li>
       <li><a href="/retirees">Retirees</a></li>
-      <li><a href="#insights">Insights</a></li>
+      <li><a href="/#insights">Insights</a></li>
       <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -251,195 +234,76 @@
   </div>
   <nav class="mobile-panel" aria-label="Mobile">
     <a href="/">Home</a>
-    <a href="#curve">The Wealth Curve</a>
+    <a href="/#curve">The Wealth Curve</a>
     <a href="/business-owners">Business Owners</a>
     <a href="/executives">Executives</a>
     <a href="/retirees">Retirees</a>
-    <a href="#insights">Insights</a>
+    <a href="/#insights">Insights</a>
     <a href="/contact">Contact</a>
     <a href="/client-portal">Client Portal</a>
   </nav>
 </header>
 <script>
-  (function(){
-    var h=document.querySelector('header'),b=document.querySelector('.burger');
-    if(b){b.addEventListener('click',function(){
-      var open=h.classList.toggle('open');
-      b.setAttribute('aria-expanded',open?'true':'false');
-    });}
-  })();
+(function(){var h=document.querySelector('header'),b=document.querySelector('.burger');if(b){b.addEventListener('click',function(){var open=h.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});}})();
 </script>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline aria-hidden="true" poster="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg">
-    <source src="https://smallwoodassociates.com/wp-content/uploads/2025/07/Hero-Video-Smallwood.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="wrap hero-grid">
-    <div class="hero-anim">
-      <span class="eyebrow">The Wealth Curve&trade; Scorecard</span>
-      <h1>Do You Know Where Your Wealth Plan Stands?</h1>
-      <p class="lead">You've built real wealth. The question is how much of it survives taxes, risk, and time. Take the Wealth Curve Scorecard &mdash; a short, private self-assessment that shows you the gaps in your plan across tax, protection, investment, and legacy.</p>
-      <div class="hero-cta">
-        <!-- QUIZ_URL -->
-        <a class="btn" href="/scorecard">Take the Wealth Curve Scorecard &rarr;</a>
-        <!-- ONCEHUB canonical -->
-        <a class="link-secondary" href="/schedule">Prefer to talk first?</a>
-      </div>
-      <p class="microline">An educational self-assessment &mdash; no cost, no obligation, about 5 minutes.</p>
-    </div>
-
-    <div class="curve-card hero-anim" aria-hidden="true">
-      <span class="label">Your position on the curve</span>
-      <div class="marker">See where you stand &rarr;</div>
-      <svg viewBox="0 0 440 240" width="100%" height="auto" role="img" aria-label="An upward wealth curve">
-        <defs>
-          <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#a3cef2" stop-opacity=".55"/>
-            <stop offset="1" stop-color="#a3cef2" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path class="cfill" d="M12,210 C120,205 210,170 300,110 C350,76 400,44 428,30 L428,222 L12,222 Z"/>
-        <path class="cpath" d="M12,210 C120,205 210,170 300,110 C350,76 400,44 428,30"/>
-        <g class="dot">
-          <circle cx="230" cy="153" r="8" fill="#fff" stroke="#1b164e" stroke-width="3"/>
-        </g>
-        <line x1="230" y1="161" x2="230" y2="222" stroke="#1b164e" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== THREE DOORS ===================== -->
-<section class="doors">
+<section class="page-hero">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Start where you are</span>
-      <h2>One plan, built around who you actually are.</h2>
-      <p>Every plan is custom &mdash; but the pressures aren't the same for an owner, an executive, and a retiree. Choose your door, then see your gaps.</p>
-    </div>
-    <div class="door-grid">
-      <div class="door">
-        <h3>Business Owners</h3>
-        <p>Your net worth is tied up in the company. We plan the tax, the timing, and everything a sale sets in motion &mdash; most of which is decided long before you sign.</p>
-        <a class="go" href="/scorecard?source=Homepage%20-%20Owner%20door&avatar=owner">Take the Scorecard &rarr;</a>
+    <span class="eyebrow">Live webinar &middot; Online</span>
+    <h1>6 Factors Impacting Your Wealth in Retirement.</h1>
+    <p class="microline" style="margin-bottom:14px">Tuesday, November 17, 2026 &middot; 12:00&ndash;12:45 PM ET &middot; Online &middot; Hosted by John Smallwood</p>
+    <p class="lead">A 45-minute online session for retirees and pre-retirees on the six factors that shape how long your savings last &mdash; and which ones you can still influence.</p>
+    <p class="microline">No cost. Educational only &mdash; nothing sold, nothing signed.</p>
+  </div>
+</section>
+<section>
+  <div class="wrap" style="max-width:760px">
+    <form id="rsvp" class="cform" style="background:#eef5fd;border:1px solid var(--line);border-radius:4px;padding:30px 28px">
+      <h2 style="font-size:20px;margin-bottom:18px">Register for the webinar</h2>
+      <div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="f"><label for="r_first">First name</label><input id="r_first" required placeholder="First name"></div>
+        <div class="f"><label for="r_last">Last name</label><input id="r_last" placeholder="Last name"></div>
+        <div class="f"><label for="r_email">Email</label><input id="r_email" type="email" required placeholder="you@email.com"></div>
+        <div class="f"><label for="r_phone">Phone</label><input id="r_phone" type="tel" placeholder="Phone"></div>
       </div>
-      <div class="door">
-        <h3>Corporate Executives</h3>
-        <p>Concentrated stock, deferred comp, and a package you didn't design. We coordinate RSUs, options, and 10b5-1 planning into one strategy instead of many.</p>
-        <a class="go" href="/scorecard?source=Homepage%20-%20Executive%20door&avatar=executive">Take the Scorecard &rarr;</a>
+            <div style="display:flex;align-items:center;gap:18px;margin-top:20px;flex-wrap:wrap">
+        <button class="btn" type="submit">Register &rarr;</button>
+        <span style="font-size:12.5px;color:var(--gray)">Join from any computer or phone.</span>
       </div>
-      <div class="door">
-        <h3>Retirees &amp; Pre-Retirees</h3>
-        <p>You have enough. Now the job is keeping it &mdash; tax-efficient income, Roth timing, protection, and a legacy that holds up. Taxes don't retire when you do.</p>
-        <a class="go" href="/scorecard?source=Homepage%20-%20Retiree%20door&avatar=retiree">Take the Scorecard &rarr;</a>
-      </div>
+      <p style="margin-top:14px;font-size:11.5px;color:var(--gray)">Your information is private and never shared.</p>
+    </form>
+    <div id="rsvp-done" style="display:none;background:#eef5fd;border:1px solid var(--line);border-radius:4px;padding:36px 30px;text-align:center">
+      <h2 style="font-size:24px;margin-bottom:10px">You&rsquo;re on the list.</h2>
+      <p style="font-size:15px;color:#45474d;max-width:44ch;margin:0 auto">Watch your inbox &mdash; your join link and a calendar invite are on the way.</p>
     </div>
   </div>
 </section>
-
-<!-- ===================== THE WEALTH CURVE (process) ===================== -->
-<section id="curve">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">The Wealth Curve&trade;</span>
-      <h2>A process, not a product.</h2>
-      <p>We start by understanding your ambitions, opportunities, and challenges &mdash; then design a plan, set it in motion, and monitor it so it evolves as you do.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="n">01</div><h3>Conversation</h3><p>We get to know your goals, your assets, and the risks you're carrying.</p></div>
-      <div class="step"><div class="n">02</div><h3>Blueprint</h3><p>A clear picture of where your wealth stands today, across every dimension.</p></div>
-      <div class="step"><div class="n">03</div><h3>Scorecard</h3><p>We measure your readiness in tax, protection, investment, and legacy.</p></div>
-      <div class="step"><div class="n">04</div><h3>Simulation</h3><p>We model the strategies before you commit to any of them.</p></div>
-      <div class="step"><div class="n">05</div><h3>Implementation</h3><p>We put the plan in motion and revisit it as your life changes.</p></div>
+<section style="border-top:1px solid var(--line)">
+  <div class="wrap" style="max-width:760px">
+    <div class="sec-head"><span class="eyebrow">What we'll cover</span><h2>Six factors, forty-five minutes.</h2></div>
+    <div class="bigsteps">
+      <div class="bstep"><div class="n">01</div><div><h3>Taxes</h3><p>How withdrawals, RMDs, and Roth timing shape your lifetime tax bill.</p></div></div>
+      <div class="bstep"><div class="n">02</div><div><h3>Inflation</h3><p>What rising costs do to a fixed income over a 25&ndash;30 year retirement.</p></div></div>
+      <div class="bstep"><div class="n">03</div><div><h3>Longevity</h3><p>Planning for a retirement that may last longer than you expect.</p></div></div>
+      <div class="bstep"><div class="n">04</div><div><h3>Healthcare</h3><p>Medicare, supplemental coverage, and long-term care costs.</p></div></div>
+      <div class="bstep"><div class="n">05</div><div><h3>Market volatility</h3><p>Why the order of returns matters most in the first years of retirement.</p></div></div>
+      <div class="bstep"><div class="n">06</div><div><h3>Legacy</h3><p>How your estate plan decides what actually reaches your family.</p></div></div>
     </div>
   </div>
 </section>
-
-<!-- ===================== SERVICES ===================== -->
-<section style="background:#fafbfc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">What we look at</span>
-      <h2>Every facet of your wealth &mdash; not just the portfolio.</h2>
-      <p>A holistic plan designed to reduce taxes, fees, and risk &mdash; and to put more protection around what you've built, so you can enjoy it and pass more of it on.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc"><div class="tag">Tax</div><h3>Tax Strategies</h3><p>Reduce lifetime tax drag &mdash; the single biggest leak in most plans.</p></div>
-      <div class="svc"><div class="tag">Grow</div><h3>Investment Planning</h3><p>Guidance built to your plan, not guesswork or product sales.</p></div>
-      <div class="svc"><div class="tag">Plan</div><h3>Financial Planning</h3><p>Plan for today; feel confident about tomorrow.</p></div>
-      <div class="svc"><div class="tag">Retire</div><h3>Retirement Planning</h3><p>Tax-efficient income and a number that lasts.</p></div>
-      <div class="svc"><div class="tag">Protect</div><h3>Protection &amp; Estate</h3><p>Estate structure, liability, disability, and long-term care &mdash; the layers most plans skip.</p></div>
-      <div class="svc"><div class="tag">Build</div><h3>Business Planning</h3><p>For owners: value, exit, and the tax around both.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== INSIGHTS (replaces testimonials) ===================== -->
-<section id="insights" class="insights">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Insights</span>
-      <h2>Learn how we think.</h2>
-      <p>No pitches &mdash; just the planning conversations we have every day, in the open.</p>
-    </div>
-    <div class="ins-grid">
-      <div class="ins-card">
-        <div class="kind">Podcast &middot; Money Isn't</div>
-        <h3>The show about everything money isn't.</h3>
-        <p>Candid conversations on wealth, taxes, and the decisions that actually move the needle.</p>
-        <a class="go" href="https://www.youtube.com/@moneyisnt">Listen &rarr;</a>
-      </div>
-      <div class="ins-card">
-        <div class="kind">Article</div>
-        <h3>Estate Planning Mistakes to Avoid</h3>
-        <p>The gaps that quietly cost families &mdash; and how to close them before they matter.</p>
-        <a class="go" href="https://smallwoodassociates.com/2025/10/14/estate-planning-mistakes-that-cost-families-millions-and-how-to-avoid-them/">Read &rarr;</a>
-      </div>
-      <div class="ins-card">
-        <div class="kind">Article</div>
-        <h3>Wealth Lessons from a Young Entrepreneur</h3>
-        <p>What building &mdash; and keeping &mdash; wealth early teaches about doing it right.</p>
-        <a class="go" href="https://smallwoodassociates.com/2025/10/24/he-made-30m-before-30-this-is-what-he-learned/">Read &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FINAL CTA ===================== -->
-
-<section id="podcast-videos" style="background:#fafbfc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Money Isn&rsquo;t Podcast</span>
-      <h2>Hear it from John first.</h2>
-      <p>Straight talk from the Money Isn&rsquo;t Podcast with John Smallwood. <a class="textlink" href="https://www.youtube.com/@moneyisnt">See all episodes on YouTube &rarr;</a></p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:100%">
-        <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden">
-          <div style="aspect-ratio:16/9"><iframe src="https://www.youtube-nocookie.com/embed/4H8BOobxJlI" title="The TRUTH About Having A Million Dollars For Retirement" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
-          <div style="padding:14px 18px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:15.5px">The TRUTH About Having A Million Dollars For Retirement</div>
-        </div>
-        <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden">
-          <div style="aspect-ratio:16/9"><iframe src="https://www.youtube-nocookie.com/embed/YKb4OOMKxSs" title="Why Most Business Owners Never See Real Profit (and How You Can)" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
-          <div style="padding:14px 18px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:15.5px">Why Most Business Owners Never See Real Profit (and How You Can)</div>
-        </div></div>
-  </div>
-</section>
-<section class="final">
-  <div class="wrap">
-    <span class="eyebrow">One step</span>
-    <h2>See where you stand on the Wealth Curve.</h2>
-    <p>A few minutes now can surface the gaps that shape the next decade of your plan. Private, educational, and yours to keep.</p>
-    <div class="hero-cta">
-      <a class="btn" href="/scorecard">Take the Wealth Curve Scorecard &rarr;</a>
-      <a class="link-secondary" href="/schedule">Schedule a Wealth Curve Conversation</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
+<script>
+document.getElementById('rsvp').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){var el=document.getElementById(id);return el?el.value.trim():''};
+  var payload={source:'Webinar registration',event:'2026-11-17 Webinar - 6 Factors',submittedAt:new Date().toISOString(),
+    contact:{firstName:v('r_first'),lastName:v('r_last'),email:v('r_email'),phone:v('r_phone'),party:v('r_guest')}};
+  var WEBHOOK_URL='';
+  if(WEBHOOK_URL){fetch(WEBHOOK_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});}
+  else{console.log('PREVIEW MODE - RSVP payload:',payload);}
+  document.getElementById('rsvp').style.display='none';
+  document.getElementById('rsvp-done').style.display='block';
+});
+</script>
 <footer>
   <div class="wrap">
     <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
@@ -453,7 +317,7 @@
       </div>
       <div>
         <h4>Explore</h4>
-        <a href="#curve">The Wealth Curve</a>
+        <a href="/#curve">The Wealth Curve</a>
         <a href="/our-process">Our Process</a>
         <a href="/our-team">Our Team</a>
         <a href="/events">Events</a>
@@ -476,7 +340,6 @@
     </div>
   </div>
 </footer>
-
 <!-- Google Tag Manager (same container as the live site; loads site tags incl. chat if configured there) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PH7597RV');</script>
 <!-- End Google Tag Manager -->
