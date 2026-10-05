@@ -3,12 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schedule a Wealth Curve Conversation | Smallwood Wealth Management</title>
-<meta name="description" content="Book a no-cost, 30-minute Wealth Curve Conversation with Smallwood Wealth Management. See how the first meeting works and pick a time that fits.">
+<title>Insights: Articles, Podcast &amp; Media | Smallwood Wealth Management</title>
+<meta name="description" content="Planning ideas on tax, business exits, estate, and protection from Smallwood Wealth Management — articles, the Money Isn’t podcast, and media.">
+
+<!--
+  ============================================================
+  SMALLWOOD HOMEPAGE — REDESIGN TARGET  (Draft v1 · Aug 2026)
+  Changes from live site, per John:
+   1. Palette: copper/orange REMOVED. White canvas + navy (#1b164e),
+      sky blue (#a3cef2) as the only accent. Swap the CTA color in ONE
+      place via --cta below if you want a brighter blue.
+   2. Offer reframed: primary conversion is now the WEALTH CURVE
+      SCORECARD (the quiz), not "schedule a call." Call is the quiet
+      secondary path.
+   3. Hero broadened from business-owner-only to all three avatars
+      (self-selection doors below the hero).
+   4. TESTIMONIALS REMOVED (compliance). NOTE: they are still being
+      served on the live WordPress/Smart Marketing page — must be
+      purged at the served source, not just here.
+  DEV TO WIRE:
+   - [QUIZ_URL]   -> hosted Wealth Curve Scorecard. Replace every href="/scorecard".
+   - [ONCEHUB]    -> canonical https://go.oncehub.com/AdvisorsIntroMeetings
+                     (live site currently uses a different OnceHub link — standardize).
+   - Canonical domain: smallwoodassociates.com. Standardize the footer
+     email (currently @smallwoodwealth.com) before launch.
+   - Final disclosure wording pending Regulus review.
+  ============================================================
+-->
+
 <link rel="icon" type="image/png" href="https://smallwoodassociates.com/wp-content/uploads/2024/08/Favicon.png">
 <meta property="og:site_name" content="Smallwood Wealth Management">
-<meta property="og:title" content="Schedule a Wealth Curve Conversation | Smallwood Wealth Management">
-<meta property="og:description" content="Book a no-cost, 30-minute Wealth Curve Conversation with Smallwood Wealth Management. See how the first meeting works and pick a time that fits.">
+<meta property="og:title" content="Insights: Articles, Podcast &amp; Media | Smallwood Wealth Management">
+<meta property="og:description" content="Planning ideas on tax, business exits, estate, and protection from Smallwood Wealth Management — articles, the Money Isn’t podcast, and media.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -190,29 +216,26 @@
     .dot{animation:none}
     .hero-anim{animation:none}
   }
-
-  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
-  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
-  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:16px;font-weight:400}
-  .sched-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
-  @media(max-width:900px){.sched-grid{grid-template-columns:1fr}}
-  .booker{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden}
-  .booker iframe{display:block;width:100%;height:760px;border:0}
-  .vid{aspect-ratio:16/9;background:var(--sky-tint);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-  .vid .play{width:56px;height:56px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
-  .vid .play::after{content:"";width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:17px solid var(--sky);margin-left:4px}
-  .vid .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);font-weight:600;text-align:center;padding:0 18px}
-  .vid iframe{width:100%;height:100%;border:0;border-radius:4px}
-  .meet-steps .bstep{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
-  .meet-steps .n{font-family:'Nunito',sans-serif;font-size:24px;color:var(--sky-line);font-weight:600}
-  .meet-steps h3{font-size:19px;margin-bottom:8px}
-  .meet-steps p{font-size:14.5px;color:#45474d;max-width:64ch}
+  /*vidgrid*/@media(max-width:760px){#podcast-videos .wrap>div[style*="grid"]{grid-template-columns:1fr !important}}
 
   .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
   .link-secondary:hover{border-bottom-color:var(--navy)}
   .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
   .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
   @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
+
+  .ins-jump{display:flex;flex-wrap:wrap;gap:10px}
+  .ins-jump a{font-size:13px;font-weight:600;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+  .ins-jump a:hover{border-color:var(--sky-line);background:var(--sky-tint)}
+  .ins-arts{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+  .ins-art{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:26px;display:flex;flex-direction:column}
+  .ins-art .kind{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sky-line);font-weight:600;margin-bottom:10px}
+  .ins-art h3{font-size:18px;margin-bottom:8px;line-height:1.3}
+  .ins-art p{font-size:14px;color:#45474d;flex:1;margin-bottom:16px}
+  .ins-art .go{font-size:13.5px;font-weight:600;color:var(--navy);border-bottom:2px solid var(--sky);align-self:flex-start;padding-bottom:2px}
+  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
+  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
+  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:60ch;margin-bottom:26px}
 
   .sw-dd{position:relative}
   .sw-dd__btn{background:none;border:0;cursor:pointer;color:#dfe2ee;font:inherit;font-size:13px;font-weight:500;letter-spacing:.01em;display:inline-flex;align-items:center;gap:6px;padding:8px 0;white-space:nowrap}
@@ -232,9 +255,10 @@
   .mobile-panel .mp-sub{padding-left:44px !important;font-size:13px !important;color:#c7cbdd !important}
   @media (prefers-reduced-motion:reduce){.sw-dd__panel,.sw-dd__btn svg{transition:none}}
 </style>
-<script type="text/javascript" src="https://cdn.oncehub.com/cal/embed.js" async></script>
 </head>
 <body>
+
+<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrap nav">
     <a href="/" aria-label="Smallwood Wealth Management home">
@@ -282,46 +306,66 @@
   </nav>
 </header>
 <script>
-(function(){var h=document.querySelector('header'),b=document.querySelector('.burger');if(b){b.addEventListener('click',function(){var open=h.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});}})();
+  (function(){
+    var h=document.querySelector('header'),b=document.querySelector('.burger');
+    if(b){b.addEventListener('click',function(){
+      var open=h.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });}
+  })();
 </script>
 
+<!-- ===================== HERO ===================== -->
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">The Wealth Curve Conversation</span>
-    <h1>Schedule your conversation.</h1>
-    <p class="lead">One call, about 30 minutes. We walk through where your plan stands &mdash; taxes, protection, investment, and legacy &mdash; and you decide if it's worth going further. No cost, no obligation.</p>
+    <span class="eyebrow">Insights</span>
+    <h1>Learn how we think.</h1>
+    <p class="lead">Planning ideas on tax, exits, estate, and protection &mdash; plus the Money Isn&rsquo;t podcast, press, and events. No pitches, just the conversations we have every day.</p>
+    <div class="ins-jump"><a href="#articles">Articles</a><a href="#podcast">Podcast</a><a href="#media">Media</a><a href="/events">Events</a><a href="/199-broad">199 Broad Street</a></div>
   </div>
 </section>
-<section>
-  <div class="wrap sched-grid">
-    <div>
-      <div class="sec-head" style="margin-bottom:24px">
-        <span class="eyebrow">Who you'll be talking to</span>
-        <h2>Before we meet.</h2>
-        <p>Smallwood Wealth Management is an SEC-registered investment advisory firm in Red Bank, NJ. For 33 years we've helped business owners, executives, and retirees coordinate every part of their financial life &mdash; taxes, investments, protection, and estate &mdash; into one plan, held to a fiduciary standard.</p>
-      </div>
-      <!-- VIDEO SLOTS: replace each .vid div with <div class="vid" style="display:block"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="..." loading="lazy" allowfullscreen></iframe></div> -->
-      <div style="display:flex;flex-direction:column;gap:22px">
-        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; What to expect]</div></div><h3 style="font-size:16px;margin-top:10px">What to expect</h3></div>
-        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; What you&rsquo;ll need]</div></div><h3 style="font-size:16px;margin-top:10px">What you&rsquo;ll need</h3></div>
-        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; How the firm works]</div></div><h3 style="font-size:16px;margin-top:10px">How the firm works</h3></div>
-      </div>
-      <div class="sec-head" style="margin:40px 0 0">
-        <span class="eyebrow">How the first meeting goes</span>
-      </div>
-      <div class="meet-steps">
-        <div class="bstep"><div class="n">01</div><div><h3>We listen first.</h3><p>Your goals, your assets, your current advisors, and where you feel uncertain. No forms to fill out beforehand &mdash; come as you are.</p></div></div>
-        <div class="bstep"><div class="n">02</div><div><h3>We name the gaps.</h3><p>Most first conversations surface specific gaps or opportunities.</p></div></div>
-        <div class="bstep"><div class="n">03</div><div><h3>You decide what's next.</h3><p>If it makes sense, the next step is a full Wealth Curve Blueprint against your real numbers. If not, you still leave with a clearer read on your plan.</p></div></div>
-      </div>
+<section id="articles" class="doors">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Articles</span><h2>Planning ideas, in plain terms.</h2></div>
+    <div class="ins-arts">
+      <div class="ins-art"><div class="kind">Estate</div><h3>Estate Planning Mistakes to Avoid</h3><p>The gaps that quietly cost families &mdash; and how to close them before they matter.</p><a class="go" href="https://smallwoodassociates.com/2025/10/14/estate-planning-mistakes-that-cost-families-millions-and-how-to-avoid-them/">Read &rarr;</a></div>
+      <div class="ins-art"><div class="kind">Business owners</div><h3>Wealth Lessons from a Young Entrepreneur</h3><p>What building &mdash; and keeping &mdash; wealth early teaches about doing it right.</p><a class="go" href="https://smallwoodassociates.com/2025/10/24/he-made-30m-before-30-this-is-what-he-learned/">Read &rarr;</a></div>
     </div>
-    <div>
-      <div class="booker">
-        <!--booking calendar inline widget begin -->
-        <div data-oh-booking-calendar-id="BKC-K752DGYV5D" style="min-width:320px;height:1150px;"></div>
-        <!--booking calendar inline widget end -->
-      </div>
-      <p style="margin-top:12px;font-size:12.5px;color:var(--gray)">Booking not loading? <a class="textlink" href="https://oncehub.com/schedule-your-introductory-meeting" target="_blank" rel="noopener">Open the scheduler in a new tab &rarr;</a> or call <a class="textlink" href="tel:7325421565">(732) 542-1565</a>.</p>
+    <p style="margin-top:22px"><a class="textlink" href="https://smallwoodassociates.com/financial-library/">Browse the full financial library &rarr;</a></p>
+  </div>
+</section>
+<section id="podcast" style="background:#fafbfc;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Money Isn&rsquo;t Podcast</span>
+      <h2>Hear it from John first.</h2>
+      <p>Straight talk from the Money Isn&rsquo;t Podcast with John Smallwood. <a class="textlink" href="https://www.youtube.com/@moneyisnt">See all episodes on YouTube &rarr;</a></p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:100%">
+        <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden">
+          <div style="aspect-ratio:16/9"><iframe src="https://www.youtube-nocookie.com/embed/4H8BOobxJlI" title="The TRUTH About Having A Million Dollars For Retirement" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
+          <div style="padding:14px 18px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:15.5px">The TRUTH About Having A Million Dollars For Retirement</div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden">
+          <div style="aspect-ratio:16/9"><iframe src="https://www.youtube-nocookie.com/embed/YKb4OOMKxSs" title="Why Most Business Owners Never See Real Profit (and How You Can)" loading="lazy" allowfullscreen style="width:100%;height:100%;border:0;display:block"></iframe></div>
+          <div style="padding:14px 18px;font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:15.5px">Why Most Business Owners Never See Real Profit (and How You Can)</div>
+        </div></div>
+  </div>
+</section>
+<section id="media">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Media</span><h2>Press, interviews, and appearances.</h2>
+      <p>[Press items to be supplied &mdash; outlet, headline, date, and link for each.]</p></div>
+  </div>
+</section>
+<section class="final">
+  <div class="wrap">
+    <span class="eyebrow">One step</span>
+    <h2>See where you stand on the Wealth Curve.</h2>
+    <p>A few minutes now can surface the gaps that shape the next decade of your plan. Private, educational, and yours to keep.</p>
+    <div class="hero-cta">
+      <a class="btn" href="/scorecard">Take the Wealth Curve Scorecard &rarr;</a>
+      <a class="link-secondary" href="/schedule">Schedule a Wealth Curve Conversation</a>
     </div>
   </div>
 </section>
@@ -361,6 +405,7 @@
     </div>
   </div>
 </footer>
+
 <!-- Google Tag Manager (same container as the live site; loads site tags incl. chat if configured there) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PH7597RV');</script>
 <!-- End Google Tag Manager -->

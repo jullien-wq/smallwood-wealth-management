@@ -223,6 +223,24 @@
   .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
   .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
   @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
+
+  .sw-dd{position:relative}
+  .sw-dd__btn{background:none;border:0;cursor:pointer;color:#dfe2ee;font:inherit;font-size:13px;font-weight:500;letter-spacing:.01em;display:inline-flex;align-items:center;gap:6px;padding:8px 0;white-space:nowrap}
+  .sw-dd__btn:hover{color:#fff}
+  .sw-dd__btn svg{width:10px;height:10px;transition:transform .2s ease}
+  .sw-dd.is-open .sw-dd__btn svg{transform:rotate(180deg)}
+  .sw-dd__btn:focus-visible{outline:2px solid #fff;outline-offset:4px}
+  .sw-dd__panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translate(-50%,6px);width:300px;background:#fff;box-shadow:0 18px 40px rgba(27,22,78,.18);border-top:3px solid var(--navy);padding:8px 0;list-style:none;margin:0;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:60;display:block}
+  .sw-dd__panel::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+  .sw-dd.is-open .sw-dd__panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  @media (hover:hover){.sw-dd:hover .sw-dd__panel{opacity:1;visibility:visible;transform:translate(-50%,0)}}
+  .nav ul .sw-dd__panel a{display:block;padding:12px 20px;color:var(--ink);white-space:normal;font-size:14px}
+  .nav ul .sw-dd__panel a:hover,.nav ul .sw-dd__panel a:focus-visible{background:var(--sky-tint);outline:none;color:var(--ink)}
+  .sw-dd__t{display:block;font-weight:600;font-size:14px;color:var(--navy)}
+  .sw-dd__d{display:block;font-size:12px;color:var(--gray);margin-top:2px;line-height:1.4}
+  .sw-dd__sep{height:1px;background:var(--line);margin:6px 20px}
+  .mobile-panel .mp-sub{padding-left:44px !important;font-size:13px !important;color:#c7cbdd !important}
+  @media (prefers-reduced-motion:reduce){.sw-dd__panel,.sw-dd__btn svg{transition:none}}
 </style>
 </head>
 <body>
@@ -237,7 +255,17 @@
       <li><a href="/business-owners">Business Owners</a></li>
       <li><a href="/executives">Executives</a></li>
       <li><a href="/retirees">Retirees</a></li>
-      <li><a href="/#insights">Insights</a></li>
+      <li class="sw-dd" data-sw-dd>
+        <button class="sw-dd__btn" type="button" aria-expanded="false" aria-controls="sw-insights-menu">Insights<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <ul class="sw-dd__panel" id="sw-insights-menu">
+          <li><a href="/insights#articles"><span class="sw-dd__t">Articles</span><span class="sw-dd__d">Planning ideas on tax, exits, estate, and protection</span></a></li>
+          <li><a href="/insights#podcast"><span class="sw-dd__t">Money Isn&rsquo;t Podcast</span><span class="sw-dd__d">Episodes with John Smallwood</span></a></li>
+          <li><a href="/insights#media"><span class="sw-dd__t">Media</span><span class="sw-dd__d">Press, interviews, and appearances</span></a></li>
+          <li><a href="/events"><span class="sw-dd__t">Events</span><span class="sw-dd__d">Upcoming workshops and seminars</span></a></li>
+          <li class="sw-dd__sep" role="presentation"></li>
+          <li><a href="/199-broad"><span class="sw-dd__t">199 Broad Street</span><span class="sw-dd__d">Our Red Bank home, renovated</span></a></li>
+        </ul>
+      </li>
       <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -253,7 +281,11 @@
     <a href="/business-owners">Business Owners</a>
     <a href="/executives">Executives</a>
     <a href="/retirees">Retirees</a>
-    <a href="/#insights">Insights</a>
+    <a href="/insights">Insights</a>
+    <a class="mp-sub" href="/insights#articles">Articles</a>
+    <a class="mp-sub" href="/insights#podcast">Money Isn&rsquo;t Podcast</a>
+    <a class="mp-sub" href="/insights#media">Media</a>
+    <a class="mp-sub" href="/199-broad">199 Broad Street</a>
     <a href="/contact">Contact</a>
     <a href="/client-portal">Client Portal</a>
   </nav>
@@ -359,5 +391,12 @@
      The widget is domain-bound, so it activates once this site is served on smallwoodassociates.com.
      Standard form: -->
 <script type="text/javascript">window.purechatApi={l:[],t:[],on:function(){this.l.push(arguments)}};(function(){var done=false;var script=document.createElement('script');script.async=true;script.type='text/javascript';script.src='https://app.purechat.com/VisitorWidget/WidgetScript';document.getElementsByTagName('HEAD').item(0).appendChild(script);script.onreadystatechange=script.onload=function(e){if(!done&&(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){var w=new PCWidget({c:'PURECHAT_WIDGET_ID',f:true});done=true;}};})();</script>
+<script>
+(function(){document.querySelectorAll('[data-sw-dd]').forEach(function(dd){var b=dd.querySelector('.sw-dd__btn');function set(o){dd.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o)}
+b.addEventListener('click',function(e){e.stopPropagation();set(!dd.classList.contains('is-open'))});
+dd.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false);b.focus()}});
+document.addEventListener('click',function(e){if(!dd.contains(e.target))set(false)});
+dd.addEventListener('focusout',function(e){if(!dd.contains(e.relatedTarget))set(false)});});})();
+</script>
 </body>
 </html>

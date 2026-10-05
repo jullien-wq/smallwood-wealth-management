@@ -3,12 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Team | Smallwood Wealth Management, Red Bank, NJ</title>
-<meta name="description" content="Meet John L. Smallwood, CFP® and the Smallwood Wealth advisory team — fiduciary planners serving business owners, executives, and retirees from Red Bank, NJ.">
+<title>About Us &amp; Our Team | Smallwood Wealth Management, Red Bank, NJ</title>
+<meta name="description" content="Meet the Smallwood Wealth Management team in Red Bank, NJ — two generations of advisors and specialists working on one integrated plan.">
+
+<!--
+  ============================================================
+  SMALLWOOD HOMEPAGE — REDESIGN TARGET  (Draft v1 · Aug 2026)
+  Changes from live site, per John:
+   1. Palette: copper/orange REMOVED. White canvas + navy (#1b164e),
+      sky blue (#a3cef2) as the only accent. Swap the CTA color in ONE
+      place via --cta below if you want a brighter blue.
+   2. Offer reframed: primary conversion is now the WEALTH CURVE
+      SCORECARD (the quiz), not "schedule a call." Call is the quiet
+      secondary path.
+   3. Hero broadened from business-owner-only to all three avatars
+      (self-selection doors below the hero).
+   4. TESTIMONIALS REMOVED (compliance). NOTE: they are still being
+      served on the live WordPress/Smart Marketing page — must be
+      purged at the served source, not just here.
+  DEV TO WIRE:
+   - [QUIZ_URL]   -> hosted Wealth Curve Scorecard. Replace every href="/scorecard".
+   - [ONCEHUB]    -> canonical https://go.oncehub.com/AdvisorsIntroMeetings
+                     (live site currently uses a different OnceHub link — standardize).
+   - Canonical domain: smallwoodassociates.com. Standardize the footer
+     email (currently @smallwoodwealth.com) before launch.
+   - Final disclosure wording pending Regulus review.
+  ============================================================
+-->
+
 <link rel="icon" type="image/png" href="https://smallwoodassociates.com/wp-content/uploads/2024/08/Favicon.png">
 <meta property="og:site_name" content="Smallwood Wealth Management">
-<meta property="og:title" content="Our Team | Smallwood Wealth Management, Red Bank, NJ">
-<meta property="og:description" content="Meet John L. Smallwood, CFP® and the Smallwood Wealth advisory team — fiduciary planners serving business owners, executives, and retirees from Red Bank, NJ.">
+<meta property="og:title" content="About Us &amp; Our Team | Smallwood Wealth Management, Red Bank, NJ">
+<meta property="og:description" content="Meet the Smallwood Wealth Management team in Red Bank, NJ — two generations of advisors and specialists working on one integrated plan.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -83,10 +109,20 @@
   }
 
   /* ---------- hero ---------- */
-  .hero{padding:82px 0 70px;border-bottom:1px solid var(--line)}
+  .hero{position:relative;padding:82px 0 70px;border-bottom:1px solid var(--line);overflow:hidden;background:var(--navy)}
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(27,22,78,.9) 0%,rgba(27,22,78,.74) 55%,rgba(27,22,78,.55) 100%);z-index:1}
+  .hero .wrap{position:relative;z-index:2}
   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
   .hero h1{font-size:clamp(34px,5vw,52px);margin:16px 0 22px}
-  .hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:40ch;margin-bottom:30px;font-weight:400}
+  .hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#e6e9f4;max-width:40ch;margin-bottom:30px;font-weight:400}
+  .hero h1{color:#fff}
+  .hero .eyebrow{color:var(--sky)}
+  .hero .microline{color:#c7cbdd}
+  .hero .btn{background:#fff;color:var(--navy);border-color:#fff}
+  .hero .btn:hover{background:var(--sky);border-color:var(--sky);color:var(--navy)}
+  .hero .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+  .hero .btn-ghost:hover{border-color:var(--sky);background:rgba(255,255,255,.08)}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
   .microline{margin-top:16px;font-size:12.5px;color:var(--gray);letter-spacing:.02em}
   .hero-anim{animation:rise .8s ease both}
@@ -180,60 +216,116 @@
     .dot{animation:none}
     .hero-anim{animation:none}
   }
-
-  /* ---------- subpage extras ---------- */
-  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
-  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
-  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:28px;font-weight:400}
-  .checklist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;max-width:900px}
-  .checklist li{position:relative;padding-left:26px;font-size:14.5px;color:#3d3f45}
-  .checklist li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;background:var(--sky);border-radius:2px}
-  @media(max-width:700px){.checklist{grid-template-columns:1fr}}
-  .faq details{border-bottom:1px solid var(--line);padding:18px 0}
-  .faq summary{font-family:'Nunito',sans-serif;font-weight:600;color:var(--navy);font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
-  .faq summary::after{content:"+";color:var(--sky-line);font-family:'Nunito Sans';font-weight:400;font-size:20px}
-  .faq details[open] summary::after{content:"\2212"}
-  .faq details p{margin-top:12px;font-size:14.5px;color:#45474d;max-width:70ch}
-  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  @media(max-width:860px){.team-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:560px){.team-grid{grid-template-columns:1fr}}
-  .member{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:26px 24px}
-  .member .mono{width:52px;height:52px;border-radius:50%;background:var(--navy);color:var(--sky);display:flex;align-items:center;justify-content:center;font-family:'Nunito',sans-serif;font-size:19px;font-weight:600;margin-bottom:16px}
-  .member h3{font-size:17px;margin-bottom:4px}
-  .member .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-line);font-weight:600;margin-bottom:12px}
-  .member a{display:block;font-size:13px;color:#52545a;margin-top:4px}
-  .member a:hover{color:var(--navy)}
-  .cform{background:var(--sky-tint);border:1px solid var(--line);border-radius:4px;padding:30px 28px}
-  .cform .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:560px){.cform .g2{grid-template-columns:1fr}}
-  .cform label{display:block;font-size:12.5px;font-weight:600;color:var(--navy);margin-bottom:6px}
-  .cform .f{display:flex;flex-direction:column;margin-bottom:0}
-  .cform input,.cform select,.cform textarea{width:100%;padding:13px 15px;border:1.5px solid #d9e2ec;border-radius:3px;font-family:'Nunito Sans';font-size:15px;color:var(--ink);background:#fff}
-  .cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--navy)}
-  .bigsteps .bstep{display:grid;grid-template-columns:80px 1fr;gap:26px;padding:30px 0;border-bottom:1px solid var(--line)}
-  .bigsteps .bstep .n{font-family:'Nunito',sans-serif;font-size:26px;color:var(--sky-line);font-weight:600}
-  .bigsteps .bstep h3{font-size:20px;margin-bottom:8px}
-  .bigsteps .bstep p{font-size:14.5px;color:#45474d;max-width:72ch}
-  .event-card{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:34px 30px;display:flex;flex-direction:column;gap:14px;max-width:760px}
-  .event-card .meta{font-size:13px;letter-spacing:.06em;color:#52545a;font-weight:500}
-  @media(max-width:820px){.contact-grid{grid-template-columns:1fr !important}}
-  .member{padding:0 0 22px;overflow:hidden}
-  .member .photo{aspect-ratio:4/5;background:var(--sky-tint);margin-bottom:18px;overflow:hidden}
-  .member .photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-  .member h3,.member .role,.member>a{padding:0 24px}
-  .lead-row{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center;margin-bottom:48px}
-  .lead-photo{aspect-ratio:4/5;background:var(--sky-tint);border-radius:4px;overflow:hidden;border-top:3px solid var(--navy)}
-  .lead-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-  @media(max-width:700px){.lead-row{grid-template-columns:1fr}.lead-photo{max-width:260px}}
+  /*vidgrid*/@media(max-width:760px){#podcast-videos .wrap>div[style*="grid"]{grid-template-columns:1fr !important}}
 
   .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
   .link-secondary:hover{border-bottom-color:var(--navy)}
   .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
   .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
   @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
+
+  /* page: /our-team */
+.tm{--tm-band:#eef5fd;--tm-warm:#6f7178;--tm-mute:#52545a;font-size:16px;line-height:1.65}
+.tm h1,.tm h2,.tm h3{font-family:'Nunito',sans-serif;letter-spacing:.01em}
+.tm .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--tm-warm)}
+.tm h1,.tm h2{font-family:'Nunito',sans-serif;font-weight:600;letter-spacing:.02em;line-height:1.2;color:var(--navy)}
+.tm h2{font-size:clamp(26px,3.4vw,38px);margin:10px 0 16px}
+.tm h3{font-size:18px;font-weight:600;color:var(--navy);line-height:1.3}
+.tm .lede{font-size:17px;max-width:62ch;color:var(--ink)}
+.tm .tbtn{display:inline-block;padding:14px 26px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s ease}
+.tm .tbtn:hover{transform:translateY(-1px)}
+.tm .tbtn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.tm .tbtn--solid{background:var(--navy);color:#fff}
+.tm .tbtn--line{border:1px solid var(--navy);color:var(--navy)}
+.tm section{padding:88px 0}
+.tm .tm-hero{background:var(--navy);color:#fff;padding:96px 0 88px}
+.tm .tm-hero .eyebrow{color:#c9ccd6}
+.tm .tm-hero h1{color:#fff;font-size:clamp(34px,5.4vw,58px);margin:14px 0 20px;max-width:18ch}
+.tm .tm-hero p{color:#e3e6ee;font-size:clamp(16px,1.8vw,19px);max-width:58ch}
+.tm .tm-hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.tm .tm-hero .tbtn--solid{background:#fff;color:var(--navy)}
+.tm .tm-hero .tbtn--line{border-color:rgba(255,255,255,.6);color:#fff}
+.tm .lead-grid{display:grid;grid-template-columns:380px 1fr;gap:56px;align-items:start}
+.tm .lead-photo{background:var(--tm-band);aspect-ratio:4/5;overflow:hidden}
+.tm .lead-photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+.tm .cred{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--tm-mute);margin-bottom:18px}
+.tm .lead p+p{margin-top:14px}
+.tm .links{display:flex;flex-wrap:wrap;gap:18px;margin-top:24px;font-size:14px;font-weight:600}
+.tm .links a{color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(27,22,78,.3);padding-bottom:2px}
+.tm .links a:hover{border-color:var(--navy)}
+.tm .band{background:var(--tm-band)}
+.tm .band-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.tm .points{list-style:none;display:grid;gap:22px}
+.tm .points li{padding-left:22px;border-left:2px solid var(--navy)}
+.tm .points strong{display:block;color:var(--navy);font-size:16px;margin-bottom:2px}
+.tm .adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.tm .adv{display:flex;flex-direction:column}
+.tm .adv .ph{aspect-ratio:4/5;background:var(--tm-band);overflow:hidden;margin-bottom:18px}
+.tm .adv .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .4s ease}
+.tm .adv:hover .ph img{transform:scale(1.03)}
+.tm .role{font-size:13px;color:var(--tm-mute);font-weight:500;margin-top:4px}
+.tm .focus{font-size:14px;margin-top:12px;flex:1}
+.tm .adv .links{margin-top:16px;gap:14px;font-size:13px}
+.tm .tm-svcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d9dde2;border:1px solid #d9dde2;margin-top:40px}
+.tm .tm-svc{background:#fff;padding:26px 24px;display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start}
+.tm .tm-svc img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;background:var(--tm-band)}
+.tm .tm-svc .area{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--tm-warm)}
+.tm .tm-svc h3{font-size:16px;margin:4px 0 6px}
+.tm .tm-svc p{font-size:13px;color:var(--tm-mute);line-height:1.55}
+.tm .tm-svc a{font-size:13px;font-weight:600;color:var(--navy);text-decoration:none;display:inline-block;margin-top:8px;word-break:break-all}
+.tm .main-line{margin-top:28px;font-size:15px}
+.tm .main-line a{font-weight:600;color:var(--navy)}
+.tm .verify{background:var(--navy);color:#fff}
+.tm .verify h2{color:#fff}
+.tm .verify .eyebrow{color:#c9ccd6}
+.tm .verify p{color:#e3e6ee;max-width:60ch}
+.tm .v-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.tm .v-links a{display:block;border:1px solid rgba(255,255,255,.3);padding:20px 22px;text-decoration:none;transition:background .15s ease}
+.tm .v-links a:hover{background:rgba(255,255,255,.06)}
+.tm .v-links strong{display:block;font-size:15px}
+.tm .v-links span{font-size:13px;color:#c9ccd6}
+.tm .close{text-align:center}
+.tm .close .lede{margin:0 auto}
+.tm .close .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+@media (max-width:900px){.tm .lead-grid,.tm .band-grid{grid-template-columns:1fr;gap:36px}
+.tm .lead-photo{max-width:360px}
+.tm .adv-grid,.tm .tm-svcgrid{grid-template-columns:1fr 1fr}
+.tm .v-links{grid-template-columns:1fr}
+}
+@media (max-width:600px){.tm section{padding:64px 0}
+.tm .adv-grid,.tm .tm-svcgrid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.tm .adv .ph img,.tm .tbtn{transition:none}
+}
+
+  .sw-dd{position:relative}
+  .sw-dd__btn{background:none;border:0;cursor:pointer;color:#dfe2ee;font:inherit;font-size:13px;font-weight:500;letter-spacing:.01em;display:inline-flex;align-items:center;gap:6px;padding:8px 0;white-space:nowrap}
+  .sw-dd__btn:hover{color:#fff}
+  .sw-dd__btn svg{width:10px;height:10px;transition:transform .2s ease}
+  .sw-dd.is-open .sw-dd__btn svg{transform:rotate(180deg)}
+  .sw-dd__btn:focus-visible{outline:2px solid #fff;outline-offset:4px}
+  .sw-dd__panel{position:absolute;top:calc(100% + 18px);left:50%;transform:translate(-50%,6px);width:300px;background:#fff;box-shadow:0 18px 40px rgba(27,22,78,.18);border-top:3px solid var(--navy);padding:8px 0;list-style:none;margin:0;opacity:0;visibility:hidden;transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:60;display:block}
+  .sw-dd__panel::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+  .sw-dd.is-open .sw-dd__panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  @media (hover:hover){.sw-dd:hover .sw-dd__panel{opacity:1;visibility:visible;transform:translate(-50%,0)}}
+  .nav ul .sw-dd__panel a{display:block;padding:12px 20px;color:var(--ink);white-space:normal;font-size:14px}
+  .nav ul .sw-dd__panel a:hover,.nav ul .sw-dd__panel a:focus-visible{background:var(--sky-tint);outline:none;color:var(--ink)}
+  .sw-dd__t{display:block;font-weight:600;font-size:14px;color:var(--navy)}
+  .sw-dd__d{display:block;font-size:12px;color:var(--gray);margin-top:2px;line-height:1.4}
+  .sw-dd__sep{height:1px;background:var(--line);margin:6px 20px}
+  .mobile-panel .mp-sub{padding-left:44px !important;font-size:13px !important;color:#c7cbdd !important}
+  @media (prefers-reduced-motion:reduce){.sw-dd__panel,.sw-dd__btn svg{transition:none}}
+  .tm .john-creds{list-style:none;margin:18px 0;padding:18px 22px;background:var(--tm-band);border-left:2px solid var(--navy);display:grid;gap:6px;font-size:14.5px;font-weight:600;color:var(--navy)}
+  .tm .john-video{margin-top:56px}
+  .tm .jv-frame{margin-top:14px;aspect-ratio:16/9;max-width:860px;background:var(--navy)}
+  .tm .jv-frame iframe{width:100%;height:100%;border:0;display:block}
+  .tm .lead-photo{position:sticky;top:96px}
+  @media (max-width:900px){.tm .lead-photo{position:static}}
 </style>
 </head>
 <body>
+
+<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrap nav">
     <a href="/" aria-label="Smallwood Wealth Management home">
@@ -245,7 +337,17 @@
       <li><a href="/business-owners">Business Owners</a></li>
       <li><a href="/executives">Executives</a></li>
       <li><a href="/retirees">Retirees</a></li>
-      <li><a href="/#insights">Insights</a></li>
+      <li class="sw-dd" data-sw-dd>
+        <button class="sw-dd__btn" type="button" aria-expanded="false" aria-controls="sw-insights-menu">Insights<svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+        <ul class="sw-dd__panel" id="sw-insights-menu">
+          <li><a href="/insights#articles"><span class="sw-dd__t">Articles</span><span class="sw-dd__d">Planning ideas on tax, exits, estate, and protection</span></a></li>
+          <li><a href="/insights#podcast"><span class="sw-dd__t">Money Isn&rsquo;t Podcast</span><span class="sw-dd__d">Episodes with John Smallwood</span></a></li>
+          <li><a href="/insights#media"><span class="sw-dd__t">Media</span><span class="sw-dd__d">Press, interviews, and appearances</span></a></li>
+          <li><a href="/events"><span class="sw-dd__t">Events</span><span class="sw-dd__d">Upcoming workshops and seminars</span></a></li>
+          <li class="sw-dd__sep" role="presentation"></li>
+          <li><a href="/199-broad"><span class="sw-dd__t">199 Broad Street</span><span class="sw-dd__d">Our Red Bank home, renovated</span></a></li>
+        </ul>
+      </li>
       <li><a href="/contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -261,125 +363,182 @@
     <a href="/business-owners">Business Owners</a>
     <a href="/executives">Executives</a>
     <a href="/retirees">Retirees</a>
-    <a href="/#insights">Insights</a>
+    <a href="/insights">Insights</a>
+    <a class="mp-sub" href="/insights#articles">Articles</a>
+    <a class="mp-sub" href="/insights#podcast">Money Isn&rsquo;t Podcast</a>
+    <a class="mp-sub" href="/insights#media">Media</a>
+    <a class="mp-sub" href="/199-broad">199 Broad Street</a>
     <a href="/contact">Contact</a>
     <a href="/client-portal">Client Portal</a>
   </nav>
 </header>
 <script>
-(function(){var h=document.querySelector('header'),b=document.querySelector('.burger');if(b){b.addEventListener('click',function(){var open=h.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});}})();
+  (function(){
+    var h=document.querySelector('header'),b=document.querySelector('.burger');
+    if(b){b.addEventListener('click',function(){
+      var open=h.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });}
+  })();
 </script>
 
-<section class="page-hero">
+<!-- ===================== HERO ===================== -->
+<main class="tm">
+<!-- 1 · HERO -->
+<section class="tm-hero">
   <div class="wrap">
-    <span class="eyebrow">About us</span>
-    <h1>The team behind the plan.</h1>
-    <p class="lead">We create personalized wealth strategies that align with your goals. Through thoughtful planning and ongoing guidance, we help secure and grow your financial future.</p>
-    <div class="hero-cta">
-      <a class="btn" href="/scorecard?source=our-team">Take the Wealth Curve Scorecard &rarr;</a>
-      <a class="link-secondary" href="/schedule">Schedule a Wealth Curve Conversation</a>
-      <a class="btn-ghost" href="/our-process">See our process</a>
-    </div>
-  </div>
-</section>
-<section class="doors">
-  <div class="wrap">
-    <div class="lead-row">
-      <div class="lead-photo"><img src="https://smallwoodassociates.com/wp-content/uploads/2023/09/John-Smallwood-bio-2023.png" alt="John L. Smallwood, CFP&reg;"></div>
-    <div class="sec-head" style="margin:0">
-      <span class="eyebrow">Leadership</span>
-      <h2>John L. Smallwood, CFP&reg;</h2>
-      <p style="max-width:72ch">John is President of Smallwood Wealth Management and affiliated companies. A CERTIFIED FINANCIAL PLANNER&trade; professional, he provides investment consulting and financial plan design for corporate executives, entrepreneurs, and professionals. His strength lies in his commitment to continually improve the level and quality of the planning process &mdash; repositioning assets to help decrease risk, decrease taxation, and increase protection.</p>
-      <p style="margin-top:14px"><a class="textlink" href="mailto:johnl@smallwoodwealth.com">johnl@smallwoodwealth.com</a>&nbsp;&nbsp;&nbsp;<a class="textlink" href="tel:8007971000">(800) 797-1000</a></p>
-    </div>
-    </div>
-    <div class="team-grid">
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Robert-Marks-headshot-scaled-1-1-scaled-rlbognb5lxrbeigq71afovx9xp7vba6jxki13w2m4o.jpg" alt="Robert Marks" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/robert-marks/" style="color:inherit;display:inline;margin:0;font-size:inherit">Robert Marks, CFP&reg;</a></h3>
-        <div class="role">Wealth Advisor</div>
-        <a href="mailto:rmarks@smallwoodwealth.com">rmarks@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Jared-SmallwoodHS1501rt-scaled-e1711465419547-rlbom1vqwn5o5sm3mve7j0towgkukmmzobjjg624co.jpg" alt="Jared Smallwood" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/jared-smallwood/" style="color:inherit;display:inline;margin:0;font-size:inherit">Jared Smallwood</a></h3>
-        <div class="role">Wealth Advisor</div>
-        <a href="mailto:jared@smallwoodwealth.com">jared@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Chris-Smallwood-bio-2023-qjpqbxamag25o28x05yrjgl1h8dth77lkd86l5kihs.png" alt="Chris Smallwood" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/chris-smallwood/" style="color:inherit;display:inline;margin:0;font-size:inherit">Chris Smallwood</a></h3>
-        <div class="role">Wealth Advisor</div>
-        <a href="mailto:chris@smallwoodwealth.com">chris@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Christine-Flynn-Headshot-scaled-rlbop4spb3di7s4zn7c6p8u2zxe5swvbfkiu2thnyg.jpg" alt="Christine Flynn" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/christine-flynn/" style="color:inherit;display:inline;margin:0;font-size:inherit">Christine Flynn</a></h3>
-        <div class="role">Client Relations &mdash; Investments</div>
-        <a href="mailto:cflynn@smallwoodwealth.com">cflynn@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Ariana-Lunderman-bio-2023-qjpq9ra0j73cwfe8nq8qai9s692cqblvln2vr6s6u8.png" alt="Ariana Lunderman" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/ariana-lunderman/" style="color:inherit;display:inline;margin:0;font-size:inherit">Ariana Lunderman</a></h3>
-        <div class="role">Client Service &mdash; Insurance</div>
-        <a href="mailto:alunderman@smallwoodwealth.com">alunderman@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/image004-1-rlboh71qdlpwkbibkuyfj63ldgay56574hm21as4gw.jpg" alt="Christina Nieves" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/christina-nieves/" style="color:inherit;display:inline;margin:0;font-size:inherit">Christina Nieves</a></h3>
-        <div class="role">Client Service &mdash; Annuities</div>
-        <a href="mailto:cnieves@smallwoodwealth.com">cnieves@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/SmallwoodHeadshotsEdits1-25-copy-1-rlbogc13bxbvj6x40wewuyrqt2rgqwxrw0o7ckjc7c.jpg" alt="James Tovey" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/james-tovey/" style="color:inherit;display:inline;margin:0;font-size:inherit">James Tovey</a></h3>
-        <div class="role">Client Service Representative</div>
-        <a href="mailto:jtovey@smallwoodwealth.com">jtovey@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Jack-Smallwood-bio-2023-qjpq5f8t0p5rd5ovyusnsln9kaff8kefo6sa397jj4.png" alt="John L. Smallwood, Jr." loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/john-l-smallwood-jr/" style="color:inherit;display:inline;margin:0;font-size:inherit">John L. &lsquo;Jack&rsquo; Smallwood, Jr.</a></h3>
-        <div class="role">Business Operations &amp; Strategy</div>
-        <a href="mailto:jack@smallwoodwealth.com">jack@smallwoodwealth.com</a>
-        <a href="tel:8007971000">(800) 797-1000</a>
-      </div>
-      <div class="member">
-        <div class="photo"><img src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Marissa_Professional-Imagev1-rn0ou0bskwypkvn98sf5cfh1d06r13uoqs2csynvz4.jpg" alt="Marissa Rudolph" loading="lazy"></div>
-        <h3><a href="https://smallwoodassociates.com/our-team/marissa-rudolph/" style="color:inherit;display:inline;margin:0;font-size:inherit">Marissa Rudolph</a></h3>
-        <div class="role">Operations &amp; Client Relations</div>
-        <a href="mailto:mrudolph@smallwoodwealth.com">mrudolph@smallwoodwealth.com</a>
-        
-      </div>
+    <div class="eyebrow">About Us · Our Team</div>
+    <h1>A family firm, built to outlast any one of us.</h1>
+    <p>Two generations of Smallwoods and a team of planners and specialists, working from one office on Broad Street in Red Bank. You get one integrated plan — and people who will still know it, and your family, years from now.</p>
+    <div class="ctas">
+      <a class="tbtn tbtn--solid" href="/scorecard?source=Team%20page%20-%20Hero">Take the Wealth Curve Scorecard →</a>
+      <a class="tbtn tbtn--line" href="/schedule">Schedule a Wealth Curve Conversation</a>
     </div>
   </div>
 </section>
 
-<section class="final">
+<!-- 2 · LEADERSHIP -->
+<section class="lead">
+  <div class="wrap lead-grid">
+    <div class="lead-photo"><img src="https://smallwoodassociates.com/wp-content/uploads/2023/09/John-Smallwood-bio-2023.png" alt="John L. Smallwood, CFP®"></div>
+    <div>
+      <div class="eyebrow">President</div>
+      <h2>John L. Smallwood, CFP®</h2>
+      <div class="cred">Senior Wealth Advisor</div>
+      <p>John L. Smallwood, CFP®, is the President and Senior Wealth Advisor of Smallwood Wealth Management. His 36+ years in the financial industry have earned him the distinction as an entrepreneur, a lecturer, and a thought leader dedicated to consistently facilitating his clients’ financial confidence.</p>
+      <p>Utilizing the Wealth Curve Blueprint, he provides investment consulting services and financial planning solutions designed to mitigate his clients’ financial risk, decrease tax liability, and enable long-term wealth growth and legacy.</p>
+      <p>John and his team believe in a holistic approach to investment, one that considers every facet of his client’s lifestyle, leading to an agile strategy that evolves with the continually changing economic environment and his clients’ dynamic needs and goals.</p>
+      <p>In addition to his work at Smallwood Wealth Management, John is also a prolific author and innovator in the financial sector. He actively seeks to empower his current and future clients with the knowledge and tools they need to succeed financially.</p>
+      <ul class="john-creds">
+        <li>Author of <em>5 Ways Your Wealth Is Under Attack</em>.</li>
+        <li>Author of <em>It’s Your Wealth-Keep It</em>.</li>
+        <li>Creator of Your Wealth Curve™.</li>
+        <li>Awarded “2025 NJ Biz Finance Leader”</li>
+      </ul>
+      <p>John lives in Red Bank, NJ, with his wife, Sharon. Together, they raised four children—Jack, Jared, Christopher, and Eve. Today, Jack, Jared, and Christopher have followed in their father’s footsteps, joining Smallwood Wealth Management to help carry on the firm’s mission of financial stewardship. Eve is currently working for a large bank in Boston.</p>
+      <p>When he’s not working with clients or growing the business, John enjoys boating, fishing, skiing, and working out. He believes in excellence in all areas of his life.</p>
+      <div class="links">
+        <a href="mailto:johnl@smallwoodwealth.com">Email John</a>
+        <a href="https://www.linkedin.com/in/john-l-smallwood-7821032">LinkedIn</a>
+        <a href="https://smallwoodassociates.com/our-team/john-l-smallwood/">Full profile →</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap john-video">
+    <div class="eyebrow">Meet John</div>
+    <div class="jv-frame"><iframe src="https://www.youtube-nocookie.com/embed/Uor-rCaADf8" title="Meet John L. Smallwood, CFP®" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  
+</section>
+
+<!-- 3 · CONTINUITY -->
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <div class="eyebrow">Why it matters</div>
+      <h2>A plan is only as good as the people who carry it forward.</h2>
+      <p class="lede">Most wealth plans live with one advisor and one client. When either steps away, the plan often goes with them. We built the firm the other way around.</p>
+    </div>
+    <ul class="points">
+      <li><strong>Continuity across generations</strong>Two generations of our family work side by side here, so the relationship is designed to continue with yours.</li>
+      <li><strong>A team on every plan</strong>Your advisor leads the plan. Specialists in investments, insurance, and annuities handle the details behind it.</li>
+      <li><strong>We want to know your family</strong>We invite spouses and the next generation into the conversation early — not after something happens.</li>
+      <li><strong>One office, one plan</strong>Tax, protection, investment, and estate coordinated under one roof in Red Bank.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4 · ADVISORS -->
+<section>
   <div class="wrap">
-    <span class="eyebrow">One step</span>
-    <h2>Meet us where you are.</h2>
-    <p>Start with the Scorecard, or skip straight to a conversation with the team.</p>
-    <div class="hero-cta">
-      <a class="btn" href="/scorecard?source=Team%20page">Take the Wealth Curve Scorecard &rarr;</a>
-      <a class="link-secondary" href="/schedule">Schedule a Wealth Curve Conversation</a>
+    <div class="eyebrow">Wealth Advisors</div>
+    <h2>The advisors who build your plan.</h2>
+    <p class="lede">Every plan is led by an advisor who works alongside John and the full team.</p>
+    <div class="adv-grid">
+      <article class="adv">
+        <div class="ph"><img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Robert-Marks-headshot-scaled-1-1-scaled-rlbognb5lxrbeigq71afovx9xp7vba6jxki13w2m4o.jpg" alt="Robert Marks, CFP®"></div>
+        <h3>Robert Marks, CFP®</h3>
+        <div class="role">Wealth Advisor</div>
+        <p class="focus">[Focus: e.g., which clients Rob works with most and what he's known for in the plan — one sentence.]</p>
+        <div class="links"><a href="mailto:rmarks@smallwoodwealth.com">Email</a><a href="https://www.linkedin.com/in/rob-d-marks/">LinkedIn</a><a href="https://smallwoodassociates.com/our-team/robert-marks/">Profile →</a></div>
+      </article>
+      <article class="adv">
+        <div class="ph"><img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Jared-SmallwoodHS1501rt-scaled-e1711465419547-rlbom1vqwn5o5sm3mve7j0towgkukmmzobjjg624co.jpg" alt="Jared Smallwood"></div>
+        <h3>Jared Smallwood</h3>
+        <div class="role">Wealth Advisor</div>
+        <p class="focus">[Focus: one sentence.]</p>
+        <div class="links"><a href="mailto:jared@smallwoodwealth.com">Email</a><a href="https://www.linkedin.com/in/jared-smallwood-791377126/">LinkedIn</a><a href="https://smallwoodassociates.com/our-team/jared-smallwood/">Profile →</a></div>
+      </article>
+      <article class="adv">
+        <div class="ph"><img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Chris-Smallwood-bio-2023-qjpqbxamag25o28x05yrjgl1h8dth77lkd86l5kihs.png" alt="Chris Smallwood"></div>
+        <h3>Chris Smallwood</h3>
+        <div class="role">Wealth Advisor</div>
+        <p class="focus">[Focus: one sentence.]</p>
+        <div class="links"><a href="mailto:chris@smallwoodwealth.com">Email</a><a href="https://www.linkedin.com/in/christopher-smallwood/">LinkedIn</a><a href="https://smallwoodassociates.com/our-team/chris-smallwood/">Profile →</a></div>
+      </article>
     </div>
   </div>
 </section>
+
+<!-- 5 · WHO HANDLES WHAT -->
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow">Client Service &amp; Operations</div>
+    <h2>Who to call for what.</h2>
+    <p class="lede">Your advisor leads the plan. For day-to-day questions, go straight to the person who handles it.</p>
+    <div class="tm-svcgrid">
+      <div class="tm-svc">
+        <img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Christine-Flynn-Headshot-scaled-rlbop4spb3di7s4zn7c6p8u2zxe5swvbfkiu2thnyg.jpg" alt="Christine Flynn">
+        <div><div class="area">Investments</div><h3>Christine Flynn</h3><p>Account paperwork, transfers, distributions, and statements.</p><a href="mailto:cflynn@smallwoodwealth.com">cflynn@smallwoodwealth.com</a></div>
+      </div>
+      <div class="tm-svc">
+        <img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Ariana-Lunderman-bio-2023-qjpq9ra0j73cwfe8nq8qai9s692cqblvln2vr6s6u8.png" alt="Ariana Lunderman">
+        <div><div class="area">Insurance</div><h3>Ariana Lunderman</h3><p>Policy service, beneficiary changes, and coverage questions.</p><a href="mailto:alunderman@smallwoodwealth.com">alunderman@smallwoodwealth.com</a></div>
+      </div>
+      <div class="tm-svc">
+        <img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/image004-1-rlboh71qdlpwkbibkuyfj63ldgay56574hm21as4gw.jpg" alt="Christina Nieves">
+        <div><div class="area">Annuities</div><h3>Christina Nieves</h3><p>Annuity service, income elections, and contract questions.</p><a href="mailto:cnieves@smallwoodwealth.com">cnieves@smallwoodwealth.com</a></div>
+      </div>
+      <div class="tm-svc">
+        <img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Jack-Smallwood-bio-2023-qjpq5f8t0p5rd5ovyusnsln9kaff8kefo6sa397jj4.png" alt="John L. 'Jack' Smallwood, Jr.">
+        <div><div class="area">Operations &amp; Strategy</div><h3>John L. “Jack” Smallwood, Jr.</h3><p>Business operations and firm strategy.</p><a href="mailto:jack@smallwoodwealth.com">jack@smallwoodwealth.com</a></div>
+      </div>
+      <div class="tm-svc">
+        <img loading="lazy" src="https://smallwoodassociates.com/wp-content/uploads/elementor/thumbs/Marissa_Professional-Imagev1-rn0ou0bskwypkvn98sf5cfh1d06r13uoqs2csynvz4.jpg" alt="Marissa Rudolph">
+        <div><div class="area">Operations &amp; Client Relations</div><h3>Marissa Rudolph</h3><p>Client onboarding and operations support.</p><a href="mailto:mrudolph@smallwoodwealth.com">mrudolph@smallwoodwealth.com</a></div>
+      </div>
+    </div>
+    <p class="main-line">Not sure who to ask? Call the main office at <a href="tel:732-542-1565">(732) 542-1565</a> or email <a href="mailto:clientservices@smallwoodwealth.com">clientservices@smallwoodwealth.com</a>.</p>
+  </div>
+</section>
+
+<!-- 6 · VERIFY -->
+<section class="verify">
+  <div class="wrap">
+    <div class="eyebrow">Check our background</div>
+    <h2>Don't take our word for it.</h2>
+    <p>Every advisor's registration and history is public. We encourage you to look us up before we meet.</p>
+    <div class="v-links">
+      <a href="https://brokercheck.finra.org/"><strong>FINRA BrokerCheck →</strong><span>Registered representative records</span></a>
+      <a href="https://adviserinfo.sec.gov/"><strong>SEC Adviser Search →</strong><span>Smallwood Wealth Investment Management, LLC</span></a>
+      <a href="https://smallwoodassociates.com/wp-content/uploads/2025/04/SWIM-4-09-2025-Form-CRS.pdf"><strong>Form CRS →</strong><span>Our client relationship summary</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · CLOSE -->
+<section class="close">
+  <div class="wrap">
+    <div class="eyebrow">One step</div>
+    <h2>Meet the team where you are.</h2>
+    <p class="lede">Start with the Scorecard on your own, or sit down with an advisor for a no-cost, no-obligation Wealth Curve Conversation.</p>
+    <div class="ctas">
+      <a class="tbtn tbtn--solid" href="/scorecard?source=Team%20page%20-%20Close">Take the Wealth Curve Scorecard →</a>
+      <a class="tbtn tbtn--line" href="/schedule">Schedule a Wealth Curve Conversation</a>
+    </div>
+  </div>
+</section>
+
+</main>
 <footer>
   <div class="wrap">
     <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
@@ -416,6 +575,7 @@
     </div>
   </div>
 </footer>
+
 <!-- Google Tag Manager (same container as the live site; loads site tags incl. chat if configured there) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PH7597RV');</script>
 <!-- End Google Tag Manager -->
@@ -423,5 +583,12 @@
      The widget is domain-bound, so it activates once this site is served on smallwoodassociates.com.
      Standard form: -->
 <script type="text/javascript">window.purechatApi={l:[],t:[],on:function(){this.l.push(arguments)}};(function(){var done=false;var script=document.createElement('script');script.async=true;script.type='text/javascript';script.src='https://app.purechat.com/VisitorWidget/WidgetScript';document.getElementsByTagName('HEAD').item(0).appendChild(script);script.onreadystatechange=script.onload=function(e){if(!done&&(!this.readyState||this.readyState=='loaded'||this.readyState=='complete')){var w=new PCWidget({c:'PURECHAT_WIDGET_ID',f:true});done=true;}};})();</script>
+<script>
+(function(){document.querySelectorAll('[data-sw-dd]').forEach(function(dd){var b=dd.querySelector('.sw-dd__btn');function set(o){dd.classList.toggle('is-open',o);b.setAttribute('aria-expanded',o)}
+b.addEventListener('click',function(e){e.stopPropagation();set(!dd.classList.contains('is-open'))});
+dd.addEventListener('keydown',function(e){if(e.key==='Escape'){set(false);b.focus()}});
+document.addEventListener('click',function(e){if(!dd.contains(e.target))set(false)});
+dd.addEventListener('focusout',function(e){if(!dd.contains(e.relatedTarget))set(false)});});})();
+</script>
 </body>
 </html>

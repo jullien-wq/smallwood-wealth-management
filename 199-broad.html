@@ -3,12 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schedule a Wealth Curve Conversation | Smallwood Wealth Management</title>
-<meta name="description" content="Book a no-cost, 30-minute Wealth Curve Conversation with Smallwood Wealth Management. See how the first meeting works and pick a time that fits.">
+<title>199 Broad Street | Smallwood Wealth Management, Red Bank, NJ</title>
+<meta name="description" content="199 Broad Street, Red Bank, NJ — the restored Victorian home of Smallwood Wealth Management. See the renovation and plan your visit.">
+
+<!--
+  ============================================================
+  SMALLWOOD HOMEPAGE — REDESIGN TARGET  (Draft v1 · Aug 2026)
+  Changes from live site, per John:
+   1. Palette: copper/orange REMOVED. White canvas + navy (#1b164e),
+      sky blue (#a3cef2) as the only accent. Swap the CTA color in ONE
+      place via --cta below if you want a brighter blue.
+   2. Offer reframed: primary conversion is now the WEALTH CURVE
+      SCORECARD (the quiz), not "schedule a call." Call is the quiet
+      secondary path.
+   3. Hero broadened from business-owner-only to all three avatars
+      (self-selection doors below the hero).
+   4. TESTIMONIALS REMOVED (compliance). NOTE: they are still being
+      served on the live WordPress/Smart Marketing page — must be
+      purged at the served source, not just here.
+  DEV TO WIRE:
+   - [QUIZ_URL]   -> hosted Wealth Curve Scorecard. Replace every href="/scorecard".
+   - [ONCEHUB]    -> canonical https://go.oncehub.com/AdvisorsIntroMeetings
+                     (live site currently uses a different OnceHub link — standardize).
+   - Canonical domain: smallwoodassociates.com. Standardize the footer
+     email (currently @smallwoodwealth.com) before launch.
+   - Final disclosure wording pending Regulus review.
+  ============================================================
+-->
+
 <link rel="icon" type="image/png" href="https://smallwoodassociates.com/wp-content/uploads/2024/08/Favicon.png">
 <meta property="og:site_name" content="Smallwood Wealth Management">
-<meta property="og:title" content="Schedule a Wealth Curve Conversation | Smallwood Wealth Management">
-<meta property="og:description" content="Book a no-cost, 30-minute Wealth Curve Conversation with Smallwood Wealth Management. See how the first meeting works and pick a time that fits.">
+<meta property="og:title" content="199 Broad Street | Smallwood Wealth Management, Red Bank, NJ">
+<meta property="og:description" content="199 Broad Street, Red Bank, NJ — the restored Victorian home of Smallwood Wealth Management. See the renovation and plan your visit.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg">
 <meta name="twitter:card" content="summary_large_image">
@@ -190,29 +216,70 @@
     .dot{animation:none}
     .hero-anim{animation:none}
   }
-
-  .page-hero{padding:70px 0 56px;border-bottom:1px solid var(--line)}
-  .page-hero h1{font-size:clamp(32px,4.5vw,46px);margin:14px 0 18px}
-  .page-hero p.lead{font-size:clamp(16px,1.7vw,18.5px);color:#3d3f45;max-width:56ch;margin-bottom:16px;font-weight:400}
-  .sched-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
-  @media(max-width:900px){.sched-grid{grid-template-columns:1fr}}
-  .booker{background:#fff;border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;overflow:hidden}
-  .booker iframe{display:block;width:100%;height:760px;border:0}
-  .vid{aspect-ratio:16/9;background:var(--sky-tint);border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
-  .vid .play{width:56px;height:56px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center}
-  .vid .play::after{content:"";width:0;height:0;border-top:10px solid transparent;border-bottom:10px solid transparent;border-left:17px solid var(--sky);margin-left:4px}
-  .vid .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gray);font-weight:600;text-align:center;padding:0 18px}
-  .vid iframe{width:100%;height:100%;border:0;border-radius:4px}
-  .meet-steps .bstep{display:grid;grid-template-columns:60px 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--line)}
-  .meet-steps .n{font-family:'Nunito',sans-serif;font-size:24px;color:var(--sky-line);font-weight:600}
-  .meet-steps h3{font-size:19px;margin-bottom:8px}
-  .meet-steps p{font-size:14.5px;color:#45474d;max-width:64ch}
+  /*vidgrid*/@media(max-width:760px){#podcast-videos .wrap>div[style*="grid"]{grid-template-columns:1fr !important}}
 
   .link-secondary{font-weight:600;font-size:14.5px;color:var(--navy);border-bottom:1px solid var(--sky-line);padding-bottom:2px;margin-left:6px}
   .link-secondary:hover{border-bottom-color:var(--navy)}
   .hero .link-secondary,.lp-band .link-secondary{color:#fff;border-bottom-color:rgba(163,206,242,.7)}
   .hero .link-secondary:hover,.lp-band .link-secondary:hover{border-bottom-color:#fff}
   @media(max-width:1150px){.nav .btn{padding:9px 16px;font-size:13px}}
+
+  /* page: /199-broad */
+.tm{--tm-band:#eef5fd;--tm-warm:#6f7178;--tm-mute:#52545a;font-size:16px;line-height:1.65}
+.tm h1,.tm h2,.tm h3{font-family:'Nunito',sans-serif;letter-spacing:.01em}
+.tm .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--tm-warm)}
+.tm h1,.tm h2{font-family:'Nunito',sans-serif;font-weight:600;letter-spacing:.02em;line-height:1.2;color:var(--navy)}
+.tm h2{font-size:clamp(26px,3.4vw,38px);margin:10px 0 18px}
+.tm h3{font-size:17px;font-weight:600;color:var(--navy)}
+.tm .tbtn{display:inline-block;padding:14px 26px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s ease}
+.tm .tbtn:hover{transform:translateY(-1px)}
+.tm .tbtn--solid{background:var(--navy);color:#fff}
+.tm .tbtn--line{border:1px solid currentColor}
+.tm .tbtn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.tm .tm-hero{position:relative;min-height:min(78vh,640px);display:flex;align-items:flex-end;color:#fff;
+  background:var(--navy) url('https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg') center/cover no-repeat}
+.tm .tm-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,22,78,.15) 0%,rgba(27,22,78,.85) 100%)}
+.tm .tm-hero .wrap{position:relative;padding-top:120px;padding-bottom:64px;width:100%}
+.tm .tm-hero .eyebrow{color:#dfe3ea}
+.tm .tm-hero h1{color:#fff;font-size:clamp(34px,6vw,64px);margin:12px 0 16px}
+.tm .tm-hero p{max-width:56ch;font-size:clamp(16px,1.8vw,19px);color:#eef0f4}
+.tm .story{padding:88px 0}
+.tm .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.tm .story p+p{margin-top:16px}
+.tm .facts{background:var(--tm-band);padding:32px}
+.tm .facts dl{display:grid;gap:18px}
+.tm .facts dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--tm-warm);font-weight:600}
+.tm .facts dd{font-weight:600;color:var(--navy);margin-top:2px}
+.tm .ba{padding:88px 0;background:var(--tm-band)}
+.tm .ba-head{max-width:640px;margin-bottom:40px}
+.tm .pairs{display:grid;gap:40px}
+.tm .pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tm .pair figure{position:relative}
+.tm .pair figcaption{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:6px 10px}
+.tm .pair-label{grid-column:1/-1;font-weight:600;color:var(--navy);margin-top:4px}
+.tm .ph{aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#d7dce2 0 12px,#dfe3e8 12px 24px);display:flex;align-items:center;justify-content:center;color:var(--tm-warm);font-size:13px;text-align:center;padding:12px}
+.tm .tl{padding:88px 0}
+.tm .bb-steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;border-top:1px solid var(--navy)}
+.tm .bb-steps li{padding:22px 18px 0 0;position:relative}
+.tm .bb-steps li::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;background:var(--navy);border-radius:50%}
+.tm .bb-steps .yr{font-family:'Nunito',sans-serif;font-size:20px;color:var(--navy);font-weight:600}
+.tm .bb-steps p{font-size:14px;margin-top:6px}
+.tm .visit{background:var(--navy);color:#fff;padding:88px 0}
+.tm .visit h2{color:#fff}
+.tm .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.tm .visit address{font-style:normal;font-size:17px;line-height:1.8}
+.tm .visit address a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.tm .visit .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.tm .visit .tbtn--solid{background:#fff;color:var(--navy)}
+.tm .visit .tbtn--line{color:#fff}
+.tm .map{aspect-ratio:4/3;border:0;width:100%;background:#2a2560}
+@media (max-width:860px){.tm .story-grid,.tm .visit-grid{grid-template-columns:1fr;gap:36px}
+.tm .bb-steps{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--navy);padding-left:22px}
+.tm .bb-steps li{padding:0 0 26px}
+.tm .bb-steps li::before{left:-28px;top:6px}
+}
+@media (max-width:560px){.tm .pair{grid-template-columns:1fr}
+}
 
   .sw-dd{position:relative}
   .sw-dd__btn{background:none;border:0;cursor:pointer;color:#dfe2ee;font:inherit;font-size:13px;font-weight:500;letter-spacing:.01em;display:inline-flex;align-items:center;gap:6px;padding:8px 0;white-space:nowrap}
@@ -232,9 +299,10 @@
   .mobile-panel .mp-sub{padding-left:44px !important;font-size:13px !important;color:#c7cbdd !important}
   @media (prefers-reduced-motion:reduce){.sw-dd__panel,.sw-dd__btn svg{transition:none}}
 </style>
-<script type="text/javascript" src="https://cdn.oncehub.com/cal/embed.js" async></script>
 </head>
 <body>
+
+<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrap nav">
     <a href="/" aria-label="Smallwood Wealth Management home">
@@ -282,49 +350,115 @@
   </nav>
 </header>
 <script>
-(function(){var h=document.querySelector('header'),b=document.querySelector('.burger');if(b){b.addEventListener('click',function(){var open=h.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});}})();
+  (function(){
+    var h=document.querySelector('header'),b=document.querySelector('.burger');
+    if(b){b.addEventListener('click',function(){
+      var open=h.classList.toggle('open');
+      b.setAttribute('aria-expanded',open?'true':'false');
+    });}
+  })();
 </script>
 
-<section class="page-hero">
+<!-- ===================== HERO ===================== -->
+<main class="tm">
+<!-- 1 · HERO -->
+<section class="tm-hero">
   <div class="wrap">
-    <span class="eyebrow">The Wealth Curve Conversation</span>
-    <h1>Schedule your conversation.</h1>
-    <p class="lead">One call, about 30 minutes. We walk through where your plan stands &mdash; taxes, protection, investment, and legacy &mdash; and you decide if it's worth going further. No cost, no obligation.</p>
+    <div class="eyebrow">199 Broad Street · Red Bank, NJ</div>
+    <h1>Our Home on Broad Street</h1>
+    <p>We could have planned from anywhere. We chose to put down roots in the middle of Red Bank — and to bring a building on Broad Street back to life while we did it.</p>
   </div>
 </section>
-<section>
-  <div class="wrap sched-grid">
+
+<!-- 2 · STORY -->
+<section class="story">
+  <div class="wrap story-grid">
     <div>
-      <div class="sec-head" style="margin-bottom:24px">
-        <span class="eyebrow">Who you'll be talking to</span>
-        <h2>Before we meet.</h2>
-        <p>Smallwood Wealth Management is an SEC-registered investment advisory firm in Red Bank, NJ. For 33 years we've helped business owners, executives, and retirees coordinate every part of their financial life &mdash; taxes, investments, protection, and estate &mdash; into one plan, held to a fiduciary standard.</p>
-      </div>
-      <!-- VIDEO SLOTS: replace each .vid div with <div class="vid" style="display:block"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="..." loading="lazy" allowfullscreen></iframe></div> -->
-      <div style="display:flex;flex-direction:column;gap:22px">
-        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; What to expect]</div></div><h3 style="font-size:16px;margin-top:10px">What to expect</h3></div>
-        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; What you&rsquo;ll need]</div></div><h3 style="font-size:16px;margin-top:10px">What you&rsquo;ll need</h3></div>
-        <div><div class="vid"><div class="play"></div><div class="lbl">[YouTube &mdash; How the firm works]</div></div><h3 style="font-size:16px;margin-top:10px">How the firm works</h3></div>
-      </div>
-      <div class="sec-head" style="margin:40px 0 0">
-        <span class="eyebrow">How the first meeting goes</span>
-      </div>
-      <div class="meet-steps">
-        <div class="bstep"><div class="n">01</div><div><h3>We listen first.</h3><p>Your goals, your assets, your current advisors, and where you feel uncertain. No forms to fill out beforehand &mdash; come as you are.</p></div></div>
-        <div class="bstep"><div class="n">02</div><div><h3>We name the gaps.</h3><p>Most first conversations surface specific gaps or opportunities.</p></div></div>
-        <div class="bstep"><div class="n">03</div><div><h3>You decide what's next.</h3><p>If it makes sense, the next step is a full Wealth Curve Blueprint against your real numbers. If not, you still leave with a clearer read on your plan.</p></div></div>
-      </div>
+      <div class="eyebrow">Why we stayed</div>
+      <h2>Built for the long term. Like the plans we write.</h2>
+      <p>When John Smallwood acquired 199 Broad Street in November 2013, plenty of people told him to level it and build new. He saw a building worth keeping, and set out to turn a historic Red Bank home into a modern office for the firm, then based in Shrewsbury, without losing its charm.</p>
+      <p>George Sutton built the house in 1904. Its woodwork, stained glass, and detailed trim suggest it was meant as a showpiece. It stayed with the Sutton family into the 1950s, later became a boarding house, and was owned for a few years by Daniel O&rsquo;Hern, who went on to serve on the New Jersey Supreme Court. From 1972 it was home to Bernard Hoffman&rsquo;s law firm for roughly 40 years.</p>
+      <p>By 2013 it was wrapped in 1980s aluminum siding with rot behind it, and the rooms were hidden under pine paneling and old carpet. The restoration brought each room back as close to the original as possible.</p>
+      <p><a class="textlink" href="https://199broad.smallwoodassociates.com/">Read John&rsquo;s full restoration journal &rarr;</a></p>
     </div>
-    <div>
-      <div class="booker">
-        <!--booking calendar inline widget begin -->
-        <div data-oh-booking-calendar-id="BKC-K752DGYV5D" style="min-width:320px;height:1150px;"></div>
-        <!--booking calendar inline widget end -->
+    <aside class="facts" aria-label="Building facts">
+      <dl>
+        <div><dt>Address</dt><dd>199 Broad Street, Red Bank, NJ 07701</dd></div>
+        <div><dt>Originally built</dt><dd>1904, by George Sutton</dd></div>
+        <div><dt>Acquired</dt><dd>November 2013</dd></div>
+        <div><dt>Restoration</dt><dd>2014</dd></div>
+        <div><dt>Use</dt><dd>Offices of Smallwood Wealth Management</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- 3 · BEFORE / AFTER -->
+<section class="ba">
+  <div class="wrap">
+    <div class="ba-head">
+      <div class="eyebrow">The renovation</div>
+      <h2>Before &amp; after</h2>
+      <p>In 2013 the house was hidden under aluminum siding, pine paneling, and old carpet. The restoration took it back toward the 1904 original.</p>
+    </div>
+    <div class="pairs">
+      <div class="pair">
+        <figure><img src="https://199broad.smallwoodassociates.com/wp-content/uploads/2014/09/0165ebf3e00a263d36c06ebeb56c814da2e4a36c1f-1024x768.jpg" alt="199 Broad Street exterior during the 2014 renovation" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"><figcaption>Before</figcaption></figure>
+        <figure><img src="https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg" alt="199 Broad Street today, restored" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"><figcaption>After</figcaption></figure>
+        <div class="pair-label">The façade &mdash; 1980s aluminum siding came off; the front clapboard and about 80% of the original porch columns were saved.</div>
       </div>
-      <p style="margin-top:12px;font-size:12.5px;color:var(--gray)">Booking not loading? <a class="textlink" href="https://oncehub.com/schedule-your-introductory-meeting" target="_blank" rel="noopener">Open the scheduler in a new tab &rarr;</a> or call <a class="textlink" href="tel:7325421565">(732) 542-1565</a>.</p>
+      <div class="pair">
+        <figure><img src="https://199broad.smallwoodassociates.com/wp-content/uploads/2014/10/01983aba8ff6298bc668f3cf076e23f113cefc9a54_00001-1024x678.jpg" alt="The foyer in 2013, floors covered in old rugs" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"><figcaption>Before</figcaption></figure>
+        <figure><div class="ph">After — reception / entry<br>[photo]</div><figcaption>After</figcaption></figure>
+        <div class="pair-label">Where clients arrive &mdash; original hardwood floors were found under decades of rugs.</div>
+      </div>
+      <div class="pair">
+        <figure><img src="https://199broad.smallwoodassociates.com/wp-content/uploads/2014/09/0157b4f8085e06dccc6cc09f7dba93e4ffabd4ab3d.jpg" alt="The fireplace room in 2013, walls covered in knotty pine paneling" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block"><figcaption>Before</figcaption></figure>
+        <figure><div class="ph">After — conference room<br>[photo]</div><figcaption>After</figcaption></figure>
+        <div class="pair-label">The conference room &mdash; once a family room with a fireplace, covered wall to wall in knotty pine paneling. This is where the Wealth Curve Conversation happens.</div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- 4 · TIMELINE -->
+<section class="tl">
+  <div class="wrap">
+    <div class="eyebrow">How it came together</div>
+    <h2>A century on Broad Street</h2>
+    <ol class="bb-steps">
+      <li><div class="yr">1904</div><h3>Built</h3><p>George Sutton builds the house on Broad Street.</p></li>
+      <li><div class="yr">1972</div><h3>Law office</h3><p>Bernard Hoffman&rsquo;s firm moves in for about 40 years.</p></li>
+      <li><div class="yr">2013</div><h3>Acquired</h3><p>John Smallwood buys the building in November.</p></li>
+      <li><div class="yr">2014</div><h3>Restoration</h3><p>Siding off, rooms opened up, porch rebuilt.</p></li>
+      <li><div class="yr">Today</div><h3>Home</h3><p>The offices of Smallwood Wealth Management.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5 · VISIT -->
+<section class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <div class="eyebrow" style="color:#c9ccd6">Visit us</div>
+      <h2>Come sit down with us.</h2>
+      <address>
+        199 Broad Street<br>Red Bank, NJ 07701<br>
+        <a href="tel:732-542-1565">(732) 542-1565</a>
+      </address>
+      <p style="margin-top:14px;color:#dfe3ea">The main entrance is in the rear of the building with plenty of spaces to park.</p>
+      <div class="ctas">
+        <a class="tbtn tbtn--solid" href="/scorecard?source=199%20Broad%20page">Take the Wealth Curve Scorecard →</a>
+        <a class="tbtn tbtn--line" href="/schedule">Schedule a Wealth Curve Conversation</a>
+      </div>
+    </div>
+    <iframe class="map" title="Map to 199 Broad Street, Red Bank NJ" loading="lazy"
+      src="https://www.google.com/maps?q=199+Broad+St,+Red+Bank,+NJ+07701&amp;output=embed"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER DISCLOSURES (same as live site) -->
+</main>
 <footer>
   <div class="wrap">
     <img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management">
@@ -361,6 +495,7 @@
     </div>
   </div>
 </footer>
+
 <!-- Google Tag Manager (same container as the live site; loads site tags incl. chat if configured there) -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PH7597RV');</script>
 <!-- End Google Tag Manager -->

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>199 Broad Street | Smallwood Wealth Management</title>
+<meta name="description" content="199 Broad Street, Red Bank, NJ — the renovated home of Smallwood Wealth Management.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   199 BROAD STREET — renovation page (/199-broad)
+   DRAFT for Smart Marketing. Items in [brackets] and .ph blocks = John to supply.
+   Website palette: navy / white / cool gray. No copper on site.
+   ===================================================================== */
+:root{
+  --navy:#1b164e; --ink:#252526; --gray:#e8ecef; --warm:#8a8b88; --white:#fff;
+  --display:'Cinzel',serif; --body:'Montserrat',sans-serif;
+  --wrap:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--white);line-height:1.65;font-size:16px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--warm)}
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:.02em;line-height:1.2;color:var(--navy)}
+h2{font-size:clamp(26px,3.4vw,38px);margin:10px 0 18px}
+h3{font-size:17px;font-weight:600;color:var(--navy)}
+.btn{display:inline-block;padding:14px 26px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn--solid{background:var(--navy);color:#fff}
+.btn--line{border:1px solid currentColor}
+.btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+
+.draft{background:#fff6d6;color:#5a4a00;font-size:12px;text-align:center;padding:8px 16px}
+
+/* header (simplified — the live site header replaces this) */
+.hdr{background:var(--navy);height:72px;display:flex;align-items:center}
+.hdr .wrap{width:100%;display:flex;align-items:center;justify-content:space-between}
+.hdr img{height:34px;width:auto}
+.hdr a.btn{background:#fff;color:var(--navy);padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{position:relative;min-height:min(78vh,640px);display:flex;align-items:flex-end;color:#fff;
+  background:var(--navy) url('https://smallwoodassociates.com/wp-content/uploads/2025/03/DJI_20250124105707_0112_D_HDR-min-1-scaled.jpeg') center/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,22,78,.15) 0%,rgba(27,22,78,.85) 100%)}
+.hero .wrap{position:relative;padding-top:120px;padding-bottom:64px;width:100%}
+.hero .eyebrow{color:#dfe3ea}
+.hero h1{color:#fff;font-size:clamp(34px,6vw,64px);margin:12px 0 16px}
+.hero p{max-width:56ch;font-size:clamp(16px,1.8vw,19px);color:#eef0f4}
+
+/* story */
+.story{padding:88px 0}
+.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.story p+p{margin-top:16px}
+.facts{background:var(--gray);padding:32px}
+.facts dl{display:grid;gap:18px}
+.facts dt{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);font-weight:600}
+.facts dd{font-weight:600;color:var(--navy);margin-top:2px}
+
+/* before / after */
+.ba{padding:88px 0;background:var(--gray)}
+.ba-head{max-width:640px;margin-bottom:40px}
+.pairs{display:grid;gap:40px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair figure{position:relative}
+.pair figcaption{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:6px 10px}
+.pair-label{grid-column:1/-1;font-weight:600;color:var(--navy);margin-top:4px}
+.ph{aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#d7dce2 0 12px,#dfe3e8 12px 24px);display:flex;align-items:center;justify-content:center;color:var(--warm);font-size:13px;text-align:center;padding:12px}
+
+/* timeline */
+.tl{padding:88px 0}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:40px;border-top:1px solid var(--navy)}
+.steps li{padding:22px 18px 0 0;position:relative}
+.steps li::before{content:"";position:absolute;top:-6px;left:0;width:11px;height:11px;background:var(--navy);border-radius:50%}
+.steps .yr{font-family:var(--display);font-size:20px;color:var(--navy);font-weight:600}
+.steps p{font-size:14px;margin-top:6px}
+
+/* visit */
+.visit{background:var(--navy);color:#fff;padding:88px 0}
+.visit h2{color:#fff}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.visit address{font-style:normal;font-size:17px;line-height:1.8}
+.visit address a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.visit .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.visit .btn--solid{background:#fff;color:var(--navy)}
+.visit .btn--line{color:#fff}
+.map{aspect-ratio:4/3;border:0;width:100%;background:#2a2560}
+
+/* footer disclosures (mirrors live site) */
+.ftr{background:#12102f;color:#b9bccb;font-size:12px;padding:40px 0}
+.ftr p+p{margin-top:12px}
+.ftr strong{color:#fff}
+
+@media (max-width:860px){
+  .story-grid,.visit-grid{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--navy);padding-left:22px}
+  .steps li{padding:0 0 26px}
+  .steps li::before{left:-28px;top:6px}
+}
+@media (max-width:560px){.pair{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="draft">Draft — copy, photos, and dates pending John's input and Regulus compliance review.</div>
+
+<header class="hdr"><div class="wrap">
+  <a href="/"><img src="https://smallwoodassociates.com/wp-content/uploads/2025/01/Smallwood_White_Horizontal-1200x335-1-1024x286.png" alt="Smallwood Wealth Management"></a>
+  <a class="btn" href="/scorecard?source=199%20Broad%20page&amp;avatar=">Take the Scorecard</a>
+</div></header>
+
+<!-- 1 · HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">199 Broad Street · Red Bank, NJ</div>
+    <h1>Our Home on Broad Street</h1>
+    <p>We could have planned from anywhere. We chose to put down roots in the middle of Red Bank — and to bring a building on Broad Street back to life while we did it.</p>
+  </div>
+</section>
+
+<!-- 2 · STORY -->
+<section class="story">
+  <div class="wrap story-grid">
+    <div>
+      <div class="eyebrow">Why we stayed</div>
+      <h2>Built for the long term. Like the plans we write.</h2>
+      <p>[John: 2–3 sentences on why the firm committed to downtown Red Bank — how long you've been here, what the town means to the family and the practice.]</p>
+      <p>[The building's history — when it was built, what it was before, what shape it was in when you took it on.]</p>
+      <p>[What the renovation set out to do — a space where clients sit down for real conversations, not a sales floor; room for the team to grow.]</p>
+    </div>
+    <aside class="facts" aria-label="Building facts">
+      <dl>
+        <div><dt>Address</dt><dd>199 Broad Street, Red Bank, NJ 07701</dd></div>
+        <div><dt>Originally built</dt><dd>[Year]</dd></div>
+        <div><dt>Renovation</dt><dd>[Start year – completion year]</dd></div>
+        <div><dt>Architect / builder</dt><dd>[Names, if you want them credited]</dd></div>
+        <div><dt>Use</dt><dd>[e.g., Firm offices + ground-floor retail]</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- 3 · BEFORE / AFTER -->
+<section class="ba">
+  <div class="wrap">
+    <div class="ba-head">
+      <div class="eyebrow">The renovation</div>
+      <h2>Before &amp; after</h2>
+      <p>[One line setting up the photos — what changed most.]</p>
+    </div>
+    <div class="pairs">
+      <div class="pair">
+        <figure><div class="ph">Before — Broad Street façade<br>[photo]</div><figcaption>Before</figcaption></figure>
+        <figure><div class="ph">After — Broad Street façade<br>[photo]</div><figcaption>After</figcaption></figure>
+        <div class="pair-label">The façade</div>
+      </div>
+      <div class="pair">
+        <figure><div class="ph">Before — reception / entry<br>[photo]</div><figcaption>Before</figcaption></figure>
+        <figure><div class="ph">After — reception / entry<br>[photo]</div><figcaption>After</figcaption></figure>
+        <div class="pair-label">Where clients arrive</div>
+      </div>
+      <div class="pair">
+        <figure><div class="ph">Before — conference room<br>[photo]</div><figcaption>Before</figcaption></figure>
+        <figure><div class="ph">After — conference room<br>[photo]</div><figcaption>After</figcaption></figure>
+        <div class="pair-label">Where the Wealth Curve Conversation happens</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · TIMELINE -->
+<section class="tl">
+  <div class="wrap">
+    <div class="eyebrow">How it came together</div>
+    <h2>From plan to open doors</h2>
+    <ol class="steps">
+      <li><div class="yr">[Year]</div><h3>Acquired</h3><p>[One line]</p></li>
+      <li><div class="yr">[Year]</div><h3>Design</h3><p>[One line]</p></li>
+      <li><div class="yr">[Year]</div><h3>Approvals</h3><p>[One line]</p></li>
+      <li><div class="yr">[Year]</div><h3>Construction</h3><p>[One line]</p></li>
+      <li><div class="yr">[Year]</div><h3>Open</h3><p>[One line]</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 5 · VISIT -->
+<section class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <div class="eyebrow" style="color:#c9ccd6">Visit us</div>
+      <h2>Come sit down with us.</h2>
+      <address>
+        199 Broad Street<br>Red Bank, NJ 07701<br>
+        <a href="tel:732-542-1565">(732) 542-1565</a>
+      </address>
+      <p style="margin-top:14px;color:#dfe3ea">[Parking / entrance note — e.g., where to park, which door to use.]</p>
+      <div class="ctas">
+        <a class="btn btn--solid" href="/schedule">Schedule a Wealth Curve Conversation</a>
+        <a class="btn btn--line" href="/scorecard?source=199%20Broad%20page&amp;avatar=">Take the Scorecard →</a>
+      </div>
+    </div>
+    <iframe class="map" title="Map to 199 Broad Street, Red Bank NJ" loading="lazy"
+      src="https://www.google.com/maps?q=199+Broad+St,+Red+Bank,+NJ+07701&amp;output=embed"></iframe>
+  </div>
+</section>
+
+<!-- FOOTER DISCLOSURES (same as live site) -->
+<footer class="ftr"><div class="wrap">
+  <p>This communication is strictly intended for individuals residing in the states of AZ, CA, CT, DC, DE, FL, GA, IL, LA, MA, MD, ME, NC, NH, NJ, NM, NY, OH, PA, RI, SC, TN, TX, UT, VA. No offers may be made or accepted from any resident outside these states due to various regulations and registration requirements regarding investment products and services. Investments are not FDIC- or NCUA-insured, are not guaranteed by a bank/financial institution, and are subject to risks, including possible loss of the principal invested.</p>
+  <p><strong>Investment Advisory Services provided by Smallwood Wealth Investment Management, LLC, an SEC registered investment advisor.</strong> Headquartered at 199 Broad Street, Red Bank, NJ 07701-2056. Securities offered through Regulus Financial Group, LLC, Member FINRA/SIPC, Headquartered at 2687 44th St. SE, Kentwood, MI 49512. Regulus Financial Group, LLC and Smallwood Wealth Investment Management, LLC are not affiliated companies.</p>
+  <p>NOT FDIC INSURED. NOT BANK GUARANTEED. MAY LOSE VALUE, INCLUDING LOSS OF PRINCIPAL. NOT INSURED BY ANY STATE OR FEDERAL AGENCY.</p>
+</div></footer>
+
+</body>
+</html>
