@@ -1,0 +1,67 @@
+# Keeps this repo up to date with the team's working copy at
+# github.com/Smart-Marketingg/<same repo name>.
+# Every hour it fast-forwards each branch here to match the org copy.
+# It never force-pushes: if a branch here has commits the org copy lacks,
+# that branch is skipped and the run is marked failed.
+name: Sync from org copy
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-from-org
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    # Only runs in the personal repo; does nothing in the org copy.
+    if: github.repository_owner == 'jullien-wq'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Fast-forward branches from Smart-Marketingg
+        env:
+          GH_TOKEN: ${{ github.token }}
+          # Only needed when the org copy is private.
+          ORG_SYNC_TOKEN: ${{ secrets.ORG_SYNC_TOKEN }}
+          GIT_TERMINAL_PROMPT: "0"
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ -n "$ORG_SYNC_TOKEN" ]; then
+            org_url="https://x-access-token:${ORG_SYNC_TOKEN}@github.com/Smart-Marketingg/${repo}.git"
+          else
+            org_url="https://github.com/Smart-Marketingg/${repo}.git"
+          fi
+
+          if ! git ls-remote --heads "$org_url" > /dev/null 2>&1; then
+            if [ -z "$ORG_SYNC_TOKEN" ]; then
+              echo "::warning::Cannot read Smart-Marketingg/${repo}. If it is private, add an ORG_SYNC_TOKEN secret to this repo."
+              exit 0
+            fi
+            echo "::error::Cannot read Smart-Marketingg/${repo} with ORG_SYNC_TOKEN. The token may have expired."
+            exit 1
+          fi
+
+          git remote add org "$org_url"
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git fetch --prune org "+refs/heads/*:refs/remotes/org/*"
+
+          failed=0
+          for branch in $(git for-each-ref --format='%(refname:strip=3)' refs/remotes/org); do
+            if git push origin "refs/remotes/org/${branch}:refs/heads/${branch}"; then
+              echo "Synced ${branch}"
+            else
+              echo "::warning::Could not fast-forward ${branch}; it has diverged or the push was rejected."
+              failed=1
+            fi
+          done
+          exit $failed
